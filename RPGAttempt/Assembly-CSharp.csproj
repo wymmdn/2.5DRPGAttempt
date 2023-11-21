@@ -57,8 +57,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Script\RotatingCamera.cs" />
-    <Compile Include="Assets\Script\PlayerMovement.cs" />
+    <Compile Include="Assets\Script\GameManager.cs" />
+    <Compile Include="Assets\Script\PlayerBehavior.cs" />
+    <Compile Include="Assets\Script\MagicBush.cs" />
+    <Compile Include="Assets\Script\ModelMgr.cs" />
     <Compile Include="Assets\Script\FacingCamera.cs" />
+    <Compile Include="Assets\Script\PlayerMovement.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
