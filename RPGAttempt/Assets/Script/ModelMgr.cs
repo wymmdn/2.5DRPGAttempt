@@ -9,7 +9,8 @@ namespace ModelMgr
         public static string enemy = "Enemy";
 
     }
-    public class keyname {
+    public class keyname
+    {
         public static string cheat = "t";
         public static string attack = "f";
     }

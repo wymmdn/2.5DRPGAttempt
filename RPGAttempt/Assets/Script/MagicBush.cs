@@ -7,8 +7,8 @@ public class MagicBush : MonoBehaviour
 {
 
     public bool triggered;
-    public Collider2D bushCol;
-    public Collider2D playerCol;
+    private Collider2D bushCol;
+    private Collider2D playerCol;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,7 +21,7 @@ public class MagicBush : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(keyname.cheat))
+        if (Input.GetKeyDown(KeyCode.T))
         {   //最好是获得碰撞到bushcol的其他col，然后判断其他col中有没有tag是player的
             
             playerCol = GameObject.FindWithTag(tagtag.player).GetComponent<Collider2D>();

@@ -1,0 +1,932 @@
+Using pre-set license
+Built from '2021.3/china_unity/release' branch; Version is '2021.3.8f1c1 (c20728c1e961) revision 12715816'; Using compiler version '192829333'; Build Type 'Release'
+OS: 'Windows 10  (10.0.19042) 64bit Professional' Language: 'zh' Physical Memory: 16310 MB
+BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 1
+
+COMMAND LINE ARGUMENTS:
+D:\UnityEditor\2021.3.8f1c1\Editor\Unity.exe
+-adb2
+-batchMode
+-noUpm
+-name
+AssetImportWorker5
+-projectPath
+D:/github/2.5DRPGAttempt/RPGAttempt
+-logFile
+Logs/AssetImportWorker5.log
+-srvPort
+53051
+Successfully changed project path to: D:/github/2.5DRPGAttempt/RPGAttempt
+D:/github/2.5DRPGAttempt/RPGAttempt
+[UnityMemory] Configuration Parameters - Can be set up in boot.config
+    "memorysetup-bucket-allocator-granularity=16"
+    "memorysetup-bucket-allocator-bucket-count=8"
+    "memorysetup-bucket-allocator-block-size=33554432"
+    "memorysetup-bucket-allocator-block-count=8"
+    "memorysetup-main-allocator-block-size=16777216"
+    "memorysetup-thread-allocator-block-size=16777216"
+    "memorysetup-gfx-main-allocator-block-size=16777216"
+    "memorysetup-gfx-thread-allocator-block-size=16777216"
+    "memorysetup-cache-allocator-block-size=4194304"
+    "memorysetup-typetree-allocator-block-size=2097152"
+    "memorysetup-profiler-bucket-allocator-granularity=16"
+    "memorysetup-profiler-bucket-allocator-bucket-count=8"
+    "memorysetup-profiler-bucket-allocator-block-size=33554432"
+    "memorysetup-profiler-bucket-allocator-block-count=8"
+    "memorysetup-profiler-allocator-block-size=16777216"
+    "memorysetup-profiler-editor-allocator-block-size=1048576"
+    "memorysetup-temp-allocator-size-main=16777216"
+    "memorysetup-job-temp-allocator-block-size=2097152"
+    "memorysetup-job-temp-allocator-block-size-background=1048576"
+    "memorysetup-job-temp-allocator-reduction-small-platforms=262144"
+    "memorysetup-temp-allocator-size-background-worker=32768"
+    "memorysetup-temp-allocator-size-job-worker=262144"
+    "memorysetup-temp-allocator-size-preload-manager=33554432"
+    "memorysetup-temp-allocator-size-nav-mesh-worker=65536"
+    "memorysetup-temp-allocator-size-audio-worker=65536"
+    "memorysetup-temp-allocator-size-cloud-worker=32768"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gfx=262144"
+AS: AutoStreaming module initializing.
+Refreshing native plugins compatible for Editor in 74.69 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Initialize engine version: 2021.3.8f1c1 (c20728c1e961)
+[Subsystems] Discovering subsystems at path D:/UnityEditor/2021.3.8f1c1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path D:/github/2.5DRPGAttempt/RPGAttempt/Assets
+GfxDevice: creating device client; threaded=0; jobified=0
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.1]
+    Renderer: NVIDIA GeForce RTX 3070 (ID=0x2488)
+    Vendor:   NVIDIA
+    VRAM:     8043 MB
+    Driver:   30.0.14.9649
+Initialize mono
+Mono path[0] = 'D:/UnityEditor/2021.3.8f1c1/Editor/Data/Managed'
+Mono path[1] = 'D:/UnityEditor/2021.3.8f1c1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
+Mono config path = 'D:/UnityEditor/2021.3.8f1c1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56516
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: D:/UnityEditor/2021.3.8f1c1/Editor/Data/PlaybackEngines/WebGLSupport/UnityEditor.WebGL.Extensions.dll
+Register platform support module: D:/UnityEditor/2021.3.8f1c1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.003865 seconds.
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 65.29 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.466 seconds
+Domain Reload Profiling:
+	ReloadAssembly (466ms)
+		BeginReloadAssembly (66ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (0ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (0ms)
+		EndReloadAssembly (317ms)
+			LoadAssemblies (63ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (67ms)
+			ReleaseScriptCaches (0ms)
+			RebuildScriptCaches (18ms)
+			SetupLoadedEditorAssemblies (192ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (6ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (65ms)
+				BeforeProcessingInitializeOnLoad (1ms)
+				ProcessInitializeOnLoadAttributes (84ms)
+				ProcessInitializeOnLoadMethodAttributes (35ms)
+				AfterProcessingInitializeOnLoad (0ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (0ms)
+Platform modules already initialized, skipping
+Registering precompiled user dll's ...
+Registered in 0.015439 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image D:\github\2.5DRPGAttempt\RPGAttempt\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image D:\github\2.5DRPGAttempt\RPGAttempt\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 64.01 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.843 seconds
+Domain Reload Profiling:
+	ReloadAssembly (844ms)
+		BeginReloadAssembly (89ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (4ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (15ms)
+		EndReloadAssembly (665ms)
+			LoadAssemblies (84ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (161ms)
+			ReleaseScriptCaches (0ms)
+			RebuildScriptCaches (36ms)
+			SetupLoadedEditorAssemblies (346ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (3ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (64ms)
+				BeforeProcessingInitializeOnLoad (76ms)
+				ProcessInitializeOnLoadAttributes (161ms)
+				ProcessInitializeOnLoadMethodAttributes (31ms)
+				AfterProcessingInitializeOnLoad (9ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (10ms)
+Platform modules already initialized, skipping
+========================================================================
+Worker process is ready to serve import requests
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.04 seconds
+Refreshing native plugins compatible for Editor in 0.67 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 4073 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 44 unused Assets / (222.4 KB). Loaded Objects now: 4525.
+Memory consumption went from 151.6 MB to 151.4 MB.
+Total: 2.844700 ms (FindLiveObjects: 0.239200 ms CreateObjectMapping: 0.149800 ms MarkObjects: 2.331400 ms  DeleteObjects: 0.123400 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 31048.859579 seconds.
+  path: Assets/Tile/wallandwater/tileset-sliced_98.asset
+  artifactKey: Guid(3c3b9dcd4ca3e924faa07bbb888d46ff) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tile/wallandwater/tileset-sliced_98.asset using Guid(3c3b9dcd4ca3e924faa07bbb888d46ff) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7b7dd766d53d8aae634ed92d8e4a18e6') in 0.070775 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/Tile/wallandwater/tileset-sliced_110.asset
+  artifactKey: Guid(1a2d6c0fb5115014ea7c6103bcd514d9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tile/wallandwater/tileset-sliced_110.asset using Guid(1a2d6c0fb5115014ea7c6103bcd514d9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b8f92936be25c146442d3daa3bc5f831') in 0.007673 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000014 seconds.
+  path: Assets/Tile/wallandwater/tileset-sliced_102.asset
+  artifactKey: Guid(f3eef39ff7aeb234ebe0986d29436e14) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tile/wallandwater/tileset-sliced_102.asset using Guid(f3eef39ff7aeb234ebe0986d29436e14) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6bd31a5928382240fd913165ad7338bf') in 0.010683 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000015 seconds.
+  path: Assets/Tile/wallandwater/tileset-sliced_107.asset
+  artifactKey: Guid(a7fce782db1c44944b6a3e6a3da86f18) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tile/wallandwater/tileset-sliced_107.asset using Guid(a7fce782db1c44944b6a3e6a3da86f18) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6d7fead98a89172324e3881059ffbaca') in 0.008160 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Tile/wallandwater/tileset-sliced_105.asset
+  artifactKey: Guid(247ba5ef68e3a1a45985c3abe664ab16) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tile/wallandwater/tileset-sliced_105.asset using Guid(247ba5ef68e3a1a45985c3abe664ab16) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f262b62e46e9cd77ad0eb9cce66092e1') in 0.020037 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000031 seconds.
+  path: Assets/Tile/wallandwater/tileset-sliced_101.asset
+  artifactKey: Guid(ffc9929ba1bd3c845afa98f6546fab59) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tile/wallandwater/tileset-sliced_101.asset using Guid(ffc9929ba1bd3c845afa98f6546fab59) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '72169c9941bff4b8bc6b189c0dfe0691') in 0.009995 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/Tile/wallandwater/tileset-sliced_103.asset
+  artifactKey: Guid(54057b8b49cceeb439375839eeb23311) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tile/wallandwater/tileset-sliced_103.asset using Guid(54057b8b49cceeb439375839eeb23311) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '04d653478e9148bda06e1d02746ce3a2') in 0.009602 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Tile/wallandwater/tileset-sliced_108.asset
+  artifactKey: Guid(9fb8d50ca0021764981139989cae99b5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tile/wallandwater/tileset-sliced_108.asset using Guid(9fb8d50ca0021764981139989cae99b5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a8eeff28041da4b65da4ed9bf13bce44') in 0.006975 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.751538 seconds.
+  path: Assets/Tile/wallandwater/tileset-sliced_114.asset
+  artifactKey: Guid(eeb4743b2dea1b24f91dd176a1631a18) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tile/wallandwater/tileset-sliced_114.asset using Guid(eeb4743b2dea1b24f91dd176a1631a18) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '95091a38c2d903922ad1851b8a7e6a73') in 0.007718 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000015 seconds.
+  path: Assets/Tile/wallandwater/tileset-sliced_124.asset
+  artifactKey: Guid(2cc38b57a7fcd0d44b8c3359a4900956) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tile/wallandwater/tileset-sliced_124.asset using Guid(2cc38b57a7fcd0d44b8c3359a4900956) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '555156b40ea4c190d3bd610ba8610177') in 0.013484 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Tile/wallandwater/tileset-sliced_125.asset
+  artifactKey: Guid(c6da061fc2372a548a1f8418b61d89e2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tile/wallandwater/tileset-sliced_125.asset using Guid(c6da061fc2372a548a1f8418b61d89e2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '005007ec615a943a91ec12a16119707f') in 0.007398 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/Tile/wallandwater/tileset-sliced_117.asset
+  artifactKey: Guid(17ec26b3eedb43b4d8cd00dc19594eee) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tile/wallandwater/tileset-sliced_117.asset using Guid(17ec26b3eedb43b4d8cd00dc19594eee) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '096b828d5e39513bbf9321d39797d8ab') in 0.007097 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000014 seconds.
+  path: Assets/Tile/wallandwater/tileset-sliced_121.asset
+  artifactKey: Guid(7f61b6712081f074981612751e7d7472) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tile/wallandwater/tileset-sliced_121.asset using Guid(7f61b6712081f074981612751e7d7472) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '50fff776d08474bf8706a4f0aa3e4457') in 0.009455 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/Tile/wallandwater/tileset-sliced_122.asset
+  artifactKey: Guid(14fb17244de908e4b92911e7d581f141) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tile/wallandwater/tileset-sliced_122.asset using Guid(14fb17244de908e4b92911e7d581f141) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '66b4cdd84090a9f12e87730932362a5d') in 0.009581 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/Tile/wallandwater/tileset-sliced_128.asset
+  artifactKey: Guid(c12d6fda69cc87e4bb67798ddfbced04) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tile/wallandwater/tileset-sliced_128.asset using Guid(c12d6fda69cc87e4bb67798ddfbced04) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '685f7968cc0c7c8273f3e7d6a8677c51') in 0.008418 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/Tile/wallandwater/tileset-sliced_118.asset
+  artifactKey: Guid(04aed49ce0179ff4e8aa422b4278ff12) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tile/wallandwater/tileset-sliced_118.asset using Guid(04aed49ce0179ff4e8aa422b4278ff12) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e2ae3622d287bc95bcb9dfc64dc55c6d') in 0.012440 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.202972 seconds.
+  path: Assets/Tile/wallandwater/tileset-sliced_130.asset
+  artifactKey: Guid(e68befc5b385f7f4595339e6eeff20a6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tile/wallandwater/tileset-sliced_130.asset using Guid(e68befc5b385f7f4595339e6eeff20a6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1761524156fa171d987546394a8932a3') in 0.007561 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Tile/wallandwater/tileset-sliced_141.asset
+  artifactKey: Guid(f7c0d71dd7a58db44ba2de614e53ca84) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tile/wallandwater/tileset-sliced_141.asset using Guid(f7c0d71dd7a58db44ba2de614e53ca84) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '97a08b4601a1704f1bb200d307d04bfa') in 0.008452 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000013 seconds.
+  path: Assets/Tile/wallandwater/tileset-sliced_143.asset
+  artifactKey: Guid(f309cf202a740174c8ef309ed1137db5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tile/wallandwater/tileset-sliced_143.asset using Guid(f309cf202a740174c8ef309ed1137db5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '42cf5f015c2d8363dce412705f5bca33') in 0.014255 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/Tile/wallandwater/tileset-sliced_142.asset
+  artifactKey: Guid(45d825a1a8ab5814ab3cdebcf58b01bd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tile/wallandwater/tileset-sliced_142.asset using Guid(45d825a1a8ab5814ab3cdebcf58b01bd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2a6e94791ae4a38c17084b15ce007490') in 0.010270 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Tile/wallandwater/tileset-sliced_133.asset
+  artifactKey: Guid(bf37d1f19a8bb8d4a970a472f9174420) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tile/wallandwater/tileset-sliced_133.asset using Guid(bf37d1f19a8bb8d4a970a472f9174420) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7bac4864b017b60fd7f8bfebc3af9c4f') in 0.009223 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000015 seconds.
+  path: Assets/Tile/wallandwater/tileset-sliced_144.asset
+  artifactKey: Guid(3ff093fd727f1744790678879cf341e6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tile/wallandwater/tileset-sliced_144.asset using Guid(3ff093fd727f1744790678879cf341e6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fdf870939c4ce4357fd64de06494c0cc') in 0.007586 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/Tile/wallandwater/tileset-sliced_131.asset
+  artifactKey: Guid(4efdd976486488f47ba0eeccb34adc9d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tile/wallandwater/tileset-sliced_131.asset using Guid(4efdd976486488f47ba0eeccb34adc9d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7058463f2cf51ee95a2104f5b63886ed') in 0.007769 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Tile/wallandwater/tileset-sliced_137.asset
+  artifactKey: Guid(8ebfc2fa9d29fd4458b470ffa52ab8ff) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tile/wallandwater/tileset-sliced_137.asset using Guid(8ebfc2fa9d29fd4458b470ffa52ab8ff) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3ccea057449c895acbafca029eacf564') in 0.008599 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.010553 seconds.
+  path: Assets/Tile/wallandwater/tileset-sliced_146.asset
+  artifactKey: Guid(7be352f5250185d4595b95ff875c37f1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tile/wallandwater/tileset-sliced_146.asset using Guid(7be352f5250185d4595b95ff875c37f1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fd44757704e5b63553c94ba4d5f0c657') in 0.012019 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/Tile/wallandwater/tileset-sliced_159.asset
+  artifactKey: Guid(8afe05c6ff886164a855016e5fe97340) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tile/wallandwater/tileset-sliced_159.asset using Guid(8afe05c6ff886164a855016e5fe97340) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '44dd00fe10800983a29b5ac258b70035') in 0.006977 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/Tile/wallandwater/tileset-sliced_155.asset
+  artifactKey: Guid(a16c9c190cdd74a4fbbb478b5d04e033) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tile/wallandwater/tileset-sliced_155.asset using Guid(a16c9c190cdd74a4fbbb478b5d04e033) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '28c6712b453dc29c8cebe3a1901d00fe') in 0.008600 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000015 seconds.
+  path: Assets/Tile/wallandwater/tileset-sliced_148.asset
+  artifactKey: Guid(d84c57a4fd0af35488eabce4ccc63148) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tile/wallandwater/tileset-sliced_148.asset using Guid(d84c57a4fd0af35488eabce4ccc63148) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4062afb2ede6159809086aa94b08f1f1') in 0.011855 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/Tile/wallandwater/tileset-sliced_157.asset
+  artifactKey: Guid(7aa0e87d3589d0f489f24eab725b5acc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tile/wallandwater/tileset-sliced_157.asset using Guid(7aa0e87d3589d0f489f24eab725b5acc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4df49e653b8e39da367f2b0783ebbdf1') in 0.009465 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Tile/wallandwater/tileset-sliced_156.asset
+  artifactKey: Guid(b7428a4d2cd41c646be3ab01d2c23df7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tile/wallandwater/tileset-sliced_156.asset using Guid(b7428a4d2cd41c646be3ab01d2c23df7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'aa1368922b010d86a0ae18c6756dd723') in 0.009833 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/Tile/wallandwater/tileset-sliced_151.asset
+  artifactKey: Guid(35b4288be161c3f4081426f61ab3b403) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tile/wallandwater/tileset-sliced_151.asset using Guid(35b4288be161c3f4081426f61ab3b403) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f58bc335c39f2922b16598870c02be62') in 0.006448 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/Tile/wallandwater/tileset-sliced_147.asset
+  artifactKey: Guid(7d1782394e19764449d6dffe112e46ec) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tile/wallandwater/tileset-sliced_147.asset using Guid(7d1782394e19764449d6dffe112e46ec) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b555036d029521dd56bb7fc4e9d2dcb9') in 0.005850 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.818859 seconds.
+  path: Assets/Tile/wallandwater/tileset-sliced_162.asset
+  artifactKey: Guid(7741ed346cfcc8849927531f6a8ad5d2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tile/wallandwater/tileset-sliced_162.asset using Guid(7741ed346cfcc8849927531f6a8ad5d2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a6f292e0022696d6e702919fa9cc4eec') in 0.018328 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Tile/wallandwater/tileset-sliced_163.asset
+  artifactKey: Guid(91515f45ce2551d458cf61264dc13ebc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tile/wallandwater/tileset-sliced_163.asset using Guid(91515f45ce2551d458cf61264dc13ebc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2b631e598f72bb5c272ab69b567c603a') in 0.006262 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/Tile/wallandwater/tileset-sliced_190.asset
+  artifactKey: Guid(e52a396ef2d54774e8c930df335800e9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tile/wallandwater/tileset-sliced_190.asset using Guid(e52a396ef2d54774e8c930df335800e9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0e37c83664b11d9d04035d301f019716') in 0.007342 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000028 seconds.
+  path: Assets/Tile/wallandwater/tileset-sliced_188.asset
+  artifactKey: Guid(39e08c8d157080f4d801785f9ee63b90) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tile/wallandwater/tileset-sliced_188.asset using Guid(39e08c8d157080f4d801785f9ee63b90) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '13ecf0bbeb2b5df128e80ced44b65b8c') in 0.008353 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/Tile/wallandwater/tileset-sliced_174.asset
+  artifactKey: Guid(423774ec7ed4bb747824f68d5b7b98d0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tile/wallandwater/tileset-sliced_174.asset using Guid(423774ec7ed4bb747824f68d5b7b98d0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e3ce7048dacbe65144f5de80a22f4ffa') in 0.007697 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/Tile/wallandwater/tileset-sliced_169.asset
+  artifactKey: Guid(fcac98347932e3440916d8418deb3b20) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tile/wallandwater/tileset-sliced_169.asset using Guid(fcac98347932e3440916d8418deb3b20) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1a65f153bf426df6660ac905dc337b13') in 0.006816 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000015 seconds.
+  path: Assets/Tile/wallandwater/tileset-sliced_181.asset
+  artifactKey: Guid(b2bf0c6cec5a68a4fa82c08ca6843c3f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tile/wallandwater/tileset-sliced_181.asset using Guid(b2bf0c6cec5a68a4fa82c08ca6843c3f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '308894b121c339fefef3f8133d2dae61') in 0.008054 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/Tile/wallandwater/tileset-sliced_172.asset
+  artifactKey: Guid(8aeb1d980f7098447bce0bb185b88d62) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tile/wallandwater/tileset-sliced_172.asset using Guid(8aeb1d980f7098447bce0bb185b88d62) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5759ab5bf391300d83de5e38a538e816') in 0.007998 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Tile/wallandwater/tileset-sliced_207.asset
+  artifactKey: Guid(5dfed2806a2d1ba42b4a183b500dd0d8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tile/wallandwater/tileset-sliced_207.asset using Guid(5dfed2806a2d1ba42b4a183b500dd0d8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '76808e20c3201b2ce8293b9f088bbaee') in 0.007436 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Tile/wallandwater/tileset-sliced_194.asset
+  artifactKey: Guid(8bf5d7044aed18c4cb7179b56ba1af6f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tile/wallandwater/tileset-sliced_194.asset using Guid(8bf5d7044aed18c4cb7179b56ba1af6f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a9863dc7d34e55ba56058b5e2d2179a9') in 0.007812 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000025 seconds.
+  path: Assets/Tile/wallandwater/tileset-sliced_195.asset
+  artifactKey: Guid(f0f8ae6993491634f93cfa5d961791f1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tile/wallandwater/tileset-sliced_195.asset using Guid(f0f8ae6993491634f93cfa5d961791f1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8688edc7b3ddceab5b312e4ea9a0803a') in 0.006460 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/Tile/wallandwater/tileset-sliced_208.asset
+  artifactKey: Guid(c6d85e2c51b4450408fea66dfaccf3cb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tile/wallandwater/tileset-sliced_208.asset using Guid(c6d85e2c51b4450408fea66dfaccf3cb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'df2d05d7732beabde5d61c287bdc9114') in 0.006411 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000014 seconds.
+  path: Assets/Tile/wallandwater/tileset-sliced_203.asset
+  artifactKey: Guid(8aa695b888b5eed45b59b2869e26c515) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tile/wallandwater/tileset-sliced_203.asset using Guid(8aa695b888b5eed45b59b2869e26c515) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9268548875f54ca1dd0da43f8fbba85d') in 0.006430 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/Tile/wallandwater/tileset-sliced_210.asset
+  artifactKey: Guid(b054cc860050a8347b6c3a6d96fb3d54) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tile/wallandwater/tileset-sliced_210.asset using Guid(b054cc860050a8347b6c3a6d96fb3d54) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8befa06aab1bda47014e81b21704a40f') in 0.006466 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000014 seconds.
+  path: Assets/Tile/wallandwater/tileset-sliced_217.asset
+  artifactKey: Guid(1323028f1a720a64ba6f009ad01d21c7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tile/wallandwater/tileset-sliced_217.asset using Guid(1323028f1a720a64ba6f009ad01d21c7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1558b7b0f2c4f67ccf47ca75df7825ad') in 0.006387 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Tile/wallandwater/tileset-sliced_197.asset
+  artifactKey: Guid(af64672b886d1c643a7c8a13d6210de9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tile/wallandwater/tileset-sliced_197.asset using Guid(af64672b886d1c643a7c8a13d6210de9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '05a6241d3c991c9ec8332f027393f25c') in 0.006493 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Tile/wallandwater/tileset-sliced_213.asset
+  artifactKey: Guid(f2c73d933951b894c96fc9b68e5111bd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tile/wallandwater/tileset-sliced_213.asset using Guid(f2c73d933951b894c96fc9b68e5111bd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e60b85ba121cbf35e943d37f6ecae18e') in 0.006760 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/Tile/wallandwater/tileset-sliced_216.asset
+  artifactKey: Guid(1d7c3318d2ed0f1469dea6bc2a495c51) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tile/wallandwater/tileset-sliced_216.asset using Guid(1d7c3318d2ed0f1469dea6bc2a495c51) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8ec0e8c7643500e0d6f6231b4a1504af') in 0.007666 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Tile/wallandwater/tileset-sliced_166.asset
+  artifactKey: Guid(dbc57a49b2a465a47b988a6e40c6e8bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tile/wallandwater/tileset-sliced_166.asset using Guid(dbc57a49b2a465a47b988a6e40c6e8bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c49cc7e1c4aa080d1d4d94e200f294a3') in 0.007176 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000015 seconds.
+  path: Assets/Tile/wallandwater/tileset-sliced_179.asset
+  artifactKey: Guid(eac9a6373d5f7ff418186cc360e43d10) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tile/wallandwater/tileset-sliced_179.asset using Guid(eac9a6373d5f7ff418186cc360e43d10) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '518625bd014f51160b671e973ac1661f') in 0.008144 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/Tile/wallandwater/tileset-sliced_175.asset
+  artifactKey: Guid(2b095fc26ee48ee47ae9facd06a997cc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tile/wallandwater/tileset-sliced_175.asset using Guid(2b095fc26ee48ee47ae9facd06a997cc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1cbab884332f110e1009df04c674e2bc') in 0.007191 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Tile/wallandwater/tileset-sliced_215.asset
+  artifactKey: Guid(8f3083329f992b04cbdd701dbe447c61) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tile/wallandwater/tileset-sliced_215.asset using Guid(8f3083329f992b04cbdd701dbe447c61) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '53b2a2e44b65934ad69cb5666fc739ff') in 0.007539 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Tile/wallandwater/tileset-sliced_184.asset
+  artifactKey: Guid(9e12f465641368145b590e3d6bd3a49a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tile/wallandwater/tileset-sliced_184.asset using Guid(9e12f465641368145b590e3d6bd3a49a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1eff8c10c69a38f28662a29782d155cd') in 0.007776 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/Tile/wallandwater/tileset-sliced_209.asset
+  artifactKey: Guid(74fac157a7eafbd43a58e2e8f931979b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tile/wallandwater/tileset-sliced_209.asset using Guid(74fac157a7eafbd43a58e2e8f931979b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '259903bb30db7917ffacdb086f7449d1') in 0.007803 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Tile/wallandwater/tileset-sliced_196.asset
+  artifactKey: Guid(1a205ad6f489d234daf940db479b1487) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tile/wallandwater/tileset-sliced_196.asset using Guid(1a205ad6f489d234daf940db479b1487) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '201523d82899335f7e95fe7b8974d5b1') in 0.007612 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/Tile/wallandwater/tileset-sliced_192.asset
+  artifactKey: Guid(5a0d7ade2b50ba843815b4d192f14e80) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tile/wallandwater/tileset-sliced_192.asset using Guid(5a0d7ade2b50ba843815b4d192f14e80) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fd78a8b7c3cccc4d91582fdd7c4c7cce') in 0.005668 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/Tile/wallandwater/tileset-sliced_206.asset
+  artifactKey: Guid(9379188d23bf5504d8f87faa1928b3b3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tile/wallandwater/tileset-sliced_206.asset using Guid(9379188d23bf5504d8f87faa1928b3b3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6181f939f3ea07fbbf34f305b5bf6c19') in 0.006239 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/Tile/wallandwater/tileset-sliced_223.asset
+  artifactKey: Guid(add35d0c9f49cc644b055c4c5e11ff6a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tile/wallandwater/tileset-sliced_223.asset using Guid(add35d0c9f49cc644b055c4c5e11ff6a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '186cfdf24f0c9c31a3dac9892e88bf2a') in 0.006309 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/Tile/wallandwater/tileset-sliced_191.asset
+  artifactKey: Guid(b84359acc1fef7a4aa7a7ec3798dcbf1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tile/wallandwater/tileset-sliced_191.asset using Guid(b84359acc1fef7a4aa7a7ec3798dcbf1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '65b1ab71246a7b9757ec7852abce0127') in 0.008027 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000026 seconds.
+  path: Assets/Tile/wallandwater/tileset-sliced_189.asset
+  artifactKey: Guid(6ebac399ab80e254e914fea0c19c3732) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tile/wallandwater/tileset-sliced_189.asset using Guid(6ebac399ab80e254e914fea0c19c3732) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e47ee2ba8a31b94cdebdc4ef3a52b93c') in 0.006005 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000014 seconds.
+  path: Assets/Tile/wallandwater/tileset-sliced_178.asset
+  artifactKey: Guid(662b3b942e1e90d43867c40c42d4d685) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tile/wallandwater/tileset-sliced_178.asset using Guid(662b3b942e1e90d43867c40c42d4d685) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fd6e183cc79dc3174996dd43d05c71ed') in 0.006538 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000015 seconds.
+  path: Assets/Tile/wallandwater/tileset-sliced_187.asset
+  artifactKey: Guid(2badf0a83c9258442be305c72262ae11) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tile/wallandwater/tileset-sliced_187.asset using Guid(2badf0a83c9258442be305c72262ae11) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4560867390dc4f36619183b01a17207d') in 0.006167 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 51.405406 seconds.
+  path: Assets/Tile/wallandwater/tileset-sliced_227.asset
+  artifactKey: Guid(da42938c9277eab47a5cc3b1bef491a7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tile/wallandwater/tileset-sliced_227.asset using Guid(da42938c9277eab47a5cc3b1bef491a7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '10e30b3232e7c39f48f571095e63e291') in 0.011574 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000015 seconds.
+  path: Assets/Tile/wallandwater/tileset-sliced_238.asset
+  artifactKey: Guid(047f5ec1a1d0ef44bace80b8ee2eb76c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tile/wallandwater/tileset-sliced_238.asset using Guid(047f5ec1a1d0ef44bace80b8ee2eb76c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4ebe00ff6058d41c5871b31f8f0a3fd1') in 0.007007 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/Tile/wallandwater/tileset-sliced_230.asset
+  artifactKey: Guid(f3424ffc5f6700d428213bf3cee78855) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tile/wallandwater/tileset-sliced_230.asset using Guid(f3424ffc5f6700d428213bf3cee78855) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '680b7b0e4a14b82e1c78b32fbae5d7c6') in 0.013530 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/Tile/wallandwater/tileset-sliced_240.asset
+  artifactKey: Guid(79f03f80516ddec41ad0c70bc6c3ba82) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tile/wallandwater/tileset-sliced_240.asset using Guid(79f03f80516ddec41ad0c70bc6c3ba82) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '271d573737c98dadb7a2391325de2944') in 0.015009 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Tile/wallandwater/tileset-sliced_232.asset
+  artifactKey: Guid(cbde83e9c7573df40820c34a86f5c458) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tile/wallandwater/tileset-sliced_232.asset using Guid(cbde83e9c7573df40820c34a86f5c458) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '344e1242cd47f8e2bef7a8ecfc48eb76') in 0.007218 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/Tile/wallandwater/tileset-sliced_237.asset
+  artifactKey: Guid(9a02d9eb0b5b6b74abf00dfa393061e3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tile/wallandwater/tileset-sliced_237.asset using Guid(9a02d9eb0b5b6b74abf00dfa393061e3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0f18f0f7ddcfb08168eda6760aaf35f5') in 0.020144 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.426735 seconds.
+  path: Assets/Tile/wallandwater/tileset-sliced_243.asset
+  artifactKey: Guid(91d2bb8a4766c3d44ace1327426efb35) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tile/wallandwater/tileset-sliced_243.asset using Guid(91d2bb8a4766c3d44ace1327426efb35) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0f29f0afe9f2bbc7b28c1873c914f198') in 0.012476 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/Tile/wallandwater/tileset-sliced_251.asset
+  artifactKey: Guid(d962ff6342c6b5040b701a1fc40dd8f1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tile/wallandwater/tileset-sliced_251.asset using Guid(d962ff6342c6b5040b701a1fc40dd8f1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b4576d43bc2cfb9025371c3082a9a9f3') in 0.007408 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000039 seconds.
+  path: Assets/Tile/wallandwater/tileset-sliced_245.asset
+  artifactKey: Guid(b405dbf234c23f34b9f836a89f46ea55) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tile/wallandwater/tileset-sliced_245.asset using Guid(b405dbf234c23f34b9f836a89f46ea55) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '93c68713e37119b4f1f482e75faffdc0') in 0.046559 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.005606 seconds.
+  path: Assets/Tile/wallandwater/tileset-sliced_259.asset
+  artifactKey: Guid(7db36548ffd5d124fb6ebe5a905e2e62) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tile/wallandwater/tileset-sliced_259.asset using Guid(7db36548ffd5d124fb6ebe5a905e2e62) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '95d2b24f40b7c34d5337a0a9fd808823') in 0.009636 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/Tile/wallandwater/tileset-sliced_264.asset
+  artifactKey: Guid(56f7a476188653041a2e109c7101d2af) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tile/wallandwater/tileset-sliced_264.asset using Guid(56f7a476188653041a2e109c7101d2af) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f558a63bd34fe669bc3810049c1f5917') in 0.016610 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/Tile/wallandwater/tileset-sliced_261.asset
+  artifactKey: Guid(40b36f9aea528ce40a8056bcf492b6dd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tile/wallandwater/tileset-sliced_261.asset using Guid(40b36f9aea528ce40a8056bcf492b6dd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7d319a1975ea779d5a38744ffda8e538') in 0.012778 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/Tile/wallandwater/tileset-sliced_265.asset
+  artifactKey: Guid(1a672d7be90892442b81b64e935202d1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tile/wallandwater/tileset-sliced_265.asset using Guid(1a672d7be90892442b81b64e935202d1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1d29980e76aea248eccfcc3897ed386b') in 0.008385 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.137405 seconds.
+  path: Assets/Tile/wallandwater/tileset-sliced_275.asset
+  artifactKey: Guid(592a4ff9cb2149842a4d62a6f5d35040) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tile/wallandwater/tileset-sliced_275.asset using Guid(592a4ff9cb2149842a4d62a6f5d35040) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bb171a70b47805115d14685b39fc42d1') in 0.008784 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/Tile/wallandwater/tileset-sliced_287.asset
+  artifactKey: Guid(19f22134b57e58b4197286c50b0ba824) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tile/wallandwater/tileset-sliced_287.asset using Guid(19f22134b57e58b4197286c50b0ba824) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ec2959be80a3dabdbc97a86b0def226f') in 0.016824 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/Tile/wallandwater/tileset-sliced_278.asset
+  artifactKey: Guid(1f28cd16b36674843addf24e6077e8d3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tile/wallandwater/tileset-sliced_278.asset using Guid(1f28cd16b36674843addf24e6077e8d3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bf530f49572cd01d041e6ac6959331e3') in 0.009012 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.072038 seconds.
+  path: Assets/Tile/wallandwater/tileset-sliced_291.asset
+  artifactKey: Guid(f32ae99b40f970c478b6f3dea6bb2e2d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tile/wallandwater/tileset-sliced_291.asset using Guid(f32ae99b40f970c478b6f3dea6bb2e2d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f88f935bcf15079949cace5d956cdbb3') in 0.010055 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Tile/wallandwater/tileset-sliced_301.asset
+  artifactKey: Guid(42350fcb05f35c445a90f575afc0644f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tile/wallandwater/tileset-sliced_301.asset using Guid(42350fcb05f35c445a90f575afc0644f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e313dfc501dc9b462c283900fa93bb3f') in 0.017211 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/Tile/wallandwater/tileset-sliced_295.asset
+  artifactKey: Guid(7be52a5a3c8851b468b9e23a7e8a1e05) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tile/wallandwater/tileset-sliced_295.asset using Guid(7be52a5a3c8851b468b9e23a7e8a1e05) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '15403261a4a75605ebba134f1a39bedd') in 0.008175 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/Tile/wallandwater/tileset-sliced_303.asset
+  artifactKey: Guid(e3005c3e6143c94439f62f2262810d7c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tile/wallandwater/tileset-sliced_303.asset using Guid(e3005c3e6143c94439f62f2262810d7c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3cff285082eff15e031dd5aa561d638f') in 0.008108 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.931039 seconds.
+  path: Assets/Tile/wallandwater/tileset-sliced_307.asset
+  artifactKey: Guid(706f59e3d0f282e4f9c788ae502fdfe6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tile/wallandwater/tileset-sliced_307.asset using Guid(706f59e3d0f282e4f9c788ae502fdfe6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c99f342d3367036f5207736c98738872') in 0.009127 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000014 seconds.
+  path: Assets/Tile/wallandwater/tileset-sliced_309.asset
+  artifactKey: Guid(67bd070abe185a14f97c61ad592aeac3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tile/wallandwater/tileset-sliced_309.asset using Guid(67bd070abe185a14f97c61ad592aeac3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6cdf189fa8f980ebe6111c5f1b7df3e2') in 0.016588 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/Tile/wallandwater/tileset-sliced_310.asset
+  artifactKey: Guid(adcd2d0781ad4c045a9b734fee7b2f9d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tile/wallandwater/tileset-sliced_310.asset using Guid(adcd2d0781ad4c045a9b734fee7b2f9d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7f8c78b5876ca5e81c99db0c67fff191') in 0.008415 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000033 seconds.
+  path: Assets/Tile/wallandwater/tileset-sliced_319.asset
+  artifactKey: Guid(d76c50d5a0701fe46aeccb5a87030106) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tile/wallandwater/tileset-sliced_319.asset using Guid(d76c50d5a0701fe46aeccb5a87030106) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '27471e2c44b283a13fbc2acf3f88929d') in 0.011978 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.001901 seconds.
+  path: Assets/Tile/wallandwater/tileset-sliced_323.asset
+  artifactKey: Guid(32075b36ab3226040892216a691d2a37) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tile/wallandwater/tileset-sliced_323.asset using Guid(32075b36ab3226040892216a691d2a37) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ac33a32a939119ecea87e01afeee5689') in 0.014054 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/Tile/wallandwater/tileset-sliced_330.asset
+  artifactKey: Guid(fe85c017edc83c34c81f9f440d4ccf02) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tile/wallandwater/tileset-sliced_330.asset using Guid(fe85c017edc83c34c81f9f440d4ccf02) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fb7203a5366c9c9135ac2bcac171622d') in 0.010224 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/Tile/wallandwater/tileset-sliced_331.asset
+  artifactKey: Guid(72646a36e9b07a54c8f5e700711eb550) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tile/wallandwater/tileset-sliced_331.asset using Guid(72646a36e9b07a54c8f5e700711eb550) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '359b9fb08383d41f0de44d48e4c12d52') in 0.007414 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/Tile/wallandwater/tileset-sliced_333.asset
+  artifactKey: Guid(075eaec8307f37f488adc7b621764e4e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tile/wallandwater/tileset-sliced_333.asset using Guid(075eaec8307f37f488adc7b621764e4e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ab9fa23ed8409c3d245418d7f425f862') in 0.007251 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.128562 seconds.
+  path: Assets/Tile/wallandwater/tileset-sliced_339.asset
+  artifactKey: Guid(b4af7381f4d62a446bf7bbff054c8184) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tile/wallandwater/tileset-sliced_339.asset using Guid(b4af7381f4d62a446bf7bbff054c8184) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8eab4eb3edce9521bf0b2a7d7c16fba4') in 0.013922 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/Tile/wallandwater/tileset-sliced_345.asset
+  artifactKey: Guid(269d5d356a169364f8256e41962d9b47) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tile/wallandwater/tileset-sliced_345.asset using Guid(269d5d356a169364f8256e41962d9b47) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9bdd12d01ce3ca3af69c020e66fd70c9') in 0.008879 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000015 seconds.
+  path: Assets/Tile/wallandwater/tileset-sliced_346.asset
+  artifactKey: Guid(b325324d214efd44095b16c7bc5ff983) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tile/wallandwater/tileset-sliced_346.asset using Guid(b325324d214efd44095b16c7bc5ff983) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e249f4ed0ccd4b6579e8a0ed14868005') in 0.009775 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000014 seconds.
+  path: Assets/Tile/wallandwater/tileset-sliced_350.asset
+  artifactKey: Guid(15f132bb687708842a3462fbc87301c6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tile/wallandwater/tileset-sliced_350.asset using Guid(15f132bb687708842a3462fbc87301c6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd41644d99e00d039ee0bde3731e348be') in 0.017122 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.547415 seconds.
+  path: Assets/Tile/wallandwater/tileset-sliced_355.asset
+  artifactKey: Guid(c34fdd3ca8660ee4a847f5e2399d6c0d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tile/wallandwater/tileset-sliced_355.asset using Guid(c34fdd3ca8660ee4a847f5e2399d6c0d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '654c8549651f536d7f1a914adeab318a') in 0.009437 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/Tile/wallandwater/tileset-sliced_360.asset
+  artifactKey: Guid(52e8cfde3a8559d469ca31c8ee6abb38) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tile/wallandwater/tileset-sliced_360.asset using Guid(52e8cfde3a8559d469ca31c8ee6abb38) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '33f0b85a80739f1c253296fb3d861571') in 0.011175 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/Tile/wallandwater/tileset-sliced_366.asset
+  artifactKey: Guid(b019fd929a756a04c9d1ae2f144cd631) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tile/wallandwater/tileset-sliced_366.asset using Guid(b019fd929a756a04c9d1ae2f144cd631) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '091fad90a0a9c5a9898f4dac8066aaa1') in 0.006943 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000013 seconds.
+  path: Assets/Tile/wallandwater/tileset-sliced_358.asset
+  artifactKey: Guid(080bbc3f41021a341b9e445f2698e225) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tile/wallandwater/tileset-sliced_358.asset using Guid(080bbc3f41021a341b9e445f2698e225) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e5b89908fb1d92e09ca482390ba687cf') in 0.023587 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.048184 seconds.
+  path: Assets/Tile/wallandwater/tileset-sliced_371.asset
+  artifactKey: Guid(cf35a4fad0ff6c2419ddacd5d90d558e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tile/wallandwater/tileset-sliced_371.asset using Guid(cf35a4fad0ff6c2419ddacd5d90d558e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '416f3a948b65aa1a3516ddfda5654bbb') in 0.009223 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/Tile/wallandwater/tileset-sliced_376.asset
+  artifactKey: Guid(2213c6b07d4b906479bab8f0d9266094) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tile/wallandwater/tileset-sliced_376.asset using Guid(2213c6b07d4b906479bab8f0d9266094) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5a510b75ac3bf90a3343c927f9f1668d') in 0.014290 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000015 seconds.
+  path: Assets/Tile/wallandwater/tileset-sliced_374.asset
+  artifactKey: Guid(d1f7fe47d3e04e849a8a5d5802534605) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tile/wallandwater/tileset-sliced_374.asset using Guid(d1f7fe47d3e04e849a8a5d5802534605) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dc5a04fe3514d6b0c5fd7aada21efa40') in 0.007306 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Tile/wallandwater/tileset-sliced_377.asset
+  artifactKey: Guid(b58628d7624ddeb4ea63689186685084) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tile/wallandwater/tileset-sliced_377.asset using Guid(b58628d7624ddeb4ea63689186685084) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '31c98cad5d5efa091effd5a12abc42e9') in 0.008655 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.169989 seconds.
+  path: Assets/Tile/wallandwater/tileset-sliced_387.asset
+  artifactKey: Guid(0dbab84863071514fa306bd7c90f8328) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tile/wallandwater/tileset-sliced_387.asset using Guid(0dbab84863071514fa306bd7c90f8328) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e1da595e3a155d1daf3ac6013e251631') in 0.011518 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000015 seconds.
+  path: Assets/Tile/wallandwater/tileset-sliced_392.asset
+  artifactKey: Guid(1d6b84949a7ec454caf9569bf33128b3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tile/wallandwater/tileset-sliced_392.asset using Guid(1d6b84949a7ec454caf9569bf33128b3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fe17b9a4732a241694fde5766fec49d4') in 0.009036 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000015 seconds.
+  path: Assets/Tile/wallandwater/tileset-sliced_398.asset
+  artifactKey: Guid(b2b90f14c7cd64840a54c1ec767bae2e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tile/wallandwater/tileset-sliced_398.asset using Guid(b2b90f14c7cd64840a54c1ec767bae2e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2972f4da18c7582d31d420e24064bed4') in 0.010958 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/Tile/wallandwater/tileset-sliced_391.asset
+  artifactKey: Guid(10afd09188ea2744880f48ccc7e34469) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tile/wallandwater/tileset-sliced_391.asset using Guid(10afd09188ea2744880f48ccc7e34469) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '83d1338342b461072ed1fb2c6c2307b2') in 0.008812 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 678.191374 seconds.
+  path: Assets/Tile/wallandwater/tileset-sliced_225.asset
+  artifactKey: Guid(9705810611f2b464d9a7b6d37eafd311) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tile/wallandwater/tileset-sliced_225.asset using Guid(9705810611f2b464d9a7b6d37eafd311) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '03aff898a38650b2bd8cc792b1883bf3') in 0.010287 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000026 seconds.
+  path: Assets/Tile/wallandwater/tileset-sliced_226.asset
+  artifactKey: Guid(4c894e4969bcf54468fba1641d2f3a0f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tile/wallandwater/tileset-sliced_226.asset using Guid(4c894e4969bcf54468fba1641d2f3a0f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0ffd614705ff5965d6fe937c6a2aca1a') in 0.008323 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.001604 seconds.
+  path: Assets/Tile/wallandwater/tileset-sliced_236.asset
+  artifactKey: Guid(3fafedcf9f85db54a97e7231e89fdb24) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tile/wallandwater/tileset-sliced_236.asset using Guid(3fafedcf9f85db54a97e7231e89fdb24) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'de6f0abc917a68dca1c69200d9d172b2') in 0.044590 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/Tile/wallandwater/tileset-sliced_254.asset
+  artifactKey: Guid(6456b5de677ecb443ae9553f8fb887ad) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tile/wallandwater/tileset-sliced_254.asset using Guid(6456b5de677ecb443ae9553f8fb887ad) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '81fdfad658791c62440cf1d3033b3ac1') in 0.008403 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Tile/wallandwater/tileset-sliced_255.asset
+  artifactKey: Guid(552a547a2b9cc0546984a7471f32e243) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tile/wallandwater/tileset-sliced_255.asset using Guid(552a547a2b9cc0546984a7471f32e243) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '79adb924c1d0217debe1451bf24e415c') in 0.009234 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/Tile/wallandwater/tileset-sliced_241.asset
+  artifactKey: Guid(f406101d7846e304ba89c9502edcfaf4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tile/wallandwater/tileset-sliced_241.asset using Guid(f406101d7846e304ba89c9502edcfaf4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bb9aaa17e735bebf7ca4a480d1a97182') in 0.022881 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Tile/wallandwater/tileset-sliced_271.asset
+  artifactKey: Guid(afe08561d12f77341bfc9e5de5fa97df) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tile/wallandwater/tileset-sliced_271.asset using Guid(afe08561d12f77341bfc9e5de5fa97df) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6c9d3908b965c465fa87e568530d2681') in 0.006451 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/Tile/wallandwater/tileset-sliced_234.asset
+  artifactKey: Guid(e891445a5d273f24aa99b9f07217e559) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tile/wallandwater/tileset-sliced_234.asset using Guid(e891445a5d273f24aa99b9f07217e559) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd1191947de7fe33e71e6a7ea729cd1ea') in 0.009095 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/Tile/wallandwater/tileset-sliced_272.asset
+  artifactKey: Guid(635e9a3835470db419a7eae890ccb697) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tile/wallandwater/tileset-sliced_272.asset using Guid(635e9a3835470db419a7eae890ccb697) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c91a0f1469b81d69a97bbf21dc12c5c1') in 0.009440 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Tile/wallandwater/tileset-sliced_237.asset
+  artifactKey: Guid(9a02d9eb0b5b6b74abf00dfa393061e3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tile/wallandwater/tileset-sliced_237.asset using Guid(9a02d9eb0b5b6b74abf00dfa393061e3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f0f3e642e8fade3519748a955af619c8') in 0.009067 seconds 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.013611 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image D:\github\2.5DRPGAttempt\RPGAttempt\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image D:\github\2.5DRPGAttempt\RPGAttempt\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.82 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.844 seconds
+Domain Reload Profiling:
+	ReloadAssembly (845ms)
+		BeginReloadAssembly (122ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (5ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (35ms)
+		EndReloadAssembly (633ms)
+			LoadAssemblies (85ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (189ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (34ms)
+			SetupLoadedEditorAssemblies (275ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (10ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (60ms)
+				ProcessInitializeOnLoadAttributes (164ms)
+				ProcessInitializeOnLoadMethodAttributes (30ms)
+				AfterProcessingInitializeOnLoad (11ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (16ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 3.65 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 4068 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 31 unused Assets / (189.6 KB). Loaded Objects now: 4531.
+Memory consumption went from 151.7 MB to 151.5 MB.
+Total: 2.892000 ms (FindLiveObjects: 0.244100 ms CreateObjectMapping: 0.164800 ms MarkObjects: 2.362800 ms  DeleteObjects: 0.119100 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+Editor requested this worker to shutdown with reason: Scaling down because of idle timeout
+AssetImportWorker is now disconnected from the server
+Process exiting
+Exiting without the bug reporter. Application will terminate with return code 0
