@@ -9,9 +9,12 @@ namespace ModelMgr
         public static string enemy = "Enemy";
 
     }
-    public class keyname
-    {
-        public static string cheat = "t";
-        public static string attack = "f";
+
+    public enum changeHealthType
+    { 
+        damage = 1,
+        heal = 2,
+        realDamage = 3,
+        realHeal = 4
     }
 }

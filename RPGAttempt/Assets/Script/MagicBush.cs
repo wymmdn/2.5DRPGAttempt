@@ -27,7 +27,7 @@ public class MagicBush : MonoBehaviour
             playerCol = GameObject.FindWithTag(tagtag.player).GetComponent<Collider2D>();
             if (Physics2D.IsTouching(bushCol, playerCol)) 
             {
-                Debug.Log("press t " + bushCol.gameObject.name);
+                //Debug.Log("press t " + bushCol.gameObject.name);
                 triggered = true;
                 GameManager.TriggerBush();
             }

@@ -1,36 +1,47 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using ModelMgr;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    static GameManager instance;
+    public static GameManager instance;
     List<MagicBush> mBushs;
-    public int bushNum;
-    public int bushTriggerNum;
+    private int bushNum;
+    private int bushTriggerNum;
+    private PlayerController playerController;
 
-    public void Awake()
+    void Awake()
     {
         if (instance == null) 
         {
             instance = this;
         }
         DontDestroyOnLoad(this);
-
         mBushs = new List<MagicBush>();
         bushNum = 0;
         bushTriggerNum = 0;
+        playerController = GameObject.FindGameObjectWithTag(tagtag.player).GetComponent<PlayerController>();
+    }
+
+    private void resetManager()
+    {
+        mBushs = new List<MagicBush>();
+        bushNum = 0;
+        bushTriggerNum = 0;
+        playerController = GameObject.FindGameObjectWithTag(tagtag.player).GetComponent<PlayerController>();
     }
     // Start is called before the first frame update
     void Start()
     {
-        
+          
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (bushTriggerNum == bushNum)
+        if (bushNum != 0 && bushTriggerNum == bushNum)
         {
             GetWin(); 
         }
@@ -58,5 +69,13 @@ public class GameManager : MonoBehaviour
     public void GetWin()
     {
         Debug.Log("you win");
+        resetManager();
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+    public void GameOver()
+    {
+        Debug.Log("game over");
+        resetManager();
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }
