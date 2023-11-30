@@ -68,16 +68,17 @@ public class PlayerController : MonoBehaviour
             case changeHealthType.damage:
                 if (!isInvicible)
                 {
-                    Debug.Log("damaged");
                     curHeart -= health;
                     isInvicible = true;
+                    anim.SetTrigger("getHurt");
                 }
-                break ;
+                break ;  
             default:
                 if (!isInvicible)
                 {
                     curHeart -= health;
                     isInvicible = true;
+                    anim.SetTrigger("getHeal");
                 }
                 break;
         }

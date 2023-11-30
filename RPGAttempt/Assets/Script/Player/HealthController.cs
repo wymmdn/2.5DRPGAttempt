@@ -18,7 +18,6 @@ public class HealthController : MonoBehaviour
     {
         player = GameObject.FindGameObjectWithTag(tagtag.player).GetComponent<PlayerController>();
         healthDisplay(player.curHeart);
-        Debug.Log("called11");
     }
 
     // Update is called once per frame
