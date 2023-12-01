@@ -62,13 +62,20 @@
   <ItemGroup>
     <Compile Include="Assets\Script\Environment\TrapMgr.cs" />
     <Compile Include="Assets\Script\Player\HealthController.cs" />
+    <Compile Include="Assets\Script\Enemy\Enemy.cs" />
+    <Compile Include="Assets\Script\Enemy\TreeMonster.cs" />
+    <Compile Include="Assets\Script\Interface\Character.cs" />
+    <Compile Include="Assets\Script\Interface\EnvironCheck.cs" />
+    <Compile Include="Assets\Script\Enemy\EnemyState.cs" />
     <Compile Include="Assets\Script\GameManager.cs" />
     <Compile Include="Assets\Script\FacingCamera.cs" />
     <Compile Include="Assets\Script\ModelMgr.cs" />
+    <Compile Include="Assets\Script\Enemy\TreeMonsterStates.cs" />
     <Compile Include="Assets\Script\Player\PlayerController.cs" />
     <Compile Include="Assets\Script\EnemyGenerate.cs" />
     <Compile Include="Assets\Script\Player\PlayerMovement.cs" />
     <Compile Include="Assets\Script\Environment\MagicBush.cs" />
+    <Compile Include="Assets\Script\Interface\BaseState.cs" />
     <Compile Include="Assets\Script\RotatingCamera.cs" />
   </ItemGroup>
   <ItemGroup>
