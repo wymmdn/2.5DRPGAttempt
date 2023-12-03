@@ -11,21 +11,23 @@ public class Enemy : MonoBehaviour        //暂定所有的敌人空闲时原地不动，发现玩
     public bool isInvicible;
     public float invicibleTime;
     public float alertRadius;
+    public float attackRadius;
     public GameObject player;
 
-    protected Vector3 bornPoint;
+    public Vector3 bornPoint;
     protected EnemyState idleState;
     protected EnemyState chaseState;
+    protected EnemyState attackState;
     protected EnemyState currentState;
     [HideInInspector]public Dictionary<stateType, EnemyState> states = new Dictionary<stateType, EnemyState>();
 
     [HideInInspector]public Animator anim;
-    protected Rigidbody rb;
+    protected Rigidbody2D rb;
 
     protected virtual void Awake()
     {
         anim = GetComponent<Animator>();
-        rb = GetComponent<Rigidbody>();
+        rb = GetComponent<Rigidbody2D>();
     }
 
     private void OnEnable()
@@ -44,20 +46,41 @@ public class Enemy : MonoBehaviour        //暂定所有的敌人空闲时原地不动，发现玩
     {
         currentState.LogicUpdate();
     }
-
+    private void FixedUpdate()
+    {
+        currentState.PhysicsUpdate();
+    }
     private void OnDisable()
     {
         currentState.OnExit();
     }
-
-    public void movement(Vector2 target) { 
+    public void attack()
+    { 
         
     }
+    public void movement(Vector2 target) {
+        target = (target - (Vector2)transform.position).normalized;
+        anim.SetBool("isMoving", true);
+        anim.SetFloat("dirX", target.x);
+        anim.SetFloat("dirY", target.y);
+        rb.velocity = target * moveSpeed;
+    }
+    public void stopMove() { 
+        Vector2 stop = rb.velocity.normalized;
+        movement(transform.position);
+        anim.SetBool("isMoving", false);
+        anim.SetFloat("dirX", stop.x);
+        anim.SetFloat("dirY", stop.y);
+    }
 
-    public bool foundPlayer() 
+    public bool foundArea(Vector2 target) 
     {
         //Debug.Log((player.transform.position - transform.position).sqrMagnitude);
-        return alertRadius > (player.transform.position - transform.position).sqrMagnitude ? true : false;
+        return alertRadius > (target - (Vector2)transform.position).sqrMagnitude ? true : false;
+    }
+    public bool attackArea(Vector2 target) 
+    {
+        return attackRadius > (target - (Vector2)transform.position).sqrMagnitude ? true : false;
     }
 
     public void TransitionState(stateType type)
@@ -71,5 +94,6 @@ public class Enemy : MonoBehaviour        //暂定所有的敌人空闲时原地不动，发现玩
     private void OnDrawGizmosSelected()
     {
         Gizmos.DrawWireSphere((Vector2)this.transform.position,alertRadius);
+        Gizmos.DrawWireSphere((Vector2)this.transform.position, attackRadius);
     }
 }

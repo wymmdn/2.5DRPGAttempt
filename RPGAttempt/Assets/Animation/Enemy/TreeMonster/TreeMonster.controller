@@ -67,8 +67,8 @@ BlendTree:
     m_CycleOffset: 0
     m_DirectBlendParameter: factx
     m_Mirror: 0
-  m_BlendParameter: factx
-  m_BlendParameterY: facty
+  m_BlendParameter: dirX
+  m_BlendParameterY: dirY
   m_MinThreshold: 0
   m_MaxThreshold: 1
   m_UseAutomaticThresholds: 1
@@ -114,8 +114,8 @@ BlendTree:
     m_CycleOffset: 0
     m_DirectBlendParameter: Blend
     m_Mirror: 0
-  m_BlendParameter: factx
-  m_BlendParameterY: facty
+  m_BlendParameter: dirX
+  m_BlendParameterY: dirY
   m_MinThreshold: 0
   m_MaxThreshold: 0.75
   m_UseAutomaticThresholds: 1
@@ -180,24 +180,24 @@ AnimatorController:
   m_Name: TreeMonster
   serializedVersion: 5
   m_AnimatorParameters:
-  - m_Name: factx
+  - m_Name: dirX
     m_Type: 1
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 9100000}
-  - m_Name: facty
+    m_Controller: {fileID: 0}
+  - m_Name: dirY
     m_Type: 1
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 9100000}
+    m_Controller: {fileID: 0}
   - m_Name: isMoving
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 9100000}
+    m_Controller: {fileID: 0}
   m_AnimatorLayers:
   - serializedVersion: 5
     m_Name: Base Layer

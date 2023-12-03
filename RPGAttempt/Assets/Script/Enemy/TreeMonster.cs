@@ -9,10 +9,13 @@ public class TreeMonster : Enemy
 
     protected override void Awake()
     {
+        base.Awake();
         idleState = new TreeMonsterIdleState();
         chaseState = new TreeMonsterChaseState();
+        attackState = new TreeMonsterAttackState();
         states.Add(stateType.idle, idleState);
         states.Add(stateType.chase,chaseState);
+        states.Add(stateType.attack, attackState);
     }
 
     protected override void Start()
