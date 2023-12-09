@@ -3,33 +3,25 @@ using System.Collections.Generic;
 using UnityEngine;
 using ModelMgr;
 
-public class PlayerController : MonoBehaviour
+public class PlayerController : Role
 {
-    public int maxHeart;
-    public int curHeart;
-    public float moveSpeed;
-    public bool isInvicible;
-    public float invicibleTime;
 
     [HideInInspector]public HealthController healthController;
     private float invicibleTimeCnt;
-    private Animator anim;
-    private Rigidbody2D rigidbody2d;
     private float inputX, inputY;
-    private float stopX, stopY;
 
-    private void Awake()
+
+    protected override void Awake()
     {
-        anim = GetComponent<Animator>();
+        base.Awake();
         //curHeart = maxHeart = 5;
         invicibleTime = 1.0f;
         invicibleTimeCnt = invicibleTime;
-        rigidbody2d = GetComponent<Rigidbody2D>();
     }
     // Start is called before the first frame update
     void Start()
     {
-        healthController.healthDisplay(curHeart);
+        healthController.healthDisplay(curHealth);
     }
 
     // Update is called once per frame
@@ -45,10 +37,9 @@ public class PlayerController : MonoBehaviour
             { 
                 isInvicible = false;
                 invicibleTimeCnt = invicibleTime;
-                Debug.Log(isInvicible.ToString() + invicibleTimeCnt.ToString());
             }
         }
-        if (curHeart == 0)
+        if (curHealth == 0)
         { 
             GameManager.instance.GameOver();
         }
@@ -59,10 +50,14 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.F))
         {
             anim.SetBool("attack", true);
+            weapon.anim.SetFloat("dirX", faceDir.x);
+            weapon.anim.SetFloat("dirY", faceDir.y);
+            weapon.anim.SetBool("attack", true);
         }
         if (Input.GetKeyUp(KeyCode.F))
         {
             anim.SetBool("attack", false);
+            weapon.anim.SetBool("attack", false);
         }
     }
     public void CheckMovement()
@@ -70,32 +65,33 @@ public class PlayerController : MonoBehaviour
         inputX = Input.GetAxisRaw("Horizontal");
         inputY = Input.GetAxisRaw("Vertical");
         Vector2 input = (transform.right * inputX + transform.up * inputY).normalized;
-        rigidbody2d.velocity = input * moveSpeed;
+        rb.velocity = input * moveSpeed;
 
         if (input != Vector2.zero)
         {
             anim.SetBool("isMoving", true);
-            stopX = inputX;
-            stopY = inputY;
+            faceDir.x = inputX;
+            faceDir.y = inputY;
         }
         else
         {
             anim.SetBool("isMoving", false);
         }
-        anim.SetFloat("InputX", stopX);
-        anim.SetFloat("InputY", stopY);
+        anim.SetFloat("InputX", faceDir.x);
+        anim.SetFloat("InputY", faceDir.y);
     }
-    public void changeHealth(int health, changeHealthType type)
+    public override void changeHealth(int health, changeHealthType type)
     {
         switch (type)
         {
             case changeHealthType.heal:
-                curHeart += health;
+                curHealth += health;
+                anim.SetTrigger("getHeal");
                 break;
             case changeHealthType.damage:
                 if (!isInvicible)
                 {
-                    curHeart -= health;
+                    curHealth -= health;
                     isInvicible = true;
                     anim.SetTrigger("getHurt");
                 }
@@ -103,23 +99,23 @@ public class PlayerController : MonoBehaviour
             default:
                 if (!isInvicible)
                 {
-                    curHeart -= health;
+                    curHealth -= health;
                     isInvicible = true;
-                    anim.SetTrigger("getHeal");
+                    anim.SetTrigger("getHurt");
                 }
                 break;
         }
 
-        if (curHeart > maxHeart)
+        if (curHealth > maxHealth)
         {
-            curHeart = maxHeart;
+            curHealth = maxHealth;
         }
-        if (curHeart < 0)
-        { 
-            curHeart = 0;
+        if (curHealth < 0)
+        {
+            curHealth = 0;
         }
-        healthController.healthDisplay(curHeart);
-        Debug.Log("health change to " + curHeart.ToString());
+        healthController.healthDisplay(curHealth);
+        Debug.Log("health change to " + curHealth.ToString());
     }
     public void PhysicCheck()
     { 

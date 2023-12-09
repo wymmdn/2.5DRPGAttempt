@@ -7,12 +7,15 @@ namespace ModelMgr
     public class Model { 
         
     }
-    public class tagtag {
-        public static string player = "Player";
-        public static string enemy = "Enemy";
-
+    public class Path {
+        public const string weaponPath = "Prefabs/weapon/";
+        public const string defaultWeaponPath = weaponPath + "freeHand";
     }
-
+    public class tagtag {
+        public const string player = "Player";
+        public const string enemy = "Enemy";
+        public const string npc = "NPC";
+    }
     public enum changeHealthType
     { 
         damage = 1,

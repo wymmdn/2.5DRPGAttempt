@@ -391,10 +391,13 @@
 "Assets/Script/Interface/BaseState.cs"
 "Assets/Script/Interface/Character.cs"
 "Assets/Script/Interface/EnvironCheck.cs"
+"Assets/Script/Interface/Role.cs"
 "Assets/Script/ModelMgr.cs"
+"Assets/Script/Others/DamageField.cs"
+"Assets/Script/Others/FreeHand.cs"
+"Assets/Script/Others/Weapon.cs"
 "Assets/Script/Player/HealthController.cs"
 "Assets/Script/Player/PlayerController.cs"
-"Assets/Script/Player/PlayerMovement.cs"
 "Assets/Script/RotatingCamera.cs"
 -langversion:9.0
 

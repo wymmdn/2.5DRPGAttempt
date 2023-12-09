@@ -3,16 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using ModelMgr;
 
-public class Enemy : MonoBehaviour        //暂定所有的敌人空闲时原地不动，发现玩家时开始追逐并攻击，脱战时回到据点
+public class Enemy : Role        //暂定所有的敌人空闲时原地不动，发现玩家时开始追逐并攻击，脱战时回到据点
 {
-    public int maxHealth;
-    public int minHealth;
-    public int moveSpeed;
-    public bool isInvicible;
-    public float invicibleTime;
     public float alertRadius;
     public float attackRadius;
-    public GameObject player;
+    public GameObject player;  //暂时用于state中找player的位置
 
     public Vector3 bornPoint;
     protected EnemyState idleState;
@@ -21,14 +16,6 @@ public class Enemy : MonoBehaviour        //暂定所有的敌人空闲时原地不动，发现玩
     protected EnemyState currentState;
     [HideInInspector]public Dictionary<stateType, EnemyState> states = new Dictionary<stateType, EnemyState>();
 
-    [HideInInspector]public Animator anim;
-    protected Rigidbody2D rb;
-
-    protected virtual void Awake()
-    {
-        anim = GetComponent<Animator>();
-        rb = GetComponent<Rigidbody2D>();
-    }
 
     private void OnEnable()
     {
@@ -54,33 +41,32 @@ public class Enemy : MonoBehaviour        //暂定所有的敌人空闲时原地不动，发现玩
     {
         currentState.OnExit();
     }
-    public void attack()
-    { 
-        
-    }
     public void movement(Vector2 target) {
-        target = (target - (Vector2)transform.position).normalized;
+        faceDir = (target - (Vector2)transform.position).normalized;
         anim.SetBool("isMoving", true);
-        anim.SetFloat("dirX", target.x);
-        anim.SetFloat("dirY", target.y);
-        rb.velocity = target * moveSpeed;
+        anim.SetFloat("dirX", faceDir.x);
+        anim.SetFloat("dirY", faceDir.y);
+        rb.velocity = faceDir * moveSpeed;
     }
     public void stopMove() { 
-        Vector2 stop = rb.velocity.normalized;
-        movement(transform.position);
+        faceDir = rb.velocity.normalized;
+        rb.velocity = Vector2.zero;
         anim.SetBool("isMoving", false);
-        anim.SetFloat("dirX", stop.x);
-        anim.SetFloat("dirY", stop.y);
+        anim.SetFloat("dirX", faceDir.x);
+        anim.SetFloat("dirY", faceDir.y);
     }
 
     public bool foundArea(Vector2 target) 
     {
-        //Debug.Log((player.transform.position - transform.position).sqrMagnitude);
-        return alertRadius > (target - (Vector2)transform.position).sqrMagnitude ? true : false;
+        if (Input.GetKeyDown(KeyCode.T))
+        {
+            Debug.Log(Vector2.Distance(target,(Vector2)transform.position));
+        }
+        return alertRadius > Vector2.Distance(target, (Vector2)transform.position) ? true : false;
     }
     public bool attackArea(Vector2 target) 
     {
-        return attackRadius > (target - (Vector2)transform.position).sqrMagnitude ? true : false;
+        return attackRadius > Vector2.Distance(target, (Vector2)transform.position) ? true : false;
     }
 
     public void TransitionState(stateType type)
