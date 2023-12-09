@@ -10,8 +10,8 @@ public class Role : MonoBehaviour
     public float moveSpeed;
     public bool isInvicible;
     public float invicibleTime;
-    public Weapon weapon;
-    public GameObject healthBar;
+    protected Weapon weapon;
+    protected HealthBarStd healthBar;
     [HideInInspector]protected Animator anim;
     protected Rigidbody2D rb;
     public Vector2 faceDir;   //标记角色的朝向
@@ -21,7 +21,7 @@ public class Role : MonoBehaviour
         anim = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
         changeWeapon((GameObject)Resources.Load(Path.defaultWeaponPath,typeof(GameObject)));
-
+        healthBar = GetComponentInChildren<HealthBarStd>();
     }
     public virtual void changeWeapon(GameObject wp)
     {
@@ -66,13 +66,10 @@ public class Role : MonoBehaviour
         {
             curHealth = 0;
         }
-        healthDisplay();
+        healthBar.healthDisplay((float)curHealth/maxHealth);
     }
 
-    public virtual void healthDisplay() 
-    {
-        
-    }
+    
 
     public void attack()
     {

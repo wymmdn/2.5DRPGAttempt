@@ -6,7 +6,7 @@ using ModelMgr;
 public class PlayerController : Role
 {
 
-    [HideInInspector]public HealthController healthController;
+    public HealthBarPlayer healthBarPlayer;  //在inspector中赋值的
     private float invicibleTimeCnt;
     private float inputX, inputY;
 
@@ -21,7 +21,7 @@ public class PlayerController : Role
     // Start is called before the first frame update
     void Start()
     {
-        healthController.healthDisplay(curHealth);
+        healthBarPlayer.healthDisplay(curHealth);
     }
 
     // Update is called once per frame
@@ -114,7 +114,7 @@ public class PlayerController : Role
         {
             curHealth = 0;
         }
-        healthController.healthDisplay(curHealth);
+        healthBarPlayer.healthDisplay(curHealth);
         Debug.Log("health change to " + curHealth.ToString());
     }
     public void PhysicCheck()

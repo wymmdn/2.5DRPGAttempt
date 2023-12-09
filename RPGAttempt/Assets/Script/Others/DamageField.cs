@@ -17,7 +17,6 @@ public class DamageField : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("called");
         Role targetRole = collision.gameObject.GetComponent<Role>();
         if (targetRole != null && weaponFrom != null)
         {
