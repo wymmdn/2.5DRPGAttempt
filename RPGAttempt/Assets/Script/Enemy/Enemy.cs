@@ -41,20 +41,6 @@ public class Enemy : Role        //ÔÝ¶¨ËùÓÐµÄµÐÈË¿ÕÏÐÊ±Ô­µØ²»¶¯£¬·¢ÏÖÍæ¼ÒÊ±¿ªÊ¼×
     {
         currentState.OnExit();
     }
-    public void movement(Vector2 target) {
-        faceDir = (target - (Vector2)transform.position).normalized;
-        anim.SetBool("isMoving", true);
-        anim.SetFloat("dirX", faceDir.x);
-        anim.SetFloat("dirY", faceDir.y);
-        rb.velocity = faceDir * moveSpeed;
-    }
-    public void stopMove() { 
-        faceDir = rb.velocity.normalized;
-        rb.velocity = Vector2.zero;
-        anim.SetBool("isMoving", false);
-        anim.SetFloat("dirX", faceDir.x);
-        anim.SetFloat("dirY", faceDir.y);
-    }
 
     public bool foundArea(Vector2 target) 
     {

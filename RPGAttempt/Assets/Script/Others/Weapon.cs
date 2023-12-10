@@ -7,23 +7,38 @@ public class Weapon : MonoBehaviour
 {
     public int damage;
     public changeHealthType damageType;
-    public Animator anim;
-    public List<DamageField> bullets;
+    public float attackSpeed;
+    public float attackInterval;
+    public Role master;
+    [HideInInspector]public Animator anim;
+    [HideInInspector]public List<DamageField> bullets;
+    
+    private float timeCnt; 
 
     protected virtual void Awake()
     {
+        master = GetComponentInParent<Role>();
         anim = GetComponent<Animator>();
+        attackSpeed = 1;
+        attackInterval = 1 / attackSpeed;
+        timeCnt = -0.1f;
+    }
+
+    protected virtual void Update()
+    {
+        if (timeCnt >= 0)
+        { 
+            timeCnt -= Time.deltaTime;
+        }
     }
 
     public void Attack()
     {
-        if (Input.GetKeyDown(KeyCode.F))
+        if (timeCnt <= 0)
         {
-            anim.SetBool("attack", true);
-        }
-        if (Input.GetKeyUp(KeyCode.F))
-        {
-            anim.SetBool("attack", false);
+            master.attack();
+            //this.attack
+            timeCnt = attackInterval;
         }
     }
 

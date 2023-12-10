@@ -40,8 +40,8 @@ BlendTree:
     m_CycleOffset: 0
     m_DirectBlendParameter: InputX
     m_Mirror: 0
-  m_BlendParameter: InputX
-  m_BlendParameterY: InputY
+  m_BlendParameter: dirX
+  m_BlendParameterY: dirY
   m_MinThreshold: 0
   m_MaxThreshold: 1
   m_UseAutomaticThresholds: 1
@@ -265,8 +265,8 @@ BlendTree:
     m_CycleOffset: 0
     m_DirectBlendParameter: InputX
     m_Mirror: 0
-  m_BlendParameter: InputX
-  m_BlendParameterY: InputY
+  m_BlendParameter: dirX
+  m_BlendParameterY: dirY
   m_MinThreshold: 0
   m_MaxThreshold: 1
   m_UseAutomaticThresholds: 1
@@ -281,42 +281,42 @@ AnimatorController:
   m_Name: Player
   serializedVersion: 5
   m_AnimatorParameters:
-  - m_Name: InputX
+  - m_Name: dirX
     m_Type: 1
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 9100000}
-  - m_Name: InputY
+    m_Controller: {fileID: 0}
+  - m_Name: dirY
     m_Type: 1
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 9100000}
+    m_Controller: {fileID: 0}
   - m_Name: isMoving
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 9100000}
+    m_Controller: {fileID: 0}
   - m_Name: attack
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 9100000}
+    m_Controller: {fileID: 0}
   - m_Name: getHurt
     m_Type: 9
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 9100000}
+    m_Controller: {fileID: 0}
   - m_Name: getHeal
     m_Type: 9
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 9100000}
+    m_Controller: {fileID: 0}
   m_AnimatorLayers:
   - serializedVersion: 5
     m_Name: Base Layer
@@ -463,8 +463,8 @@ BlendTree:
     m_CycleOffset: 0
     m_DirectBlendParameter: InputX
     m_Mirror: 0
-  m_BlendParameter: InputX
-  m_BlendParameterY: InputY
+  m_BlendParameter: dirX
+  m_BlendParameterY: dirY
   m_MinThreshold: 0
   m_MaxThreshold: 1
   m_UseAutomaticThresholds: 1

@@ -53,6 +53,7 @@ public class PlayerController : Role
             weapon.anim.SetFloat("dirX", faceDir.x);
             weapon.anim.SetFloat("dirY", faceDir.y);
             weapon.anim.SetBool("attack", true);
+            //base.attack();
         }
         if (Input.GetKeyUp(KeyCode.F))
         {
@@ -69,16 +70,13 @@ public class PlayerController : Role
 
         if (input != Vector2.zero)
         {
-            anim.SetBool("isMoving", true);
-            faceDir.x = inputX;
-            faceDir.y = inputY;
+            faceDir = input.normalized;
+            animatorManager.movingAnimation(faceDir);
         }
         else
         {
-            anim.SetBool("isMoving", false);
+            animatorManager.idleAnimation(faceDir);
         }
-        anim.SetFloat("InputX", faceDir.x);
-        anim.SetFloat("InputY", faceDir.y);
     }
     public override void changeHealth(int health, changeHealthType type)
     {
@@ -86,14 +84,14 @@ public class PlayerController : Role
         {
             case changeHealthType.heal:
                 curHealth += health;
-                anim.SetTrigger("getHeal");
+                animatorManager.getHealAnimation();
                 break;
             case changeHealthType.damage:
                 if (!isInvicible)
                 {
                     curHealth -= health;
                     isInvicible = true;
-                    anim.SetTrigger("getHurt");
+                    animatorManager.getHurtAnimation();
                 }
                 break ;  
             default:
@@ -101,7 +99,7 @@ public class PlayerController : Role
                 {
                     curHealth -= health;
                     isInvicible = true;
-                    anim.SetTrigger("getHurt");
+                    animatorManager.getHurtAnimation();
                 }
                 break;
         }
@@ -115,7 +113,6 @@ public class PlayerController : Role
             curHealth = 0;
         }
         healthBarPlayer.healthDisplay(curHealth);
-        Debug.Log("health change to " + curHealth.ToString());
     }
     public void PhysicCheck()
     { 

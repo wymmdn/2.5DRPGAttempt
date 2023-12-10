@@ -7,7 +7,7 @@ namespace ModelMgr
     public class Model { 
         
     }
-    public class Path {
+    public static class GloblePath {
         public const string weaponPath = "Prefabs/weapon/";
         public const string defaultWeaponPath = weaponPath + "freeHand";
     }
@@ -15,6 +15,17 @@ namespace ModelMgr
         public const string player = "Player";
         public const string enemy = "Enemy";
         public const string npc = "NPC";
+    }
+
+    public class AnimtorParam {
+        public static readonly int InputX   = Animator.StringToHash("InputX");
+        public static readonly int InputY   = Animator.StringToHash("InputY");
+        public static readonly int dirX     = Animator.StringToHash("dirX");
+        public static readonly int dirY     = Animator.StringToHash("dirY");
+        public static readonly int isMoving = Animator.StringToHash("isMoving");
+        public static readonly int attack   = Animator.StringToHash("attack");
+        public static readonly int getHurt  = Animator.StringToHash("getHurt");
+        public static readonly int getHeal  = Animator.StringToHash("getHeal");
     }
     public enum changeHealthType
     { 

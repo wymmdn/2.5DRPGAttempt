@@ -12,15 +12,17 @@ public class Role : MonoBehaviour
     public float invicibleTime;
     protected Weapon weapon;
     protected HealthBarStd healthBar;
-    [HideInInspector]protected Animator anim;
+    protected Animator anim;
+    protected RolesAnimatorManager animatorManager;
     protected Rigidbody2D rb;
     public Vector2 faceDir;   //标记角色的朝向
 
     protected virtual void Awake()
     {
         anim = GetComponent<Animator>();
+        animatorManager = GetComponent<RolesAnimatorManager>();
         rb = GetComponent<Rigidbody2D>();
-        changeWeapon((GameObject)Resources.Load(Path.defaultWeaponPath,typeof(GameObject)));
+        changeWeapon((GameObject)Resources.Load(GloblePath.defaultWeaponPath,typeof(GameObject)));
         healthBar = GetComponentInChildren<HealthBarStd>();
     }
     public virtual void changeWeapon(GameObject wp)
@@ -40,20 +42,20 @@ public class Role : MonoBehaviour
         {
             case changeHealthType.heal:
                 curHealth += health;
-                anim.SetTrigger("getHeal");
+                animatorManager.getHealAnimation();
                 break;
             case changeHealthType.damage:
                 if (!isInvicible)
                 {
                     curHealth -= health;
-                    anim.SetTrigger("getHurt");
+                    animatorManager.getHurtAnimation();
                 }
                 break;
             default:
                 if (!isInvicible)
                 {
                     curHealth -= health;
-                    anim.SetTrigger("getHurt");
+                    animatorManager.getHurtAnimation();
                 }
                 break;
         }
@@ -66,10 +68,21 @@ public class Role : MonoBehaviour
         {
             curHealth = 0;
         }
-        healthBar.healthDisplay((float)curHealth/maxHealth);
+        healthBar?.healthDisplay((float)curHealth/maxHealth);
     }
 
-    
+    public void movement(Vector2 target)
+    {
+        faceDir = (target - (Vector2)transform.position).normalized;
+        animatorManager.movingAnimation(faceDir);
+        rb.velocity = faceDir * moveSpeed;
+    }
+    public void stopMove()
+    {
+        faceDir = rb.velocity.normalized;
+        rb.velocity = Vector2.zero;
+        animatorManager.idleAnimation(faceDir);
+    }
 
     public void attack()
     {
