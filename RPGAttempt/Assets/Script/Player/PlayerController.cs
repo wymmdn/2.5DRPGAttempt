@@ -15,7 +15,7 @@ public class PlayerController : Role
     {
         base.Awake();
         //curHeart = maxHeart = 5;
-        invicibleTime = 1.0f;
+        invicibleTime = 0.75f;
         invicibleTimeCnt = invicibleTime;
     }
     // Start is called before the first frame update
@@ -47,18 +47,10 @@ public class PlayerController : Role
 
     public void CheckAttack()
     {
-        if (Input.GetKeyDown(KeyCode.F))
+        if (Input.GetKey(KeyCode.F))
         {
-            anim.SetBool("attack", true);
-            weapon.anim.SetFloat("dirX", faceDir.x);
-            weapon.anim.SetFloat("dirY", faceDir.y);
-            weapon.anim.SetBool("attack", true);
-            //base.attack();
-        }
-        if (Input.GetKeyUp(KeyCode.F))
-        {
-            anim.SetBool("attack", false);
-            weapon.anim.SetBool("attack", false);
+            rb.velocity = Vector2.zero;
+            weapon.attack();
         }
     }
     public void CheckMovement()
@@ -66,16 +58,18 @@ public class PlayerController : Role
         inputX = Input.GetAxisRaw("Horizontal");
         inputY = Input.GetAxisRaw("Vertical");
         Vector2 input = (transform.right * inputX + transform.up * inputY).normalized;
-        rb.velocity = input * moveSpeed;
-
-        if (input != Vector2.zero)
-        {
-            faceDir = input.normalized;
-            animatorManager.movingAnimation(faceDir);
-        }
-        else
-        {
-            animatorManager.idleAnimation(faceDir);
+        if (!isAttacking)
+        { 
+            rb.velocity = input * moveSpeed;
+            if (input != Vector2.zero)
+            {
+                faceDir = input;
+                animatorManager.movingAnimation(faceDir);
+            }
+            else
+            {
+                animatorManager.idleAnimation(faceDir);
+            }
         }
     }
     public override void changeHealth(int health, changeHealthType type)

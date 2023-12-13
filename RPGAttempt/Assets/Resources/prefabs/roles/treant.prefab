@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 394321638911344054}
   - component: {fileID: 2986386599647762386}
   - component: {fileID: 8290154896165649134}
+  - component: {fileID: 466563131774132776}
   m_Layer: 0
   m_Name: treant
   m_TagString: Untagged
@@ -199,11 +200,26 @@ MonoBehaviour:
   moveSpeed: 1
   isInvicible: 0
   invicibleTime: 0
+  isAttacking: 0
+  isMoving: 0
+  animatorManager: {fileID: 0}
   faceDir: {x: 0, y: 0}
   alertRadius: 1.8
   attackRadius: 0.25
   player: {fileID: 0}
   bornPoint: {x: 0, y: 0, z: 0}
+--- !u!114 &466563131774132776
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1662529318632717727}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c14c24630082d10488ff595615e92b2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &3310535948072398865
 PrefabInstance:
   m_ObjectHideFlags: 0

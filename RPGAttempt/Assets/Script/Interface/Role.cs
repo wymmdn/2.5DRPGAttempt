@@ -10,16 +10,16 @@ public class Role : MonoBehaviour
     public float moveSpeed;
     public bool isInvicible;
     public float invicibleTime;
+    public bool isAttacking;
+    public bool isMoving;
     protected Weapon weapon;
     protected HealthBarStd healthBar;
-    protected Animator anim;
-    protected RolesAnimatorManager animatorManager;
+    [HideInInspector]public RolesAnimatorManager animatorManager;
     protected Rigidbody2D rb;
-    public Vector2 faceDir;   //标记角色的朝向
+    [HideInInspector]public Vector2 faceDir;   //标记角色的朝向
 
     protected virtual void Awake()
     {
-        anim = GetComponent<Animator>();
         animatorManager = GetComponent<RolesAnimatorManager>();
         rb = GetComponent<Rigidbody2D>();
         changeWeapon((GameObject)Resources.Load(GloblePath.defaultWeaponPath,typeof(GameObject)));
@@ -73,9 +73,12 @@ public class Role : MonoBehaviour
 
     public void movement(Vector2 target)
     {
-        faceDir = (target - (Vector2)transform.position).normalized;
-        animatorManager.movingAnimation(faceDir);
-        rb.velocity = faceDir * moveSpeed;
+        if (!isAttacking)
+        {
+            faceDir = (target - (Vector2)transform.position).normalized;
+            animatorManager.movingAnimation(faceDir);
+            rb.velocity = faceDir * moveSpeed;
+        }
     }
     public void stopMove()
     {
@@ -83,9 +86,23 @@ public class Role : MonoBehaviour
         rb.velocity = Vector2.zero;
         animatorManager.idleAnimation(faceDir);
     }
-
+    public virtual void toDead()
+    {
+        animatorManager.deadAnimation();
+        this.transform.SetParent(null);
+        Destroy(this.gameObject);
+    }
     public void attack()
     {
-
+        rb.velocity = Vector2.zero;
+        weapon.attack();
+    }
+    public void attackStart()   
+    { 
+        isAttacking = true;
+    }
+    public void attackEnd()     
+    {
+        isAttacking = false;
     }
 }

@@ -105,6 +105,7 @@ GameObject:
   - component: {fileID: 561180678949216209}
   - component: {fileID: 8189933923529200347}
   - component: {fileID: 3410377047799066615}
+  - component: {fileID: -9036278815925399863}
   m_Layer: 0
   m_Name: freeHand
   m_TagString: Untagged
@@ -166,8 +167,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 1
   damageType: 0
+  attackSpeed: 0
+  attackInterval: 0
+  master: {fileID: 0}
   anim: {fileID: 0}
   bullets: []
+--- !u!114 &-9036278815925399863
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 561601079972670528}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be0182b219c083841b782c2b14b84e6d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1640227937734749527
 GameObject:
   m_ObjectHideFlags: 0

@@ -81,6 +81,7 @@
     <Compile Include="Assets\Script\Enemy\TreeMonsterStates.cs" />
     <Compile Include="Assets\Script\Player\PlayerController.cs" />
     <Compile Include="Assets\Script\Player\HealthBarPlayer.cs" />
+    <Compile Include="Assets\Script\Interface\WeaponAnimatorManager.cs" />
     <Compile Include="Assets\Script\Control\EnemyGenerate.cs" />
     <Compile Include="Assets\Script\Environment\MagicBush.cs" />
     <Compile Include="Assets\Script\Interface\BaseState.cs" />

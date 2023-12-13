@@ -31,6 +31,10 @@ public class Enemy : Role        //Ôİ¶¨ËùÓĞµÄµĞÈË¿ÕÏĞÊ±Ô­µØ²»¶¯£¬·¢ÏÖÍæ¼ÒÊ±¿ªÊ¼×
     // Update is called once per frame
     void Update()
     {
+        if (curHealth == 0)
+        {
+            toDead();
+        }
         currentState.LogicUpdate();
     }
     private void FixedUpdate()
@@ -68,4 +72,5 @@ public class Enemy : Role        //Ôİ¶¨ËùÓĞµÄµĞÈË¿ÕÏĞÊ±Ô­µØ²»¶¯£¬·¢ÏÖÍæ¼ÒÊ±¿ªÊ¼×
         Gizmos.DrawWireSphere((Vector2)this.transform.position,alertRadius);
         Gizmos.DrawWireSphere((Vector2)this.transform.position, attackRadius);
     }
+
 }

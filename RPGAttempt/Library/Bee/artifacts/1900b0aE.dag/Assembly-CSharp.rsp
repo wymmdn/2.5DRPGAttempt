@@ -398,6 +398,7 @@
 "Assets/Script/Interface/IAnimatorManager.cs"
 "Assets/Script/Interface/Role.cs"
 "Assets/Script/Interface/RolesAnimatorManager.cs"
+"Assets/Script/Interface/WeaponAnimatorManager.cs"
 "Assets/Script/ModelMgr.cs"
 "Assets/Script/Others/DamageField.cs"
 "Assets/Script/Others/FreeHand.cs"

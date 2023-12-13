@@ -9,6 +9,22 @@ public class RolesAnimatorManager : MonoBehaviour
     private void Awake()
     {
         anim = GetComponent<Animator>();
+
+        AnimationEvent attackStart = new AnimationEvent();
+        AnimationEvent attackEnd = new AnimationEvent();
+        AnimationClip[] clips = anim.runtimeAnimatorController.animationClips;
+        foreach (AnimationClip clip in clips)
+        {
+            if (clip.name.StartsWith("Attack") || clip.name.StartsWith("attack"))
+            {
+                attackStart.functionName = "attackStart";   // set Role.isAttacking to true
+                attackEnd.functionName = "attackEnd";       // set Role.isAttacking to false
+                attackStart.time = 0f;
+                attackEnd.time = clip.length;
+                clip.AddEvent(attackStart);
+                clip.AddEvent(attackEnd);
+            }
+        }
     }
     public void movingAnimation(Vector2 dir)
     {
@@ -22,9 +38,11 @@ public class RolesAnimatorManager : MonoBehaviour
         anim.SetFloat("dirX", dir.x);
         anim.SetFloat("dirY", dir.y);
     }
-    public void attackAnimation()
-    { 
-    
+    public void attackAnimation(Vector2 dir)
+    {
+        anim.SetTrigger("attack");
+        anim.SetFloat("dirX", dir.x);
+        anim.SetFloat("dirY", dir.y);
     }
     public void getHurtAnimation()
     {
@@ -34,5 +52,8 @@ public class RolesAnimatorManager : MonoBehaviour
     {
         anim.SetTrigger("getHeal");
     }
-
+    public void deadAnimation()
+    { 
+    
+    }
 }

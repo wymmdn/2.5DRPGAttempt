@@ -10,8 +10,7 @@ public class FreeHand : Weapon
         base.Awake();
         damage = 1;
         damageType = changeHealthType.damage;
-        attackSpeed = 1;
-        attackInterval = 1 / attackSpeed;
+        attackInterval = attackIntervalInit = 1;
     }
     // Start is called before the first frame update
     void Start()
