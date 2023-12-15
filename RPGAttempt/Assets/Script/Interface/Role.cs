@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using ModelMgr;
 
-public class Role : MonoBehaviour
+public class Role : MonoBehaviour ,IInteraction
 {
     public int maxHealth;
     public int curHealth;
@@ -12,14 +12,16 @@ public class Role : MonoBehaviour
     public float invicibleTime;
     public bool isAttacking;
     public bool isMoving;
+    public string roleName;
     protected Weapon weapon;
     protected HealthBarStd healthBar;
     [HideInInspector]public RolesAnimatorManager animatorManager;
     protected Rigidbody2D rb;
     [HideInInspector]public Vector2 faceDir;   //标记角色的朝向
-
+    [SerializeField]protected Dialogue_SO dialogueData;
     protected virtual void Awake()
     {
+        roleName = gameObject.name;
         animatorManager = GetComponent<RolesAnimatorManager>();
         rb = GetComponent<Rigidbody2D>();
         changeWeapon((GameObject)Resources.Load(GloblePath.defaultWeaponPath,typeof(GameObject)));
@@ -70,7 +72,10 @@ public class Role : MonoBehaviour
         }
         healthBar?.healthDisplay((float)curHealth/maxHealth);
     }
-
+    public virtual void interact()
+    {
+        Debug.Log("trigger interact");
+    }
     public void movement(Vector2 target)
     {
         if (!isAttacking)
@@ -105,4 +110,6 @@ public class Role : MonoBehaviour
     {
         isAttacking = false;
     }
+
+    
 }

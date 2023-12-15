@@ -74,12 +74,12 @@ public class GameManager : MonoBehaviour
     {
         Debug.Log("you win");
         resetManager();
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        SceneManager.LoadScene(playerController.gameObject.scene.name);
     }
     public void GameOver()
     {
         Debug.Log("game over");
         resetManager();
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        SceneManager.LoadScene(playerController.gameObject.scene.name);
     }
 }
