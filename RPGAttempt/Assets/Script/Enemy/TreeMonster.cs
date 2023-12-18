@@ -22,4 +22,9 @@ public class TreeMonster : Enemy
     {
         base.Start();
     }
+    public override void toDead()
+    {
+        base.toDead();
+        EventHandler.CallTreeMonster(StoryManager.dead);
+    }
 }

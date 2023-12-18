@@ -70,6 +70,11 @@ public class GameManager : MonoBehaviour
             }
         }
     }
+
+    private void readData()
+    { 
+        
+    }
     public void GetWin()
     {
         Debug.Log("you win");

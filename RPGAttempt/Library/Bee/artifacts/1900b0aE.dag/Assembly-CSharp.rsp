@@ -121,7 +121,7 @@
 -define:TEXTCORE_FONT_ENGINE_1_5_OR_NEWER
 -define:CSHARP_7_OR_LATER
 -define:CSHARP_7_3_OR_NEWER
--r:"Assets/Plugins/newtonsoft.json/9.0.1/lib/portable-net40+sl5+wp80+win8+wpa81/Newtonsoft.Json.dll"
+-r:"Assets/Plugins/newtonsoft.json/9.0.1/lib/net45/Newtonsoft.Json.dll"
 -r:"D:/UnityEditor/2022.3.13f1c1/Editor/Data/Managed/UnityEngine/UnityEditor.CoreModule.dll"
 -r:"D:/UnityEditor/2022.3.13f1c1/Editor/Data/Managed/UnityEngine/UnityEditor.DeviceSimulatorModule.dll"
 -r:"D:/UnityEditor/2022.3.13f1c1/Editor/Data/Managed/UnityEngine/UnityEditor.DiagnosticsModule.dll"
@@ -388,8 +388,7 @@
 "Assets/Script/Control/UI/DialogueController.cs"
 "Assets/Script/Control/UI/HealthBarPlayer.cs"
 "Assets/Script/Control/UI/HealthBarStd.cs"
-"Assets/Script/Control/UIManager.cs"
-"Assets/Script/Data/Dialogue_SO.cs"
+"Assets/Script/Data/JsonModel.cs"
 "Assets/Script/Enemy/Enemy.cs"
 "Assets/Script/Enemy/EnemyState.cs"
 "Assets/Script/Enemy/TreeMonster.cs"
@@ -399,8 +398,8 @@
 "Assets/Script/Interface/BaseState.cs"
 "Assets/Script/Interface/Character.cs"
 "Assets/Script/Interface/EnvironCheck.cs"
-"Assets/Script/Interface/IConversable.cs"
 "Assets/Script/Interface/IInteraction.cs"
+"Assets/Script/Interface/IStoryActor.cs"
 "Assets/Script/Interface/Role.cs"
 "Assets/Script/Interface/RolesAnimatorManager.cs"
 "Assets/Script/Interface/WeaponAnimatorManager.cs"

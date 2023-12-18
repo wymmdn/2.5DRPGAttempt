@@ -1,0 +1,108 @@
+﻿[
+	{
+		"actorName": "TreeMonster^FireMonster",
+		"index": "firstSee",
+		"convSteps": [
+			{
+				"index": 0,
+				"nextIndex": 1,
+				"speaker": "TreeMonster",
+				"type": "cnv",
+				"words": "I will killing you",
+				"branch": "main"
+			},
+			{
+				"index": 1,
+				"nextIndex": 2,
+				"speaker": "player",
+				"type": "opt",
+				"words": "come on! Monster!",
+				"branch": "main"
+			},
+			{
+				"index": 1,
+				"nextIndex": 3,
+				"speaker": "player",
+				"type": "opt",
+				"words": "let me go away, please",
+				"branch": "main"
+			},
+			{
+				"index": 2,
+				"nextIndex": -1,
+				"speaker": "TreeMonster",
+				"type": "cnv",
+				"words": "ha~~~",
+				"branch": "main"
+			},
+			{
+				"index": 3,
+				"nextIndex": -1,
+				"speaker": "TreeMonster",
+				"type": "cnv",
+				"words": "no,you will die!",
+				"branch": "main"
+			}
+		]
+	},
+	{
+		"actorName": "OrangeMeow",
+		"index": "firstSee",
+		"convSteps": [
+			{
+				"index": 0,
+				"nextIndex": 1,
+				"speaker": "OrangeMeow",
+				"type": "cnv",
+				"words": "Wow! who are you(>_<)?",
+				"branch": "main"
+			},
+			{
+				"index": 1,
+				"nextIndex": 2,
+				"speaker": "Player",
+				"type": "opt",
+				"words": "hello, I'm Neo",
+				"branch": "main"
+			},
+			{
+				"index": 1,
+				"nextIndex": 3,
+				"speaker": "Player",
+				"type": "opt",
+				"words": "Mom won't let me talk to a stranger",
+				"branch": "main"
+			},
+			{
+				"index": 2,
+				"nextIndex": -1,
+				"speaker": "OrangeMeow",
+				"type": "cnv",
+				"words": "I,I'm OrangeMeow.I came to pick up mushrooms and got trapped in the valley. a powerful tree monster over there, don't go there",
+				"branch": "main"
+			},
+			{
+				"index": 3,
+				"nextIndex": -1,
+				"speaker": "OrangeMeow",
+				"type": "cnv",
+				"words": "emmm, fine(๑•̌.•̑๑).but a powerful tree monster over there, better don't go there",
+				"branch": "main"
+			}
+		]
+	},
+	{
+		"actorName": "OrangeMeow",
+		"index": "killedMonster",
+		"convSteps": [
+			{
+				"index": 0,
+				"nextIndex": -1,
+				"speaker": "OrangeMeow",
+				"type": "cnv",
+				"words": "cool! you killed it",
+				"branch": "main"
+			}
+		]
+	}
+]

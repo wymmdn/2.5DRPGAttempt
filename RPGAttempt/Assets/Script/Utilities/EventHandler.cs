@@ -5,14 +5,19 @@ using System;
 
 public static class EventHandler
 {
-    public static event Action<string> ShowDialogueEvent;
+    public static event Action<Conversation> ShowDialogueEvent;
     public static event Action<string> PerformStory;
-    public static void CallShowDialogueEvent(string dialogue)
+    public static event Action<int> TreeMonster;
+    public static void CallShowDialogueEvent(Conversation conv)
     {
-        ShowDialogueEvent?.Invoke(dialogue);
+        ShowDialogueEvent?.Invoke(conv);
     }
-    public static void CallPerformStory(string dialogue)
+    public static void CallPerformStory(string aa)
     {
-        PerformStory?.Invoke(dialogue);
+        PerformStory?.Invoke(aa);
+    }
+    public static void CallTreeMonster(int aa)
+    {
+        TreeMonster?.Invoke(aa);
     }
 }

@@ -177,9 +177,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1675086025}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bd0a63928db486144a12d52433c77c14, type: 3}
+  m_Script: {fileID: 11500000, guid: c400b62ebb25add418ffa1c0a220eda0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  treeMonsterState: 0
+  magicBushSate: 0
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
