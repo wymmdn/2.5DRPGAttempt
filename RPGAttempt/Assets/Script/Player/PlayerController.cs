@@ -24,10 +24,24 @@ public class PlayerController : Role
     {
         healthBarPlayer.healthDisplay(curHealth);
     }
-
+    private void OnEnable()
+    {
+        EventHandler.ShowDialogueEvent += talkStart;
+        EventHandler.CloseDialogueEvent += talkEnd;
+    }
+    private void OnDisable()
+    {
+        EventHandler.ShowDialogueEvent -= talkStart;
+        EventHandler.CloseDialogueEvent -= talkEnd;
+    }
     // Update is called once per frame
     void Update()
     {
+        if (isTalking)
+        {
+            isInvicible = true;
+            return;
+        }
         checkAttack();
         checkMovement();
         checkInteract();
@@ -129,6 +143,14 @@ public class PlayerController : Role
         healthBarPlayer.healthDisplay(curHealth);
     }
     
+    private void talkStart(Conversation c)
+    {
+        this.isTalking = true;
+    }
+    private void talkEnd()
+    {
+        this.isTalking = false;
+    }
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (!colliders.Contains(other)) { colliders.Add(other); }

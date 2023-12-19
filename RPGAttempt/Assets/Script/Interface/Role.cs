@@ -12,6 +12,7 @@ public class Role : MonoBehaviour ,IInteraction
     public float invicibleTime;
     public bool isAttacking;
     public bool isMoving;
+    public bool isTalking;
     protected Weapon weapon;
     protected HealthBarStd healthBar;
     [HideInInspector]public RolesAnimatorManager animatorManager;
@@ -23,6 +24,7 @@ public class Role : MonoBehaviour ,IInteraction
         rb = GetComponent<Rigidbody2D>();
         changeWeapon((GameObject)Resources.Load(GloblePath.defaultWeaponPath,typeof(GameObject)));
         healthBar = GetComponentInChildren<HealthBarStd>();
+        isInvicible = isAttacking = isMoving = isTalking = false;
     }
     public virtual void changeWeapon(GameObject wp)
     {

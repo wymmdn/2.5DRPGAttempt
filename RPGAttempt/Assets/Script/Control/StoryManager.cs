@@ -38,7 +38,6 @@ public class StoryManager : MonoBehaviour
     }
     public Conversation GetConversation(string actorName)
     {
-        Debug.Log("getconversation" + actorName);
         Conversation conversation = new Conversation();
         switch (actorName)
         {
@@ -55,7 +54,6 @@ public class StoryManager : MonoBehaviour
             default:
                 break;
         }
-        Debug.Log("called - " + conversation.convSteps[0].words);
         return conversation;
     }
     public Conversation readConvFromJson(string actorName,string convIndex)

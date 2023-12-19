@@ -16,7 +16,6 @@ public class NPC : Role,IStoryActor
     }
     public override void interact()
     {
-        Debug.Log("called");
         EventHandler.CallShowDialogueEvent(conversation);
     }
 
