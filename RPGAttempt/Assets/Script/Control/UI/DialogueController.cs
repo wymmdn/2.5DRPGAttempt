@@ -3,16 +3,19 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
 public class DialogueController : MonoBehaviour
 {
     private Transform panel;
     private Text dialogueText;
+    private Button nextButton;
     [SerializeField]private GameObject dialogueOption;
     private Transform optionGroup;
     private Conversation conversation;
     private ConvStep currentStep;
-    private List<ConvStep> options;
+    private List<ConvStep> optionSteps = new List<ConvStep>();
+    private List<Button> optionBtns = new List<Button>();
 
     private bool isShowing;
     private bool quickShow;
@@ -28,6 +31,7 @@ public class DialogueController : MonoBehaviour
     {
         panel = this.transform;
         dialogueText = this.GetComponentInChildren<Text>();
+        nextButton = this.GetComponentInChildren<Button>();
         optionGroup = this.transform.Find(optionGroupName);
         panel.localScale = Vector3.zero;
         isOpen = false;
@@ -39,7 +43,10 @@ public class DialogueController : MonoBehaviour
     {
         EventHandler.ShowDialogueEvent += StartDialogue;//事件订阅
     }
-
+    private void OnDisable()
+    {
+        EventHandler.ShowDialogueEvent -= StartDialogue;//取消订阅
+    }
     private void StartDialogue(Conversation conv)
     {
         this.conversation = conv;
@@ -49,19 +56,38 @@ public class DialogueController : MonoBehaviour
 
     private void Update()
     {
-        if (isOpen && Input.GetKeyDown(KeyCode.Space))
+        if (isOpen && (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.Return)))
         {
             nextWords();
         }
         if (isOpen && currentStep.type.Equals(opt, System.StringComparison.OrdinalIgnoreCase))
         {
-            if (Input.GetKeyDown(KeyCode.UpArrow))
+            if (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.LeftArrow))
             {
-                //currentStep = options[options.IndexOf(currentStep) + 1];
+                lastOption();
+            }
+            if (Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.RightArrow))
+            {
+                nextOption();
             }
         }
     }
-
+    public void lastOption()
+    {
+        var idx = optionSteps.IndexOf(currentStep);
+        idx--;
+        if (idx < 0)
+        { idx = optionSteps.Count - 1; }
+        onOptionSelect(optionSteps[idx]);
+    }
+    public void nextOption()
+    {
+        var idx = optionSteps.IndexOf(currentStep);
+        idx++;
+        if (idx >= optionSteps.Count)
+        { idx = 0; }
+        onOptionSelect(optionSteps[idx]);
+    }
     public void nextWords()
     {
         if (isShowing)
@@ -80,26 +106,44 @@ public class DialogueController : MonoBehaviour
             StartCoroutine(ShowDialogue(currentStep.words));
         }
         else if (currentStep.type.Equals(opt, System.StringComparison.OrdinalIgnoreCase))
-        { 
-            options = conversation.convSteps.FindAll(i => i.index == currentStep.index);
-            dialogueText.text = string.Empty;
-            optionGroup.localScale = Vector3.one;
-            foreach (var opt in options)
-            { 
-                var text = Instantiate(dialogueOption,optionGroup).GetComponentInChildren<TMP_Text>();
-                text.text = " -> " + opt.words;
-                if (options.IndexOf(opt) == 0)
-                { 
-                    currentStep = opt;
-                    text.fontStyle = FontStyles.Bold;
-                }
-            }
+        {
+            createOptions(conversation.convSteps.FindAll(i => i.index == currentStep.index));
         }
     }
-
+    private void createOptions(List<ConvStep> options)
+    { 
+        dialogueText.text = string.Empty;
+        optionGroup.gameObject.SetActive(true);
+        nextButton.gameObject.SetActive(false);
+        optionSteps = options;
+        optionBtns = new List<Button>();
+        while (optionGroup.childCount > 0)
+        {
+            var child = optionGroup.GetChild(0);
+            child.SetParent(null);
+            Destroy(child.gameObject);
+        }
+        foreach (var opt in options)
+        {
+            //get variable
+            var go = Instantiate(dialogueOption, optionGroup);
+            var btn = go.GetComponent<Button>();
+            var text = go.GetComponentInChildren<TMP_Text>();
+            var trigger = go.GetComponent<EventTrigger>();
+            // add event
+            btn.onClick.AddListener(delegate { nextWords(); });
+            EventTrigger.Entry entry = new EventTrigger.Entry();
+            entry.eventID = EventTriggerType.Select;
+            entry.callback.AddListener(delegate { onOptionSelect(opt); });
+            trigger.triggers.Add(entry);
+            //build reflect
+            optionBtns.Add(btn);
+            text.text = " -> " + opt.words;
+        }
+        onOptionSelect(optionSteps[0]);
+    }
     private IEnumerator ShowDialogue(string words)
     {
-        optionGroup.localScale = Vector3.zero;
         if (words == string.Empty)
         {
             panel.localScale = Vector3.zero;
@@ -108,6 +152,8 @@ public class DialogueController : MonoBehaviour
             yield break;
         }
         panel.localScale = Vector3.one;
+        optionGroup.gameObject.SetActive(false);
+        nextButton.gameObject.SetActive(true);
         yield return null;
         isOpen = true; 
         isShowing = true;
@@ -125,8 +171,27 @@ public class DialogueController : MonoBehaviour
         }
         isShowing = false;
     }
-    private void OnDisable()
+    public void onOptionPointerEnter()
     {
-        EventHandler.ShowDialogueEvent -= StartDialogue;//取消订阅
+        
+    }
+    public void onOptionPointerExit()
+    {
+        
+    }
+    public void onOptionSelect(ConvStep cs)
+    {
+        this.currentStep = cs;
+        foreach (Button btn in optionBtns)
+        { 
+            if(optionBtns.IndexOf(btn) == optionSteps.IndexOf(cs))
+                btn.transform.GetComponentInChildren<TMP_Text>().fontStyle = FontStyles.Bold;
+            else
+                btn.transform.GetComponentInChildren<TMP_Text>().fontStyle = FontStyles.Normal;
+        }
+    }
+    public void onOptionDeselect()
+    { 
+    
     }
 }

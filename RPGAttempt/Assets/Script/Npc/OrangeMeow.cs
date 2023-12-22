@@ -9,8 +9,11 @@ public class OrangeMeow : NPC
     {
         EventHandler.TreeMonster += treeMonsterSateChanged;
     }
-    
 
+    private void Update()
+    {
+        rb.velocity = Vector2.zero;
+    }
     private void treeMonsterSateChanged(int obj)
     {
         conversation = StoryManager.instance.GetConversation(actorName);

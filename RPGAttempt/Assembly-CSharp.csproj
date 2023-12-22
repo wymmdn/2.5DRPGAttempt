@@ -84,6 +84,7 @@
     <Compile Include="Assets\Script\Npc\NPC.cs" />
     <Compile Include="Assets\Script\Control\GameManager.cs" />
     <Compile Include="Assets\Script\Npc\OrangeMeowState.cs" />
+    <Compile Include="Assets\Script\Control\UI\DialogueOption.cs" />
     <Compile Include="Assets\Script\Npc\NPCState.cs" />
     <Compile Include="Assets\Script\Data\JsonModel.cs" />
     <Compile Include="Assets\Script\Enemy\TreeMonsterStates.cs" />

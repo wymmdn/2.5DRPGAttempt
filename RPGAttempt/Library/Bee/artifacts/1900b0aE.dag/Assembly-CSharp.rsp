@@ -386,6 +386,7 @@
 "Assets/Script/Control/RotatingCamera.cs"
 "Assets/Script/Control/StoryManager.cs"
 "Assets/Script/Control/UI/DialogueController.cs"
+"Assets/Script/Control/UI/DialogueOption.cs"
 "Assets/Script/Control/UI/HealthBarPlayer.cs"
 "Assets/Script/Control/UI/HealthBarStd.cs"
 "Assets/Script/Data/JsonModel.cs"
