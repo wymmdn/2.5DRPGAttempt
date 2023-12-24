@@ -10,19 +10,25 @@ public class Role : MonoBehaviour ,IInteraction
     public float moveSpeed;
     public bool isInvicible;
     public float invicibleTime;
+
     public bool isAttacking;
     public bool isMoving;
     public bool isTalking;
+
     protected Weapon weapon;
     protected HealthBarStd healthBar;
+    //protected Role attackTarget;
     [HideInInspector]public RolesAnimatorManager animatorManager;
-    protected Rigidbody2D rb;
+    [HideInInspector]public float attackRadius;
     [HideInInspector]public Vector2 faceDir;   //标记角色的朝向
+    protected Rigidbody2D rb;
+    
     protected virtual void Awake()
     {
         animatorManager = GetComponent<RolesAnimatorManager>();
         rb = GetComponent<Rigidbody2D>();
         changeWeapon((GameObject)Resources.Load(GloblePath.defaultWeaponPath,typeof(GameObject)));
+        this.attackRadius = weapon.attackRadius;
         healthBar = GetComponentInChildren<HealthBarStd>();
         isInvicible = isAttacking = isMoving = isTalking = false;
     }
@@ -84,7 +90,7 @@ public class Role : MonoBehaviour ,IInteraction
     {
         faceDir = rb.velocity.normalized;
         rb.velocity = Vector2.zero;
-        animatorManager.idleAnimation(faceDir);
+        animatorManager.idleAnimation();
     }
     public virtual void toDead()
     {
@@ -94,10 +100,11 @@ public class Role : MonoBehaviour ,IInteraction
     }
     public void attack()
     {
+
         rb.velocity = Vector2.zero;
         weapon.attack();
     }
-    public void attackStart()   
+    public void attackStart()   //called in animator event
     { 
         isAttacking = true;
     }

@@ -10,16 +10,22 @@ public class Weapon : MonoBehaviour
     //public float attackSpeed;
     public float attackInterval;
     public float attackIntervalInit;
+    public float attackRadius;
     public Role master;
     protected WeaponAnimatorManager weaponAnimator;
-    [HideInInspector]public List<DamageField> bullets;
-    
+    protected CircleCollider2D attackCol;
+    [SerializeField] private List<Transform> attackTargets = new List<Transform>();
+    public Vector2 attackDir;
+
     private float timeCnt;   //攻击间隔计时，小于0时可以攻击
 
     protected virtual void Awake()
     {
         master = GetComponentInParent<Role>();
         weaponAnimator = GetComponent<WeaponAnimatorManager>();
+        attackCol = this.gameObject.AddComponent<CircleCollider2D>();
+        attackCol.radius = attackRadius;
+        attackCol.isTrigger = true;
         attackIntervalInit = attackInterval = 1;
         //attackSpeed = 1 / attackInterval;
         timeCnt = -0.1f;
@@ -37,8 +43,20 @@ public class Weapon : MonoBehaviour
     {
         if (timeCnt <= 0)
         {
-            master.animatorManager.attackAnimation(master.faceDir);
-            weaponAnimator.attackAnimation(master.faceDir);
+            var nearDis = float.MaxValue;
+            attackDir = master.faceDir;
+            foreach (Transform t in attackTargets)
+            {
+                if (Vector2.Distance((Vector2)t.position, (Vector2)this.transform.position) < nearDis)
+                {
+                    //attackDir = ((Vector2)t.position - (Vector2)this.transform.position).normalized;
+                    nearDis = Vector2.Distance((Vector2)t.position, (Vector2)this.transform.position);
+                    Vector2 vec = ((Vector2)t.position - (Vector2)this.transform.position).normalized;
+                    attackDir = new Vector2(Mathf.RoundToInt(vec.x), Mathf.RoundToInt(vec.y));
+                }
+            }
+            master.animatorManager.attackAnimation(attackDir);
+            weaponAnimator.attackAnimation(attackDir);
             timeCnt = attackInterval;
         }
     }
@@ -70,5 +88,18 @@ public class Weapon : MonoBehaviour
         }
         return length;
     }
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        Role role = other.GetComponent<Role>();
+        if (!attackTargets.Contains(other.transform) && role !=null) { attackTargets.Add(other.transform); }
+    }
 
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        attackTargets.Remove(other.transform);
+    }
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.DrawWireSphere((Vector2)this.transform.position, attackRadius);
+    }
 }

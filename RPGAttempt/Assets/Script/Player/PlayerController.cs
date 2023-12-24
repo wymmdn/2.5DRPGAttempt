@@ -9,7 +9,7 @@ public class PlayerController : Role
     public HealthBarPlayer healthBarPlayer;  //在inspector中赋值的
     private float invicibleTimeCnt;
     private float inputX, inputY;
-    [SerializeField]private List<Collider2D> colliders = new List<Collider2D>(); //存储所有进入trigger collider的collider，用于交互判断
+    private List<Collider2D> colliders = new List<Collider2D>(); //存储所有进入trigger collider的collider，用于交互判断
 
 
     protected override void Awake()
@@ -84,7 +84,7 @@ public class PlayerController : Role
             }
             else
             {
-                animatorManager.idleAnimation(faceDir);
+                animatorManager.idleAnimation();
             }
         }
     }
@@ -99,6 +99,7 @@ public class PlayerController : Role
                 if (Vector2.Distance((Vector2)col.transform.position, (Vector2)this.transform.position) < distance)
                 { 
                     nearstCol = col;
+                    distance = Vector2.Distance((Vector2)nearstCol.transform.position, (Vector2)this.transform.position);
                 }
             }
             IInteraction interaction = nearstCol.transform.GetComponent<IInteraction>();

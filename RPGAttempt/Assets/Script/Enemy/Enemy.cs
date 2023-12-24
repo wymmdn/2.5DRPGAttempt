@@ -6,9 +6,7 @@ using ModelMgr;
 public class Enemy : Role        //ÔÝ¶¨ËùÓÐµÄµÐÈË¿ÕÏÐÊ±Ô­µØ²»¶¯£¬·¢ÏÖÍæ¼ÒÊ±¿ªÊ¼×·Öð²¢¹¥»÷£¬ÍÑÕ½Ê±»Øµ½¾Ýµã
 {
     public float alertRadius;
-    public float attackRadius;
     public GameObject player;  //ÔÝÊ±ÓÃÓÚstateÖÐÕÒplayerµÄÎ»ÖÃ
-
     public Vector3 bornPoint;
     protected EnemyState idleState;
     protected EnemyState chaseState;
@@ -48,10 +46,6 @@ public class Enemy : Role        //ÔÝ¶¨ËùÓÐµÄµÐÈË¿ÕÏÐÊ±Ô­µØ²»¶¯£¬·¢ÏÖÍæ¼ÒÊ±¿ªÊ¼×
 
     public bool foundArea(Vector2 target) 
     {
-        if (Input.GetKeyDown(KeyCode.T))
-        {
-            Debug.Log(Vector2.Distance(target,(Vector2)transform.position));
-        }
         return alertRadius > Vector2.Distance(target, (Vector2)transform.position) ? true : false;
     }
     public bool attackArea(Vector2 target) 

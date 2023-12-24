@@ -32,11 +32,11 @@ public class RolesAnimatorManager : MonoBehaviour
         anim.SetFloat("dirX", dir.x);
         anim.SetFloat("dirY", dir.y);
     }
-    public void idleAnimation(Vector2 dir)
+    public void idleAnimation()
     {
         anim.SetBool("isMoving", false);
-        anim.SetFloat("dirX", dir.x);
-        anim.SetFloat("dirY", dir.y);
+        //anim.SetFloat("dirX", dir.x);
+        //anim.SetFloat("dirY", dir.y);
     }
     public void attackAnimation(Vector2 dir)
     {
