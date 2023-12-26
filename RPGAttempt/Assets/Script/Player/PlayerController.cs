@@ -15,6 +15,7 @@ public class PlayerController : Role
     protected override void Awake()
     {
         base.Awake();
+        changeWeapon((GameObject)Resources.Load(GloblePath.fireWand, typeof(GameObject)));
         //curHeart = maxHeart = 5;
         invicibleTime = 0.75f;
         invicibleTimeCnt = invicibleTime;
@@ -115,7 +116,7 @@ public class PlayerController : Role
                 curHealth += health;
                 animatorManager.getHealAnimation();
                 break;
-            case changeHealthType.damage:
+            case changeHealthType.physicDamage:
                 if (!isInvicible)
                 {
                     curHealth -= health;

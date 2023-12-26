@@ -5,11 +5,14 @@ using UnityEngine;
 public static class GloblePath {
     public const string weaponPath = "Prefabs/weapon/";
     public const string defaultWeaponPath = weaponPath + "freeHand";
+    public const string fireWand = weaponPath + "fireWand";
+    public const string fireWandProjectile = weaponPath + "fireWand_Projectile";
 }
 public class tagtag {
     public const string player = "Player";
     public const string enemy = "Enemy";
     public const string npc = "NPC";
+    public const string createdMap = "CreatedMap";
 }
 
 public class AnimtorParam {
@@ -24,10 +27,11 @@ public class AnimtorParam {
 }
 public enum changeHealthType
 { 
-    damage = 1,
+    physicDamage = 1,
     heal = 2,
     realDamage = 3,
-    realHeal = 4
+    realHeal = 4,
+    fireDamage = 5
 }
 
 public enum stateType

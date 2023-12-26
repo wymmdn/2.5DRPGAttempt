@@ -14,7 +14,8 @@ public class Weapon : MonoBehaviour
     public Role master;
     protected WeaponAnimatorManager weaponAnimator;
     protected CircleCollider2D attackCol;
-    [SerializeField] private List<Transform> attackTargets = new List<Transform>();
+    protected List<Transform> attackTargets = new List<Transform>();
+    protected Transform attackTarget;
     public Vector2 attackDir;
 
     private float timeCnt;   //攻击间隔计时，小于0时可以攻击
@@ -39,7 +40,7 @@ public class Weapon : MonoBehaviour
         }
     }
 
-    public void attack()
+    public virtual void attack()
     {
         if (timeCnt <= 0)
         {
@@ -49,16 +50,19 @@ public class Weapon : MonoBehaviour
             {
                 if (Vector2.Distance((Vector2)t.position, (Vector2)this.transform.position) < nearDis)
                 {
-                    //attackDir = ((Vector2)t.position - (Vector2)this.transform.position).normalized;
                     nearDis = Vector2.Distance((Vector2)t.position, (Vector2)this.transform.position);
-                    Vector2 vec = ((Vector2)t.position - (Vector2)this.transform.position).normalized;
-                    attackDir = new Vector2(Mathf.RoundToInt(vec.x), Mathf.RoundToInt(vec.y));
+                    attackDir = ((Vector2)t.position - (Vector2)this.transform.position).normalized;
+                    attackTarget = t;
                 }
             }
-            master.animatorManager.attackAnimation(attackDir);
-            weaponAnimator.attackAnimation(attackDir);
+            playAttack();
             timeCnt = attackInterval;
         }
+    }
+    protected virtual void playAttack()
+    { 
+        master.animatorManager.attackAnimation(attackDir);
+        weaponAnimator.attackAnimation(attackDir);
     }
     public void changeDamage(int damege)
     { 
@@ -90,8 +94,8 @@ public class Weapon : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
-        Role role = other.GetComponent<Role>();
-        if (!attackTargets.Contains(other.transform) && role !=null) { attackTargets.Add(other.transform); }
+        IAssailable obj = other.GetComponent<IAssailable>();
+        if (!attackTargets.Contains(other.transform) && obj != null) { attackTargets.Add(other.transform); }
     }
 
     private void OnTriggerExit2D(Collider2D other)

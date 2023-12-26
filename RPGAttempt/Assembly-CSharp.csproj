@@ -66,8 +66,10 @@
     <Compile Include="Assets\Script\Control\RotatingCamera.cs" />
     <Compile Include="Assets\Script\Utilities\ModelMgr.cs" />
     <Compile Include="Assets\Script\Enemy\Enemy.cs" />
+    <Compile Include="Assets\Script\Item\Weapon\FireWand.cs" />
     <Compile Include="Assets\Script\Interface\Role.cs" />
     <Compile Include="Assets\Script\Control\UI\DialogueController.cs" />
+    <Compile Include="Assets\Script\Item\Weapon\Projectile.cs" />
     <Compile Include="Assets\Script\Interface\IInteraction.cs" />
     <Compile Include="Assets\Script\Control\StoryManager.cs" />
     <Compile Include="Assets\Script\Utilities\AnimatorParameter.cs" />
@@ -86,12 +88,14 @@
     <Compile Include="Assets\Script\Npc\OrangeMeowState.cs" />
     <Compile Include="Assets\Script\Control\UI\DialogueOption.cs" />
     <Compile Include="Assets\Script\Npc\NPCState.cs" />
+    <Compile Include="Assets\Script\Item\Weapon\FireWandProjectile.cs" />
     <Compile Include="Assets\Script\Data\JsonModel.cs" />
     <Compile Include="Assets\Script\Enemy\TreeMonsterStates.cs" />
     <Compile Include="Assets\Script\Player\PlayerController.cs" />
     <Compile Include="Assets\Script\Utilities\EventHandler.cs" />
     <Compile Include="Assets\Script\Item\Weapon\DamageField.cs" />
     <Compile Include="Assets\Script\Interface\WeaponAnimatorManager.cs" />
+    <Compile Include="Assets\Script\Interface\IAssailable.cs" />
     <Compile Include="Assets\Script\Control\EnemyGenerate.cs" />
     <Compile Include="Assets\Script\Environment\MagicBush.cs" />
     <Compile Include="Assets\Script\Interface\BaseState.cs" />

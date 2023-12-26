@@ -23,7 +23,7 @@ public class TrapMgr : MonoBehaviour
         PlayerController controller = collision.GetComponent<PlayerController>();
         if (controller != null)
         {
-            controller.changeHealth(damage, changeHealthType.damage);
+            controller.changeHealth(damage, changeHealthType.physicDamage);
         }
     }
 }

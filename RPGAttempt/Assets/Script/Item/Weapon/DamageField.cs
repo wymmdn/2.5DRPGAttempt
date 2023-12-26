@@ -18,13 +18,10 @@ public class DamageField : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         
-        Role targetRole = collision.gameObject.GetComponent<Role>();
-        Debug.Log(collision.gameObject.name);
-        Debug.Log(weaponFrom.gameObject.name);
-        if (targetRole != null && weaponFrom != null)
+        IAssailable target = collision.gameObject.GetComponent<IAssailable>();
+        if (target != null && weaponFrom != null)
         {
-            Debug.Log("field");
-            targetRole.changeHealth(damage, damageType);
+            target.changeHealth(damage, damageType);
         }
     }
 

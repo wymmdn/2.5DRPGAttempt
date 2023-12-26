@@ -224,7 +224,6 @@ MonoBehaviour:
   attackIntervalInit: 0
   attackRadius: 0.3
   master: {fileID: 0}
-  attackTargets: []
   attackDir: {x: 0, y: 0}
 --- !u!114 &-9036278815925399863
 MonoBehaviour:

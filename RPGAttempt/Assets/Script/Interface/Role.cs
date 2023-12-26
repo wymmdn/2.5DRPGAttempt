@@ -3,14 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using ModelMgr;
 
-public class Role : MonoBehaviour ,IInteraction
+public class Role : MonoBehaviour ,IInteraction,IAssailable
 {
     public int maxHealth;
     public int curHealth;
-    public float moveSpeed;
     public bool isInvicible;
     public float invicibleTime;
+    public float physicResist;
+    public float fireResist;
 
+    public float moveSpeed;
     public bool isAttacking;
     public bool isMoving;
     public bool isTalking;
@@ -51,11 +53,16 @@ public class Role : MonoBehaviour ,IInteraction
                 curHealth += health;
                 animatorManager.getHealAnimation();
                 break;
-            case changeHealthType.damage:
+            case changeHealthType.physicDamage:
                 if (!isInvicible)
                 {
-                    curHealth -= health;
-                    animatorManager.getHurtAnimation();
+                    dealPhysicDamage(health);
+                }
+                break;
+            case changeHealthType.fireDamage:
+                if (!isInvicible)
+                {
+                    dealFireDamage(health);
                 }
                 break;
             default:
@@ -66,7 +73,6 @@ public class Role : MonoBehaviour ,IInteraction
                 }
                 break;
         }
-
         if (curHealth > maxHealth)
         {
             curHealth = maxHealth;
@@ -100,9 +106,20 @@ public class Role : MonoBehaviour ,IInteraction
     }
     public void attack()
     {
-
         rb.velocity = Vector2.zero;
         weapon.attack();
+    }
+    protected virtual void dealPhysicDamage(int health)
+    {
+        health = (int)(health * (1 - physicResist));
+        curHealth -= health;
+        animatorManager.getHurtAnimation();
+    }
+    protected virtual void dealFireDamage(int health)
+    {
+        health = (int)(health * (1 - fireResist));
+        curHealth -= health;
+        animatorManager.getHurtAnimation();
     }
     public void attackStart()   //called in animator event
     { 
