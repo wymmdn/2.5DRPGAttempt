@@ -14,7 +14,7 @@ public class NPC : Role,IStoryActor
         actorName = this.name;
         conversation = StoryManager.instance.GetConversation(actorName);
     }
-    public override void interact()
+    public override void interact(Role role)
     {
         EventHandler.CallShowDialogueEvent(conversation);
     }

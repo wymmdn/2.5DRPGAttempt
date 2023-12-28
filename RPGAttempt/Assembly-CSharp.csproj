@@ -60,6 +60,7 @@
     <Analyzer Include="D:\UnityEditor\2022.3.13f1c1\Editor\Data\Tools\Unity.SourceGenerators\Unity.Properties.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Script\Interface\IPickable.cs" />
     <Compile Include="Assets\Script\Utilities\Example.cs" />
     <Compile Include="Assets\Script\Environment\TrapMgr.cs" />
     <Compile Include="Assets\Script\Npc\OrangeMeow.cs" />
@@ -67,20 +68,20 @@
     <Compile Include="Assets\Script\Utilities\ModelMgr.cs" />
     <Compile Include="Assets\Script\Enemy\Enemy.cs" />
     <Compile Include="Assets\Script\Item\Weapon\FireWand.cs" />
-    <Compile Include="Assets\Script\Interface\Role.cs" />
     <Compile Include="Assets\Script\Control\UI\DialogueController.cs" />
     <Compile Include="Assets\Script\Item\Weapon\Projectile.cs" />
     <Compile Include="Assets\Script\Interface\IInteraction.cs" />
     <Compile Include="Assets\Script\Control\StoryManager.cs" />
+    <Compile Include="Assets\Script\Npc\Role.cs" />
     <Compile Include="Assets\Script\Utilities\AnimatorParameter.cs" />
     <Compile Include="Assets\Script\Interface\RolesAnimatorManager.cs" />
     <Compile Include="Assets\Script\Enemy\TreeMonster.cs" />
     <Compile Include="Assets\Script\Item\Weapon\Weapon.cs" />
-    <Compile Include="Assets\Script\Interface\Character.cs" />
     <Compile Include="Assets\Script\Control\UI\HealthBarPlayer.cs" />
+    <Compile Include="Assets\Script\Environment\SecretPoint.cs" />
     <Compile Include="Assets\Script\Interface\IStoryActor.cs" />
     <Compile Include="Assets\Script\Item\Weapon\FreeHand.cs" />
-    <Compile Include="Assets\Script\Interface\EnvironCheck.cs" />
+    <Compile Include="Assets\Script\Utilities\EnvironCheck.cs" />
     <Compile Include="Assets\Script\Control\FacingCamera.cs" />
     <Compile Include="Assets\Script\Enemy\EnemyState.cs" />
     <Compile Include="Assets\Script\Npc\NPC.cs" />
@@ -99,9 +100,11 @@
     <Compile Include="Assets\Script\Item\Weapon\DamageField.cs" />
     <Compile Include="Assets\Script\Interface\WeaponAnimatorManager.cs" />
     <Compile Include="Assets\Script\Interface\IAssailable.cs" />
+    <Compile Include="Assets\Script\Control\UI\Equipments.cs" />
     <Compile Include="Assets\Script\Control\EnemyGenerate.cs" />
     <Compile Include="Assets\Script\Environment\MagicBush.cs" />
     <Compile Include="Assets\Script\Interface\BaseState.cs" />
+    <Compile Include="Assets\Script\Item\Item.cs" />
     <Compile Include="Assets\Script\Control\UI\HealthBarStd.cs" />
   </ItemGroup>
   <ItemGroup>

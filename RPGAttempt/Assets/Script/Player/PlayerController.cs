@@ -5,17 +5,20 @@ using ModelMgr;
 
 public class PlayerController : Role
 {
+    [Header("Init in inspector")]
+    public HealthBarPlayer healthBarPlayer;  
+    public Equipments equipments;
 
-    public HealthBarPlayer healthBarPlayer;  //在inspector中赋值的
+
     private float invicibleTimeCnt;
     private float inputX, inputY;
-    private List<Collider2D> colliders = new List<Collider2D>(); //存储所有进入trigger collider的collider，用于交互判断
+    [SerializeField]private List<Collider2D> interactCols = new List<Collider2D>(); //存储所有进入trigger collider的collider，用于交互判断
 
 
     protected override void Awake()
     {
         base.Awake();
-        changeWeapon((GameObject)Resources.Load(GloblePath.fireWand, typeof(GameObject)));
+        //changeWeapon((GameObject)Resources.Load(GloblePath.fireWand, typeof(GameObject)));
         //curHeart = maxHeart = 5;
         invicibleTime = 0.75f;
         invicibleTimeCnt = invicibleTime;
@@ -93,9 +96,9 @@ public class PlayerController : Role
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            float distance = 999f;
+            float distance = float.MaxValue;
             Collider2D nearstCol = new Collider2D();
-            foreach (Collider2D col in colliders)      //可以优化，一个物体有多个collider，存transform可以减少遍历次数
+            foreach (Collider2D col in interactCols)      //可以优化，一个物体有多个collider，存transform可以减少遍历次数
             {
                 if (Vector2.Distance((Vector2)col.transform.position, (Vector2)this.transform.position) < distance)
                 { 
@@ -103,8 +106,10 @@ public class PlayerController : Role
                     distance = Vector2.Distance((Vector2)nearstCol.transform.position, (Vector2)this.transform.position);
                 }
             }
-            IInteraction interaction = nearstCol.transform.GetComponent<IInteraction>();
-            interaction?.interact();
+            IInteraction interaction = nearstCol.transform.parent.GetComponent<IInteraction>();
+            if (interaction == null)
+                interaction = nearstCol.GetComponent<IInteraction>();
+            interaction?.interact(this);
         }
     }
 
@@ -117,6 +122,7 @@ public class PlayerController : Role
                 animatorManager.getHealAnimation();
                 break;
             case changeHealthType.physicDamage:
+            case changeHealthType.fireDamage:
                 if (!isInvicible)
                 {
                     curHealth -= health;
@@ -144,7 +150,12 @@ public class PlayerController : Role
         }
         healthBarPlayer.healthDisplay(curHealth);
     }
-    
+    public override void changeWeapon(GameObject wp)
+    {
+        base.changeWeapon(wp);
+        equipments.displayWeapon(wp.GetComponent<Weapon>());
+    }
+
     private void talkStart(Conversation c)
     {
         this.isTalking = true;
@@ -155,12 +166,12 @@ public class PlayerController : Role
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (!colliders.Contains(other)) { colliders.Add(other); }
+        if (other.GetComponent<IInteraction>() != null && !interactCols.Contains(other)) { interactCols.Add(other); }
     }
 
     private void OnTriggerExit2D(Collider2D other)
     {
-        colliders.Remove(other);
+        interactCols.Remove(other);
     }
     public void PhysicCheck()
     { 

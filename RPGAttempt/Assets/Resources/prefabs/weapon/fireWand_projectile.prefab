@@ -135,6 +135,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weaponFrom: {fileID: 0}
+  survivalTime: 0.6
+  launchForce: 2.8
   createdMap: {fileID: 0}
   fireTile: {fileID: 11400000, guid: 3eb5a089d85e0754f839e887b6015dd4, type: 2}
   fireTilePrefab: {fileID: 5672035160333866904, guid: 89703a94a053dfc4d82a1eeea01003aa, type: 3}

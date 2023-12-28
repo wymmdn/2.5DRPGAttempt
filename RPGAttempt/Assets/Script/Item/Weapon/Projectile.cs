@@ -5,12 +5,12 @@ using UnityEngine;
 public class Projectile : MonoBehaviour
 {
     public Weapon weaponFrom;
-    private float survivalTime;
+    [SerializeField]public float survivalTime;
+    [SerializeField]public float launchForce;
     private float timeCnt;
     protected virtual void Awake()
     {
         weaponFrom = GetComponentInParent<Weapon>();
-        survivalTime = 1f;
         timeCnt = survivalTime;
     }
     protected virtual void Update()

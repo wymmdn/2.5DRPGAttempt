@@ -7,10 +7,11 @@ public class FireWand : Weapon
     private List<FireWandProjectile> projectiles = new List<FireWandProjectile>();
     [SerializeField]private GameObject projectile;
     [SerializeField]private Transform firePoint;
-    [SerializeField]private float launchForce;
+    
     protected override void Awake()
     {
         base.Awake();
+        positionOffset += new Vector3(0, 0.1f, 0);
     }
 
     // Update is called once per frame
@@ -24,6 +25,6 @@ public class FireWand : Weapon
         transform.right = attackDir;
         master.animatorManager.attackAnimation(attackDir);
         GameObject go = Instantiate(projectile, firePoint.position, new Quaternion(), transform);
-        go.GetComponent<Rigidbody2D>().velocity = attackDir * launchForce;
+        go.GetComponent<Rigidbody2D>().velocity = attackDir * go.GetComponent<Projectile>().launchForce;
     }
 }

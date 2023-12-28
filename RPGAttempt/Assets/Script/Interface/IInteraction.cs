@@ -4,5 +4,5 @@ using UnityEngine;
 
 public interface IInteraction
 {
-    public void interact();
+    public void interact(Role role);
 }

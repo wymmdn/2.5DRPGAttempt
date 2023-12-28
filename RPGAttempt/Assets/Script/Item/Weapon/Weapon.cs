@@ -3,14 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using ModelMgr;
 
-public class Weapon : MonoBehaviour
+public class Weapon : Item,IInteraction
 {
     public int damage;
     public changeHealthType damageType;
-    //public float attackSpeed;
     public float attackInterval;
     public float attackIntervalInit;
     public float attackRadius;
+    public Vector3 positionOffset;  //武器装备在身上的位置，默认是0
     public Role master;
     protected WeaponAnimatorManager weaponAnimator;
     protected CircleCollider2D attackCol;
@@ -28,7 +28,7 @@ public class Weapon : MonoBehaviour
         attackCol.radius = attackRadius;
         attackCol.isTrigger = true;
         attackIntervalInit = attackInterval = 1;
-        //attackSpeed = 1 / attackInterval;
+        positionOffset = Vector3.zero;
         timeCnt = -0.1f;
     }
 
@@ -63,6 +63,19 @@ public class Weapon : MonoBehaviour
     { 
         master.animatorManager.attackAnimation(attackDir);
         weaponAnimator.attackAnimation(attackDir);
+    }
+    public void interact(Role role)
+    {
+        equip(role);
+    }
+    protected virtual void equip(Role master)
+    {
+        this.transform.SetParent(master.transform);
+        this.master = master;
+        master.changeWeapon(this.gameObject);
+    }
+    protected virtual void unEquip(Role master) { 
+        
     }
     public void changeDamage(int damege)
     { 
@@ -106,4 +119,6 @@ public class Weapon : MonoBehaviour
     {
         Gizmos.DrawWireSphere((Vector2)this.transform.position, attackRadius);
     }
+
+    
 }

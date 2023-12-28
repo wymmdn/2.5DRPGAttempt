@@ -5,19 +5,21 @@ using ModelMgr;
 
 public class Role : MonoBehaviour ,IInteraction,IAssailable
 {
+    [Header("attributes")]
     public int maxHealth;
     public int curHealth;
-    public bool isInvicible;
-    public float invicibleTime;
     public float physicResist;
     public float fireResist;
-
     public float moveSpeed;
+    [Header("states")]
     public bool isAttacking;
     public bool isMoving;
     public bool isTalking;
+    public bool isInvicible;
+    public float invicibleTime;
 
     protected Weapon weapon;
+    protected GameObject defaultWeapon;
     protected HealthBarStd healthBar;
     //protected Role attackTarget;
     [HideInInspector]public RolesAnimatorManager animatorManager;
@@ -29,21 +31,26 @@ public class Role : MonoBehaviour ,IInteraction,IAssailable
     {
         animatorManager = GetComponent<RolesAnimatorManager>();
         rb = GetComponent<Rigidbody2D>();
-        changeWeapon((GameObject)Resources.Load(GloblePath.defaultWeaponPath,typeof(GameObject)));
+        defaultWeapon = (GameObject)Resources.Load(GloblePath.defaultWeaponPath, typeof(GameObject));
+        changeWeapon(Instantiate(defaultWeapon,transform));
         this.attackRadius = weapon.attackRadius;
         healthBar = GetComponentInChildren<HealthBarStd>();
         isInvicible = isAttacking = isMoving = isTalking = false;
     }
     public virtual void changeWeapon(GameObject wp)
     {
+        if (wp.GetComponent<Weapon>() == null)
+            return;
         if (weapon != null)
         {
             Destroy(weapon.gameObject);
-            weapon = Instantiate(wp, transform).GetComponent<Weapon>();
+            weapon = wp.GetComponent<Weapon>();
         }
         else {
-            weapon = Instantiate(wp, transform).GetComponent<Weapon>();
+            weapon = wp.GetComponent<Weapon>();
         }
+        wp.transform.SetParent(this.transform);
+        wp.transform.position = this.transform.position + weapon.positionOffset;
     }
     public virtual void changeHealth(int health, changeHealthType type)
     {
@@ -130,7 +137,7 @@ public class Role : MonoBehaviour ,IInteraction,IAssailable
         isAttacking = false;
     }
 
-    public virtual void interact()
+    public virtual void interact(Role role)
     {
         
     }
