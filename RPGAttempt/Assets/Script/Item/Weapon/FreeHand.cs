@@ -21,7 +21,6 @@ public class FreeHand : Weapon
     {
         attackDir = new Vector2(Mathf.RoundToInt(attackDir.x), Mathf.RoundToInt(attackDir.y));
         base.playAttack();
-        Debug.Log("override");
     }
 
 }

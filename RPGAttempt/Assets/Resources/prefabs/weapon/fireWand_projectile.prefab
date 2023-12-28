@@ -134,8 +134,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6bc88a7dcad43e8439b93c64668fc39f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  weaponFrom: {fileID: 0}
   createdMap: {fileID: 0}
   fireTile: {fileID: 11400000, guid: 3eb5a089d85e0754f839e887b6015dd4, type: 2}
+  fireTilePrefab: {fileID: 5672035160333866904, guid: 89703a94a053dfc4d82a1eeea01003aa, type: 3}
   grid: {fileID: 0}
 --- !u!50 &5309908569901655424
 Rigidbody2D:
