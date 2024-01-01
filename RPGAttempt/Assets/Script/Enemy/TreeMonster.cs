@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TreeMonsterStates;
-using ModelMgr;
 
 public class TreeMonster : Enemy
 {

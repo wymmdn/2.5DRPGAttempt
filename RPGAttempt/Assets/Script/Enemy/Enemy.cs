@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using ModelMgr;
 
 public class Enemy : Role        //暂定所有的敌人空闲时原地不动，发现玩家时开始追逐并攻击，脱战时回到据点
 {

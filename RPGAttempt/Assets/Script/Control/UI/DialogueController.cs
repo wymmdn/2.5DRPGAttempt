@@ -8,7 +8,7 @@ using UnityEngine.EventSystems;
 public class DialogueController : MonoBehaviour
 {
     private Transform panel;
-    private Text dialogueText;
+    private TMP_Text dialogueText;
     private Button nextButton;
     [SerializeField]private GameObject dialogueOption;
     private Transform optionGroup;
@@ -30,7 +30,7 @@ public class DialogueController : MonoBehaviour
     private void Awake()
     {
         panel = this.transform;
-        dialogueText = this.GetComponentInChildren<Text>();
+        dialogueText = this.GetComponentInChildren<TMP_Text>();
         nextButton = this.GetComponentInChildren<Button>();
         optionGroup = this.transform.Find(optionGroupName);
         panel.localScale = Vector3.zero;

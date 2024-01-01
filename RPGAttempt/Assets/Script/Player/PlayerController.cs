@@ -1,14 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using ModelMgr;
 
 public class PlayerController : Role
 {
     [Header("Init in inspector")]
     public HealthBarPlayer healthBarPlayer;  
     public Equipments equipments;
-
 
     private float invicibleTimeCnt;
     private float inputX, inputY;

@@ -41,4 +41,11 @@ public enum stateType
     attack = 3
 }
 
-namespace ModelMgr { }
+public class InteractOption
+{
+    public const string pickUp = "PickUp";
+    public const string discard = "Discard";
+    public const string use = "Use";
+    public const string equip = "Equip";
+    public const string unEquip = "TakeOff";
+}
