@@ -42,6 +42,7 @@ GameObject:
   - component: {fileID: 5366230906178568258}
   - component: {fileID: 199461184080970838}
   - component: {fileID: 5810528659618353729}
+  - component: {fileID: 9006801064604791297}
   m_Layer: 3
   m_Name: fireWand
   m_TagString: Untagged
@@ -113,16 +114,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aac7fe0f062cc3b49956016ca9fcfb7a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  holder: {fileID: 0}
+  sprite: {fileID: 0}
+  interactOpts: []
   damage: 1
   damageType: 5
   attackInterval: 0
   attackIntervalInit: 0
   attackRadius: 1.6
+  positionOffset: {x: 0, y: 0, z: 0}
   master: {fileID: 0}
   attackDir: {x: 0, y: 0}
   projectile: {fileID: 8846378035516186396, guid: 28b4b2c4e390e1449a30a36b97c37925, type: 3}
   firePoint: {fileID: 4883092603078082800}
-  launchForce: 2
+--- !u!114 &9006801064604791297
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4538419418632723952}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates: []
 --- !u!1 &7936239891774315268
 GameObject:
   m_ObjectHideFlags: 0

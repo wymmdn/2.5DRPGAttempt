@@ -13,6 +13,7 @@ public class tagtag {
     public const string enemy = "Enemy";
     public const string npc = "NPC";
     public const string createdMap = "CreatedMap";
+    public const string ground = "Ground";
 }
 
 public class AnimtorParam {
@@ -40,12 +41,18 @@ public enum stateType
     chase = 2,
     attack = 3
 }
-
-public class InteractOption
+public enum equipmentName
+{ 
+    weapon = 1,
+    headArmor = 2,
+    bodyArmor = 3
+}
+public class UIString
 {
-    public const string pickUp = "PickUp";
-    public const string discard = "Discard";
-    public const string use = "Use";
-    public const string equip = "Equip";
-    public const string unEquip = "TakeOff";
+    public const string pickUp = "拾取";
+    public const string discard = "丢弃";
+    public const string use = "使用";
+    public const string equip = "装备";
+    public const string unEquip = "脱下";
+    public const string place = "放置";
 }

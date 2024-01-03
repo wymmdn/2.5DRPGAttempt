@@ -5,12 +5,13 @@ using UnityEngine;
 public class PlayerController : Role
 {
     [Header("Init in inspector")]
-    public HealthBarPlayer healthBarPlayer;  
-    public Equipments equipments;
+    [SerializeField] private HealthBarPlayer healthBarPlayer;  
+    [SerializeField] private Equipments equipments;
 
     private float invicibleTimeCnt;
     private float inputX, inputY;
     [SerializeField]private List<Collider2D> interactCols = new List<Collider2D>(); //存储所有进入trigger collider的collider，用于交互判断
+    [SerializeField]private List<Transform> pickables = new List<Transform>(); //存储范围内可拾取的物品，用于拾取判断
 
 
     protected override void Awake()
@@ -47,6 +48,7 @@ public class PlayerController : Role
         checkAttack();
         checkMovement();
         checkInteract();
+        checkPick();
         if (isInvicible)
         {
             invicibleTimeCnt -= Time.deltaTime;
@@ -96,7 +98,7 @@ public class PlayerController : Role
         {
             float distance = float.MaxValue;
             Collider2D nearstCol = new Collider2D();
-            foreach (Collider2D col in interactCols)      //可以优化，一个物体有多个collider，存transform可以减少遍历次数
+            foreach (Collider2D col in interactCols)      //可以优化，一个物体有多个collider，存transform可以减少遍历次数,或者直接存IInteraction
             {
                 if (Vector2.Distance((Vector2)col.transform.position, (Vector2)this.transform.position) < distance)
                 { 
@@ -110,7 +112,17 @@ public class PlayerController : Role
             interaction?.interact(this);
         }
     }
-
+    private void checkPick()
+    {
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            IPickable item = getNearst(pickables)?.GetComponent<IPickable>();
+            if (item != null && item.isPickable == true)
+            { 
+                item.pickUp(this);
+            }
+        }
+    }
     public override void changeHealth(int health, changeHealthType type)
     {
         switch (type)
@@ -164,12 +176,38 @@ public class PlayerController : Role
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
+        //interact
         if (other.GetComponent<IInteraction>() != null && !interactCols.Contains(other)) { interactCols.Add(other); }
+        //pickable
+        IPickable item = other.GetComponent<IPickable>();
+        if (item != null && item.isPickable == true && !pickables.Contains(other.transform))
+        { 
+            pickables.Add(other.transform);
+        }
     }
-
     private void OnTriggerExit2D(Collider2D other)
     {
+        //interact
         interactCols.Remove(other);
+        //pickable
+        if (pickables.Contains(other.transform))
+        {
+            pickables.Remove(other.transform);
+        }
+    }
+    private Transform getNearst(List<Transform> tfs)
+    {
+        Transform nearst = null;
+        float distance = float.MaxValue;
+        foreach (Transform tf in tfs)
+        {
+            if (Vector2.Distance((Vector2)tf.position, (Vector2)this.transform.position) < distance)
+            {
+                nearst = tf;
+                distance = Vector2.Distance((Vector2)tf.position, (Vector2)this.transform.position);
+            }
+        }
+        return nearst;
     }
     public void PhysicCheck()
     { 

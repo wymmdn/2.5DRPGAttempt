@@ -5,26 +5,26 @@ using UnityEngine;
 public class Role : MonoBehaviour ,IInteraction,IAssailable
 {
     [Header("attributes")]
-    public int maxHealth;
-    public int curHealth;
-    public float physicResist;
-    public float fireResist;
-    public float moveSpeed;
+    [SerializeField] protected int maxHealth;
+    [SerializeField] protected int curHealth;
+    [SerializeField] protected float physicResist;
+    [SerializeField] protected float fireResist;
+    [SerializeField] protected float moveSpeed;
     [Header("states")]
-    public bool isAttacking;
-    public bool isMoving;
-    public bool isTalking;
-    public bool isInvicible;
-    public float invicibleTime;
+    [SerializeField] protected bool isAttacking;
+    [SerializeField] protected bool isMoving;
+    [SerializeField] protected bool isTalking;
+    [SerializeField] protected bool isInvicible;
+    [SerializeField] protected float invicibleTime;
 
-    protected Weapon weapon;
-    protected GameObject defaultWeapon;
-    protected HealthBarStd healthBar;
-    //protected Role attackTarget;
+    public ItemBag itemBag;
+    [HideInInspector] public Weapon weapon;
+    [HideInInspector] public GameObject defaultWeapon;
     [HideInInspector]public RolesAnimatorManager animatorManager;
     [HideInInspector]public float attackRadius;
     [HideInInspector]public Vector2 faceDir;   //标记角色的朝向
     protected Rigidbody2D rb;
+    protected HealthBarStd healthBar;
     
     protected virtual void Awake()
     {

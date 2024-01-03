@@ -10,11 +10,12 @@ public class FreeHand : Weapon
         damage = 1;
         damageType = changeHealthType.physicDamage;
         attackInterval = attackIntervalInit = 1;
+        this.isPickable = false;
     }
     // Start is called before the first frame update
     void Start()
     {
-        
+           
     }
     protected override void playAttack()
     {

@@ -4,6 +4,7 @@ using UnityEngine;
 
 public interface IPickable
 {
-    public void pickUp();
+    public bool isPickable { get; set; }
+    public void pickUp(Role role);
     public void discard();
 }

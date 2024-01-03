@@ -5,7 +5,6 @@ using UnityEngine;
 public class UIManager : MonoBehaviour
 {
     public static UIManager instance;
-
     void Awake()
     {
         if (instance == null)
@@ -19,5 +18,8 @@ public class UIManager : MonoBehaviour
         DontDestroyOnLoad(this);
     }
 
-    //public 
+    public void createInteractPanel(List<string> ops, Item target)
+    { 
+    
+    }
 }

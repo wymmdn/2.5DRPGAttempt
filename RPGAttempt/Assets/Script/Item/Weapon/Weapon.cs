@@ -19,8 +19,10 @@ public class Weapon : Item,IInteraction
 
     private float timeCnt;   //攻击间隔计时，小于0时可以攻击
 
-    protected virtual void Awake()
+    protected override void Awake()
     {
+        base.Awake();
+        interactOpts.Insert(0, UIString.equip);
         master = GetComponentInParent<Role>();
         weaponAnimator = GetComponent<WeaponAnimatorManager>();
         attackCol = this.gameObject.AddComponent<CircleCollider2D>();
@@ -71,6 +73,7 @@ public class Weapon : Item,IInteraction
     {
         this.transform.SetParent(master.transform);
         this.master = master;
+        this.isPickable = false;
         master.changeWeapon(this.gameObject);
     }
     protected virtual void unEquip(Role master) { 

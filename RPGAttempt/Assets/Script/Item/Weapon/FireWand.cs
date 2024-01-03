@@ -12,6 +12,7 @@ public class FireWand : Weapon
     {
         base.Awake();
         positionOffset += new Vector3(0, 0.1f, 0);
+        sprite = GetComponentInChildren<SpriteRenderer>();
     }
 
     // Update is called once per frame

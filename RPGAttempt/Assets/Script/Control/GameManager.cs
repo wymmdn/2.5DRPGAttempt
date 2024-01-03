@@ -35,12 +35,6 @@ public class GameManager : MonoBehaviour
         bushTriggerNum = 0;
         playerController = GameObject.FindGameObjectWithTag(tagtag.player).GetComponent<PlayerController>();
     }
-    // Start is called before the first frame update
-    void Start()
-    {
-          
-    }
-
     // Update is called once per frame
     void Update()
     {
@@ -69,7 +63,15 @@ public class GameManager : MonoBehaviour
             }
         }
     }
+    public void pauseGame()
+    {
+        Time.timeScale = 0;
+    }
 
+    public void OnApplicationPause(bool pause)
+    {
+        
+    }
     private void readData()
     { 
         

@@ -24,7 +24,10 @@ public class SecretPoint : MonoBehaviour,IInteraction
             if (content[i] == true)
             { 
                 Item item = Instantiate(i,this.transform.parent);
-                StartCoroutine(Curve(transform.position, transform.position + (Vector3)Random.insideUnitCircle * 0.5f, item.transform));
+                item.isPickable = true;
+                Vector3 generatePoint = Random.insideUnitCircle * 0.4f;
+                generatePoint = (Mathf.Abs(generatePoint.x) > 0.1f || Mathf.Abs(generatePoint.x) > 0.1f) ? generatePoint : new Vector2(0.1f, 0f);
+                StartCoroutine(Curve(transform.position, transform.position + generatePoint, item.transform));
                 content[i] = false;
             }
         }
