@@ -20,9 +20,10 @@ public class Role : MonoBehaviour ,IInteraction,IAssailable
     public ItemBag itemBag;
     [HideInInspector] public Weapon weapon;
     [HideInInspector] public GameObject defaultWeapon;
-    [HideInInspector]public RolesAnimatorManager animatorManager;
-    [HideInInspector]public float attackRadius;
-    [HideInInspector]public Vector2 faceDir;   //标记角色的朝向
+    [HideInInspector] public RolesAnimatorManager animatorManager;
+    [HideInInspector] public float attackRadius;
+    [HideInInspector] public float interactRadius;
+    [HideInInspector] public Vector2 faceDir;   //标记角色的朝向
     protected Rigidbody2D rb;
     protected HealthBarStd healthBar;
     
@@ -30,26 +31,20 @@ public class Role : MonoBehaviour ,IInteraction,IAssailable
     {
         animatorManager = GetComponent<RolesAnimatorManager>();
         rb = GetComponent<Rigidbody2D>();
-        defaultWeapon = (GameObject)Resources.Load(GloblePath.defaultWeaponPath, typeof(GameObject));
-        changeWeapon(Instantiate(defaultWeapon,transform));
+        defaultWeapon = (GameObject)Resources.Load(GloblePath.defaultWeaponPath);
+        Instantiate(defaultWeapon).GetComponent<Weapon>().equip(this);
+        //defaultWeapon.equip(this);
         this.attackRadius = weapon.attackRadius;
         healthBar = GetComponentInChildren<HealthBarStd>();
         isInvicible = isAttacking = isMoving = isTalking = false;
     }
-    public virtual void changeWeapon(GameObject wp)
+    public virtual void equipWeapon(Weapon wp)
     {
-        if (wp.GetComponent<Weapon>() == null)
-            return;
         if (weapon != null)
         {
-            Destroy(weapon.gameObject);
-            weapon = wp.GetComponent<Weapon>();
+            weapon.unEquip();
         }
-        else {
-            weapon = wp.GetComponent<Weapon>();
-        }
-        wp.transform.SetParent(this.transform);
-        wp.transform.position = this.transform.position + weapon.positionOffset;
+        weapon = wp;
     }
     public virtual void changeHealth(int health, changeHealthType type)
     {

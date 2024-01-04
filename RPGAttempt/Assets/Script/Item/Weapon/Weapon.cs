@@ -67,17 +67,27 @@ public class Weapon : Item,IInteraction
     }
     public void interact(Role role)
     {
+        if (this.master != null || this.holder != null)
+            return;
         equip(role);
     }
-    protected virtual void equip(Role master)
+    public virtual void equip(Role master)
     {
+        master.equipWeapon(this);
         this.transform.SetParent(master.transform);
+        this.transform.position = master.transform.position + positionOffset;
         this.master = master;
         this.isPickable = false;
-        master.changeWeapon(this.gameObject);
     }
-    protected virtual void unEquip(Role master) { 
-        
+    public virtual void unEquip() 
+    {
+        if (master == null) return;
+        this.transform.SetParent(master.transform.parent);
+        if (master.itemBag != null)
+        {
+            this.pickUp(master);
+        }
+        this.master = null;
     }
     public void changeDamage(int damege)
     { 

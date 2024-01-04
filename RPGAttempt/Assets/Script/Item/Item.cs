@@ -18,12 +18,14 @@ public class Item : MonoBehaviour,IPickable
 
     public void discard()
     {
-        
+        this.holder = null;
+        this.isPickable = true;
     }
 
     public void pickUp(Role role)
     {
         this.holder = role;
+        this.isPickable = false;
         role.itemBag.addItem(this);
     }
 

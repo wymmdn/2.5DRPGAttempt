@@ -17,6 +17,7 @@ public class PlayerController : Role
     protected override void Awake()
     {
         base.Awake();
+        interactRadius = GetComponent<CircleCollider2D>().radius;
         //changeWeapon((GameObject)Resources.Load(GloblePath.fireWand, typeof(GameObject)));
         //curHeart = maxHeart = 5;
         invicibleTime = 0.75f;
@@ -118,7 +119,7 @@ public class PlayerController : Role
         {
             IPickable item = getNearst(pickables)?.GetComponent<IPickable>();
             if (item != null && item.isPickable == true)
-            { 
+            {
                 item.pickUp(this);
             }
         }
@@ -160,10 +161,10 @@ public class PlayerController : Role
         }
         healthBarPlayer.healthDisplay(curHealth);
     }
-    public override void changeWeapon(GameObject wp)
+    public override void equipWeapon(Weapon wp)
     {
-        base.changeWeapon(wp);
-        equipments.displayWeapon(wp.GetComponent<Weapon>());
+        base.equipWeapon(wp);
+        equipments.displayWeapon(wp);
     }
 
     private void talkStart(Conversation c)

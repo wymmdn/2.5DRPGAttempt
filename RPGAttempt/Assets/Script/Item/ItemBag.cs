@@ -36,21 +36,23 @@ public class ItemBag : MonoBehaviour
     {
         if (onPlace == true)
         {
-            clickSlot.item.transform.position = Input.mousePosition;
+            var pos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            clickSlot.item.transform.position = new Vector3(pos.x,pos.y);
             if (Input.GetMouseButton(0))
             {
-                var col = Physics2D.OverlapPoint(Input.mousePosition);
-                hitTransform = col.transform;
-                /*if (rayCast.transform.tag == tagtag.ground || rayCast.transform.tag == tagtag.createdMap)
-                {
-                    clickSlot.item.transform.SetParent(GameObject.FindGameObjectWithTag(tagtag.player).transform.parent);
-                    clickSlot.item.transform.position = rayCast.transform.position;
-                }
-                else { 
-                    clickSlot.item.gameObject.SetActive(false);
-                    clickSlot.image.enabled = true;
-                }*/
                 onPlace = false;
+                hitTransform = Physics2D.OverlapPoint(clickSlot.item.transform.position, (LayerMask.GetMask("Default") | 
+                                                                                          LayerMask.GetMask("UI") | 
+                                                                                          LayerMask.GetMask("Barrier")))?.transform;
+                if (hitTransform == null)
+                {
+                    StartCoroutine(onMove(pos, clickSlot));
+                }
+                else {
+                    placeFailed();
+                }
+                clickSlot.item.gameObject.SetActive(false);
+                clickSlot.image.enabled = true;
                 clickSlot = null;
             }
         }
@@ -70,7 +72,10 @@ public class ItemBag : MonoBehaviour
             case "":
                 break;
             case UIString.place:
-                place(clickSlot);
+                startPlace(clickSlot);
+                break;
+            case UIString.equip:
+                equip();
                 break;
             default:
                 break;
@@ -78,12 +83,53 @@ public class ItemBag : MonoBehaviour
         if(act != UIString.place)
             clickSlot = null;
     }
-    private void place(ItemSolt slot)
+    private void startPlace(ItemSolt slot)
     {
-        Debug.Log("called");
         slot.item.gameObject.SetActive(true);
-        slot.item.transform.SetParent(player.transform.parent);
         slot.image.enabled = false;
         onPlace = true;
+    }
+    private void equip()
+    {
+        clickSlot.item.gameObject.SetActive(true);
+        Weapon weapon = clickSlot.item as Weapon;
+        weapon.equip(player);
+        items.Remove(clickSlot);
+        clickSlot.transform.SetParent(null);
+        Destroy(clickSlot.gameObject);
+    }
+    private IEnumerator onMove(Vector2 target,ItemSolt slot)
+    {
+        yield return null;
+        while (Vector2.Distance(player.transform.position, target) > player.interactRadius)
+        {
+            player.movement(target);
+            if (Input.GetKeyDown(KeyCode.W) ||
+               Input.GetKeyDown(KeyCode.A) ||
+               Input.GetKeyDown(KeyCode.S) ||
+               Input.GetKeyDown(KeyCode.D) ||
+               Input.GetKeyDown(KeyCode.Space) ||
+               onPlace == true)
+            {
+                placeFailed();
+                yield break;
+            }
+            yield return null;
+        }
+        placeSucceed(target,slot);
+    }
+    private void placeSucceed(Vector2 target,ItemSolt slot)
+    {
+        slot.item.gameObject.SetActive(true);
+        slot.item.transform.SetParent(player.transform.parent);
+        slot.item.transform.position = target;
+        slot.item.discard();
+        items.Remove(slot);
+        slot.transform.SetParent(null);
+        Destroy(slot.gameObject);
+    }
+    private void placeFailed()
+    { 
+    
     }
 }

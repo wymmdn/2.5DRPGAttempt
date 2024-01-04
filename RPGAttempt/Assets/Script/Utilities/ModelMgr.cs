@@ -15,6 +15,9 @@ public class tagtag {
     public const string createdMap = "CreatedMap";
     public const string ground = "Ground";
 }
+public class LayerString { 
+    //public const string
+} 
 
 public class AnimtorParam {
     public static readonly int InputX   = Animator.StringToHash("InputX");

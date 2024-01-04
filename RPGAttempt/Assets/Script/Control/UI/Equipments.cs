@@ -16,14 +16,45 @@ public class Equipments : MonoBehaviour
     private void Awake()
     {
         interactOptions.Add(UIString.unEquip);
-        interactOptions.Add(UIString.place);
-        interactOptions.Add(UIString.discard);
+    }
+    private void OnEnable()
+    {
+        EventHandler.CloseInteractPanel += performAct;
+    }
+    private void OnDisable()
+    {
+        EventHandler.CloseInteractPanel -= performAct;
     }
     private void Update()
     {
         if (curChild != noneChild && Input.GetMouseButtonUp(1))
         {
             rightClick();
+        }
+    }
+    private void performAct(string act)
+    {
+        if (clickChild == noneChild) return;
+        switch (act)
+        {
+            case "":
+                break;
+            case UIString.unEquip:
+                unEquip((int)clickChild);
+                break;
+            default:
+                break;
+        }
+        clickChild = noneChild;
+    }
+    private void unEquip(int equipName)
+    {
+        if (equipName == (int)equipmentName.weapon)
+        {
+            weapon.isPickable = true;
+            Weapon def = Instantiate(weapon.master.defaultWeapon).GetComponent<Weapon>();
+            def.equip(weapon.master);
+            weapon = null;
         }
     }
     public void displayWeapon(Weapon wp)
@@ -41,28 +72,23 @@ public class Equipments : MonoBehaviour
         }
         weaponIcon.GetComponent<Image>().color = tmpColor;
     }
-    public void displayHeadArmor()
-    { 
-    
-    }
-    public void displayBodyArmor()
-    { 
-    
-    }
     public void displayEquipments(PlayerController player)
     { 
         
     }
     public void rightClick()
     {
-        clickChild = curChild;
-        switch (clickChild)
+        
+        switch (curChild)
         { 
             case noneChild:
                 break;
             case equipmentName.weapon:
                 if (this.weapon != null)
+                { 
+                    clickChild = curChild;
                     EventHandler.CallOpenInteractPanel(interactOptions,this.weapon,weaponIcon.transform.position);
+                }
                 break;
             case equipmentName.headArmor:
             case equipmentName.bodyArmor:

@@ -12,15 +12,15 @@ public class FreeHand : Weapon
         attackInterval = attackIntervalInit = 1;
         this.isPickable = false;
     }
-    // Start is called before the first frame update
-    void Start()
-    {
-           
-    }
     protected override void playAttack()
     {
         attackDir = new Vector2(Mathf.RoundToInt(attackDir.x), Mathf.RoundToInt(attackDir.y));
         base.playAttack();
+    }
+    public override void unEquip()
+    {
+        this.transform.SetParent(null);
+        Destroy(this.gameObject);
     }
 
 }
