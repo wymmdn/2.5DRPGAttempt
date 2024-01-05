@@ -398,6 +398,8 @@
 "Assets/Script/Data/UIWords_SO.cs"
 "Assets/Script/Enemy/Enemy.cs"
 "Assets/Script/Enemy/EnemyState.cs"
+"Assets/Script/Enemy/FireBear.cs"
+"Assets/Script/Enemy/FireBearStates.cs"
 "Assets/Script/Enemy/TreeMonster.cs"
 "Assets/Script/Enemy/TreeMonsterStates.cs"
 "Assets/Script/Environment/CreatedGround.cs"

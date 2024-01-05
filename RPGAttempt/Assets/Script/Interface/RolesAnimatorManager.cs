@@ -5,11 +5,12 @@ using UnityEngine;
 public class RolesAnimatorManager : MonoBehaviour
 {
     private Animator anim;
+    private Role role;
 
     private void Awake()
     {
         anim = GetComponent<Animator>();
-
+        role = GetComponent<Role>();
         AnimationEvent attackStart = new AnimationEvent();
         AnimationEvent attackEnd = new AnimationEvent();
         AnimationClip[] clips = anim.runtimeAnimatorController.animationClips;
@@ -23,6 +24,7 @@ public class RolesAnimatorManager : MonoBehaviour
                 attackEnd.time = clip.length;
                 clip.AddEvent(attackStart);
                 clip.AddEvent(attackEnd);
+                Debug.Log("added");
             }
         }
     }
@@ -55,5 +57,14 @@ public class RolesAnimatorManager : MonoBehaviour
     public void deadAnimation()
     { 
     
+    }
+    public void attackStart()   //called in animator event
+    {
+        role.isAttacking = true;
+    }
+    public void attackEnd()
+    {
+        role.isAttacking = false;
+        Debug.Log("called");
     }
 }

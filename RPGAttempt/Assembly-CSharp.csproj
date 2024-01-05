@@ -79,6 +79,7 @@
     <Compile Include="Assets\Script\Enemy\TreeMonster.cs" />
     <Compile Include="Assets\Script\Item\Weapon\Weapon.cs" />
     <Compile Include="Assets\Script\Control\UI\HealthBarPlayer.cs" />
+    <Compile Include="Assets\Script\Enemy\FireBear.cs" />
     <Compile Include="Assets\Script\Environment\SecretPoint.cs" />
     <Compile Include="Assets\Script\Interface\IStoryActor.cs" />
     <Compile Include="Assets\Script\Item\Weapon\FreeHand.cs" />
@@ -86,6 +87,7 @@
     <Compile Include="Assets\Script\Control\FacingCamera.cs" />
     <Compile Include="Assets\Script\Enemy\EnemyState.cs" />
     <Compile Include="Assets\Script\Npc\NPC.cs" />
+    <Compile Include="Assets\Script\Enemy\FireBearStates.cs" />
     <Compile Include="Assets\Script\Environment\FireGroundTile.cs" />
     <Compile Include="Assets\Script\Control\GameManager.cs" />
     <Compile Include="Assets\Script\Npc\OrangeMeowState.cs" />

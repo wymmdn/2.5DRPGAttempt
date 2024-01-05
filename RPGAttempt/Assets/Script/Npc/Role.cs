@@ -11,11 +11,12 @@ public class Role : MonoBehaviour ,IInteraction,IAssailable
     [SerializeField] protected float fireResist;
     [SerializeField] protected float moveSpeed;
     [Header("states")]
-    [SerializeField] protected bool isAttacking;
     [SerializeField] protected bool isMoving;
     [SerializeField] protected bool isTalking;
     [SerializeField] protected bool isInvicible;
     [SerializeField] protected float invicibleTime;
+    [SerializeField] public bool isAttacking;
+    
 
     public ItemBag itemBag;
     [HideInInspector] public Weapon weapon;
@@ -121,14 +122,6 @@ public class Role : MonoBehaviour ,IInteraction,IAssailable
         health = (int)(health * (1 - fireResist));
         curHealth -= health;
         animatorManager.getHurtAnimation();
-    }
-    public void attackStart()   //called in animator event
-    { 
-        isAttacking = true;
-    }
-    public void attackEnd()     
-    {
-        isAttacking = false;
     }
 
     public virtual void interact(Role role)
