@@ -33,6 +33,11 @@ public class Enemy : Role        //ÔÝ¶¨ËùÓÐµÄµÐÈË¿ÕÏÐÊ±Ô­µØ²»¶¯£¬·¢ÏÖÍæ¼ÒÊ±¿ªÊ¼×
             toDead();
         }
         currentState.LogicUpdate();
+        UpdateContent();
+    }
+    protected virtual void UpdateContent()
+    { 
+        
     }
     private void FixedUpdate()
     {
@@ -51,7 +56,10 @@ public class Enemy : Role        //ÔÝ¶¨ËùÓÐµÄµÐÈË¿ÕÏÐÊ±Ô­µØ²»¶¯£¬·¢ÏÖÍæ¼ÒÊ±¿ªÊ¼×
     {
         return attackRadius > Vector2.Distance(target, (Vector2)transform.position) ? true : false;
     }
-
+    public bool inDistance(Vector2 target, float distance)
+    {
+        return distance > Vector2.Distance(target, (Vector2)transform.position) ? true : false;
+    }
     public void TransitionState(stateType type)
     {
         if (currentState != null)
@@ -60,7 +68,7 @@ public class Enemy : Role        //ÔÝ¶¨ËùÓÐµÄµÐÈË¿ÕÏÐÊ±Ô­µØ²»¶¯£¬·¢ÏÖÍæ¼ÒÊ±¿ªÊ¼×
         currentState.OnEnter(this);
     }
 
-    private void OnDrawGizmosSelected()
+    protected virtual void OnDrawGizmosSelected()
     {
         Gizmos.DrawWireSphere((Vector2)this.transform.position,alertRadius);
         Gizmos.DrawWireSphere((Vector2)this.transform.position, attackRadius);

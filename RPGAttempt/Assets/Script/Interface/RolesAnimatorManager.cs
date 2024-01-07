@@ -24,7 +24,6 @@ public class RolesAnimatorManager : MonoBehaviour
                 attackEnd.time = clip.length;
                 clip.AddEvent(attackStart);
                 clip.AddEvent(attackEnd);
-                Debug.Log("added");
             }
         }
     }
@@ -65,6 +64,5 @@ public class RolesAnimatorManager : MonoBehaviour
     public void attackEnd()
     {
         role.isAttacking = false;
-        Debug.Log("called");
     }
 }

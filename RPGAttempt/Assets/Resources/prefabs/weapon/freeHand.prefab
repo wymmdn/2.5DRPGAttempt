@@ -218,11 +218,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52a7b7d8ae4f1a54aaaa8bf8a008613e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  holder: {fileID: 0}
+  sprite: {fileID: 0}
+  interactOpts: []
   damage: 1
   damageType: 1
-  attackInterval: 0
-  attackIntervalInit: 0
+  attackInterval: 1
+  attackIntervalInit: 1
   attackRadius: 0.3
+  positionOffset: {x: 0, y: 0, z: 0}
   master: {fileID: 0}
   attackDir: {x: 0, y: 0}
 --- !u!114 &-9036278815925399863

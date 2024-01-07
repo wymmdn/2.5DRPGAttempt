@@ -61,12 +61,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Script\Interface\IPickable.cs" />
+    <Compile Include="Assets\Script\Item\Weapon\FireBoom.cs" />
     <Compile Include="Assets\Script\Utilities\Example.cs" />
     <Compile Include="Assets\Script\Environment\TrapMgr.cs" />
     <Compile Include="Assets\Script\Npc\OrangeMeow.cs" />
     <Compile Include="Assets\Script\Control\RotatingCamera.cs" />
     <Compile Include="Assets\Script\Utilities\ModelMgr.cs" />
     <Compile Include="Assets\Script\Enemy\Enemy.cs" />
+    <Compile Include="Assets\Script\Item\Weapon\FireBoomProjectile.cs" />
     <Compile Include="Assets\Script\Item\Weapon\FireWand.cs" />
     <Compile Include="Assets\Script\Control\UI\DialogueController.cs" />
     <Compile Include="Assets\Script\Item\Weapon\Projectile.cs" />
@@ -91,6 +93,7 @@
     <Compile Include="Assets\Script\Environment\FireGroundTile.cs" />
     <Compile Include="Assets\Script\Control\GameManager.cs" />
     <Compile Include="Assets\Script\Npc\OrangeMeowState.cs" />
+    <Compile Include="Assets\Script\Item\Boob.cs" />
     <Compile Include="Assets\Script\Environment\GroundTile.cs" />
     <Compile Include="Assets\Script\Npc\NPCState.cs" />
     <Compile Include="Assets\Script\Item\Weapon\FireWandProjectile.cs" />

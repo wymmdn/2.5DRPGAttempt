@@ -7,10 +7,12 @@ public class Projectile : MonoBehaviour
     public Weapon weaponFrom;
     [SerializeField]public float survivalTime;
     [SerializeField]public float launchForce;
+    protected Rigidbody2D rb;
     private float timeCnt;
     protected virtual void Awake()
     {
         weaponFrom = GetComponentInParent<Weapon>();
+        rb = GetComponent<Rigidbody2D>();
         timeCnt = survivalTime;
     }
     protected virtual void Update()

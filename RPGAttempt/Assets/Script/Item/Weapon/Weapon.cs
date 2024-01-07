@@ -28,7 +28,6 @@ public class Weapon : Item,IInteraction
         attackCol = this.gameObject.AddComponent<CircleCollider2D>();
         attackCol.radius = attackRadius;
         attackCol.isTrigger = true;
-        attackIntervalInit = attackInterval = 1;
         positionOffset = Vector3.zero;
         timeCnt = -0.1f;
     }
@@ -47,13 +46,21 @@ public class Weapon : Item,IInteraction
         {
             var nearDis = float.MaxValue;
             attackDir = master.faceDir;
-            foreach (Transform t in attackTargets)
+            if (master.tag == tagtag.enemy || master.tag == tagtag.npc)
             {
-                if (Vector2.Distance((Vector2)t.position, (Vector2)this.transform.position) < nearDis)
+                attackTarget = GameObject.FindGameObjectWithTag(tagtag.player).GetComponent<Transform>();
+                attackDir = ((Vector2)attackTarget.position - (Vector2)transform.position).normalized;
+            }
+            else
+            { 
+                foreach (Transform t in attackTargets)
                 {
-                    nearDis = Vector2.Distance((Vector2)t.position, (Vector2)this.transform.position);
-                    attackDir = ((Vector2)t.position - (Vector2)this.transform.position).normalized;
-                    attackTarget = t;
+                    if (Vector2.Distance((Vector2)t.position, (Vector2)this.transform.position) < nearDis)
+                    {
+                        nearDis = Vector2.Distance((Vector2)t.position, (Vector2)this.transform.position);
+                        attackDir = ((Vector2)t.position - (Vector2)this.transform.position).normalized;
+                        attackTarget = t;
+                    }
                 }
             }
             playAttack();

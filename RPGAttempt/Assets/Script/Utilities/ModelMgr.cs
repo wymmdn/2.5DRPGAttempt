@@ -7,6 +7,8 @@ public static class GloblePath {
     public const string defaultWeaponPath = weaponPath + "freeHand";
     public const string fireWand = weaponPath + "fireWand";
     public const string fireWandProjectile = weaponPath + "fireWand_Projectile";
+    public const string fireHand = weaponPath + "fireHand";
+    public const string fireBoom = weaponPath + "fireBoom";
 }
 public class tagtag {
     public const string player = "Player";
@@ -42,7 +44,10 @@ public enum stateType
 {
     idle = 1,
     chase = 2,
-    attack = 3
+    chase1 = 3,
+    chase2 = 4,
+    secondAttack = 5,
+    attack = 6
 }
 public enum equipmentName
 { 

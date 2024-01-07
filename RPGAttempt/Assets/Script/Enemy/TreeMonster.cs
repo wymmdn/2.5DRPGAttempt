@@ -15,6 +15,7 @@ public class TreeMonster : Enemy
         states.Add(stateType.idle, idleState);
         states.Add(stateType.chase,chaseState);
         states.Add(stateType.attack, attackState);
+        this.weapon.attackInterval = 1.5f;
     }
 
     protected override void Start()

@@ -119,8 +119,8 @@ MonoBehaviour:
   interactOpts: []
   damage: 1
   damageType: 5
-  attackInterval: 0
-  attackIntervalInit: 0
+  attackInterval: 1
+  attackIntervalInit: 1
   attackRadius: 1.6
   positionOffset: {x: 0, y: 0, z: 0}
   master: {fileID: 0}

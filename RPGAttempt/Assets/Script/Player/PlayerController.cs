@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class PlayerController : Role
 {
-    [Header("Init in inspector")]
     [SerializeField] private HealthBarPlayer healthBarPlayer;  
     [SerializeField] private Equipments equipments;
 

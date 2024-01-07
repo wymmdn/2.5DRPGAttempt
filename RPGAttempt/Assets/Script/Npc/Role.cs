@@ -16,11 +16,11 @@ public class Role : MonoBehaviour ,IInteraction,IAssailable
     [SerializeField] protected bool isInvicible;
     [SerializeField] protected float invicibleTime;
     [SerializeField] public bool isAttacking;
-    
 
+    [Header("init in inspector")]
     public ItemBag itemBag;
+    public GameObject defaultWeapon;
     [HideInInspector] public Weapon weapon;
-    [HideInInspector] public GameObject defaultWeapon;
     [HideInInspector] public RolesAnimatorManager animatorManager;
     [HideInInspector] public float attackRadius;
     [HideInInspector] public float interactRadius;
@@ -32,11 +32,13 @@ public class Role : MonoBehaviour ,IInteraction,IAssailable
     {
         animatorManager = GetComponent<RolesAnimatorManager>();
         rb = GetComponent<Rigidbody2D>();
-        defaultWeapon = (GameObject)Resources.Load(GloblePath.defaultWeaponPath);
-        Instantiate(defaultWeapon).GetComponent<Weapon>().equip(this);
-        //defaultWeapon.equip(this);
-        this.attackRadius = weapon.attackRadius;
         healthBar = GetComponentInChildren<HealthBarStd>();
+
+        if (defaultWeapon == null)
+            defaultWeapon = (GameObject)Resources.Load(GloblePath.defaultWeaponPath);
+        Instantiate(defaultWeapon).GetComponent<Weapon>().equip(this);
+        this.attackRadius = weapon.attackRadius;
+        
         isInvicible = isAttacking = isMoving = isTalking = false;
     }
     public virtual void equipWeapon(Weapon wp)
@@ -106,7 +108,7 @@ public class Role : MonoBehaviour ,IInteraction,IAssailable
         this.transform.SetParent(null);
         Destroy(this.gameObject);
     }
-    public void attack()
+    public virtual void attack()
     {
         rb.velocity = Vector2.zero;
         weapon.attack();

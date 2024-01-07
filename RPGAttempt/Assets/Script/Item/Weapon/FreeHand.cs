@@ -7,9 +7,6 @@ public class FreeHand : Weapon
     protected override void Awake()
     {
         base.Awake();
-        damage = 1;
-        damageType = changeHealthType.physicDamage;
-        attackInterval = attackIntervalInit = 1;
         this.isPickable = false;
     }
     protected override void playAttack()
