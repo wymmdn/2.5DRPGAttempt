@@ -19,7 +19,8 @@ public class PlayerController : Role
         interactRadius = GetComponent<CircleCollider2D>().radius;
         //changeWeapon((GameObject)Resources.Load(GloblePath.fireWand, typeof(GameObject)));
         //curHeart = maxHeart = 5;
-        invicibleTime = 0.75f;
+        invicibleTime = 0f;
+        //invicibleTime = 9999f;
         invicibleTimeCnt = invicibleTime;
     }
     // Start is called before the first frame update

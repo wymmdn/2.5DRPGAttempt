@@ -10,6 +10,8 @@ public class CreatedGround : MonoBehaviour
     private int fireDamage;
     private float fireEffectTime;
     private float fireEffectTimeCnt;
+
+    private List<Transform> assailables = new List<Transform>();
     private void Awake()
     {
         createdMap = GetComponent<Tilemap>();
@@ -23,8 +25,26 @@ public class CreatedGround : MonoBehaviour
     void Update()
     {
         fireEffectTimeCnt += Time.deltaTime;
+        effect();
     }
-    private void OnTriggerStay2D(Collider2D collision)
+    private void effect()
+    {
+        for (int i = assailables.Count - 1; i >= 0; i--)
+        {
+            if (!assailables[i].TryGetComponent<IAssailable>(out var assailable))
+            {
+                assailables.RemoveAt(i);
+                continue;
+            }
+            if (fireEffectTimeCnt > fireEffectTime)
+            {
+                assailable.changeHealth(fireDamage, changeHealthType.fireDamage);
+            }
+        }
+        if(fireEffectTimeCnt > fireEffectTime)
+            fireEffectTimeCnt = 0f;
+    }
+    /*private void OnTriggerStay2D(Collider2D collision)
     {
         
         if (collision.GetComponent<IAssailable>() == null) 
@@ -39,6 +59,21 @@ public class CreatedGround : MonoBehaviour
                 collision.GetComponent<IAssailable>().changeHealth(fireDamage, changeHealthType.fireDamage);
                 fireEffectTimeCnt = 0f;
             }
+        }
+    }*/
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        //IAssailable obj = other.GetComponent<IAssailable>();
+        if (!assailables.Contains(other.transform))
+        {
+            assailables.Add(other.transform);
+        }
+    }
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        if (assailables.Contains(other.transform))
+        {
+            assailables.Remove(other.transform);
         }
     }
 }

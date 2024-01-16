@@ -59422,10 +59422,6 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 295471484}
-    - target: {fileID: 4124779532424644006, guid: 68e7329cc0628ef49b68e1e2c7800eee, type: 3}
-      propertyPath: alertRadius
-      value: 2.2
-      objectReference: {fileID: 0}
     - target: {fileID: 7030173950770624801, guid: 68e7329cc0628ef49b68e1e2c7800eee, type: 3}
       propertyPath: m_LocalPosition.x
       value: 2.754
@@ -59967,8 +59963,16 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 902157964}
     - target: {fileID: 1758205125300768481, guid: 418f6a78655e60b4c9dcacb6e0348470, type: 3}
+      propertyPath: curHealth
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 1758205125300768481, guid: 418f6a78655e60b4c9dcacb6e0348470, type: 3}
+      propertyPath: maxHealth
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 1758205125300768481, guid: 418f6a78655e60b4c9dcacb6e0348470, type: 3}
       propertyPath: moveSpeed
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1758205125300768481, guid: 418f6a78655e60b4c9dcacb6e0348470, type: 3}
       propertyPath: equipments
