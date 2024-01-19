@@ -16,11 +16,12 @@ public class NPC : Role,IStoryActor
     }
     public override void interact(Role role)
     {
-        EventHandler.CallShowDialogueEvent(conversation);
+        openDialogue();
     }
 
     public void openDialogue()
     {
-        //EventHandler.CallShowDialogueEvent(getWords(dialogueData.contentJson));
+        conversation = StoryManager.instance.GetConversation(actorName);
+        EventHandler.CallShowDialogueEvent(conversation);
     }
 }

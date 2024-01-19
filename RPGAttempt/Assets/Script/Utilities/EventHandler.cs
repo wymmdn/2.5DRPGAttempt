@@ -14,6 +14,7 @@ public static class EventHandler
 
     public static event Action<string> PerformStory;
     public static event Action<int> TreeMonster;
+    public static event Action<bool> gotMisson;
     public static void CallShowDialogueEvent(Conversation conv)
     {
         ShowDialogueEvent?.Invoke(conv);
@@ -38,4 +39,5 @@ public static class EventHandler
     {
         TreeMonster?.Invoke(state);
     }
+    public static void CallGotMission(bool state) => gotMisson?.Invoke(state);
 }

@@ -47,14 +47,14 @@
 	},
 	{
 		"actorName": "OrangeMeow",
-		"index": "firstSee",
+		"index": "conv1-1",
 		"convSteps": [
 			{
 				"index": 0,
 				"nextIndex": 1,
 				"speaker": "OrangeMeow",
 				"type": "cnv",
-				"words": "Wow! who are you(>_<)?",
+				"words": "你，你是谁(>_<)?",
 				"branch": "main"
 			},
 			{
@@ -62,7 +62,15 @@
 				"nextIndex": 2,
 				"speaker": "Player",
 				"type": "opt",
-				"words": "hello, I'm Neo",
+				"words": "不要紧张，我只是路过",
+				"branch": "main"
+			},
+			{
+				"index": 1,
+				"nextIndex": 2,
+				"speaker": "Player",
+				"type": "opt",
+				"words": "我是炒鸡无敌暴龙战神！",
 				"branch": "main"
 			},
 			{
@@ -70,37 +78,139 @@
 				"nextIndex": 3,
 				"speaker": "Player",
 				"type": "opt",
-				"words": "Mom won't let me talk to a stranger",
+				"words": "妈妈不让我和陌生人说话。。。",
 				"branch": "main"
 			},
 			{
 				"index": 2,
-				"nextIndex": -1,
+				"nextIndex": 4,
 				"speaker": "OrangeMeow",
 				"type": "cnv",
-				"words": "I,I'm OrangeMeow.I came to pick up mushrooms and got trapped in the valley. a powerful tree monster over there, don't go there",
+				"words": "我叫橙猫猫，我来采蘑菇被困在这个山谷里了，那边有强大的怪物，你可不要乱走啊",
 				"branch": "main"
 			},
 			{
 				"index": 3,
+				"nextIndex": 4,
+				"speaker": "OrangeMeow",
+				"type": "cnv",
+				"words": "emmm, 好吧( •̌.•̑ ).但是我提醒你那边有强大的怪物，最好不要过去",
+				"branch": "main"
+			},
+			{
+				"index": 4,
+				"nextIndex": 5,
+				"speaker": "Player",
+				"type": "opt",
+				"words": "怪物？呆胶布，我会解决它的",
+				"branch": "main"
+			},
+			{
+				"index": 4,
+				"nextIndex": 5,
+				"speaker": "Player",
+				"type": "opt",
+				"words": "呜呜呜，那怎么办QAQ",
+				"branch": "main"
+			},
+			{
+				"index": 5,
 				"nextIndex": -1,
 				"speaker": "OrangeMeow",
 				"type": "cnv",
-				"words": "emmm, fine( •̌.•̑ ).but a powerful tree monster over there, better don't go there",
+				"words": "不管你了，得先想个办法出去才行。",
 				"branch": "main"
 			}
 		]
 	},
 	{
 		"actorName": "OrangeMeow",
-		"index": "killedMonster",
+		"index": "conv1-2",
 		"convSteps": [
 			{
 				"index": 0,
 				"nextIndex": -1,
 				"speaker": "OrangeMeow",
 				"type": "cnv",
-				"words": "cool! you killed it",
+				"words": "得先想个办法出去才行。。",
+				"branch": "main"
+			}
+		]
+	},
+	{
+		"actorName": "OrangeMeow",
+		"index": "conv2-1",
+		"convSteps": [
+			{
+				"index": 0,
+				"nextIndex": 1,
+				"speaker": "OrangeMeow",
+				"type": "cnv",
+				"words": "得先想个办法出去才行。。。",
+				"branch": "main"
+			},
+			{
+				"index": 1,
+				"nextIndex": 2,
+				"speaker": "Player",
+				"type": "opt",
+				"words": "那个树精已经被我杀死了",
+				"branch": "main"
+			},
+			{
+				"index": 1,
+				"nextIndex": -1,
+				"speaker": "Player",
+				"type": "opt",
+				"words": "离开",
+				"branch": "main"
+			},
+			{
+				"index": 2,
+				"nextIndex": 3,
+				"speaker": "OrangeMeow",
+				"type": "cnv",
+				"words": "真的？你这么厉害！不过你可要小心了，那个树精有个老大罩着，它一定会来找你报仇。",
+				"branch": "main"
+			},
+			{
+				"index": 3,
+				"nextIndex": 4,
+				"speaker": "Player",
+				"type": "opt",
+				"words": "不怕，我一拳一个小妖怪",
+				"branch": "main"
+			},
+			{
+				"index": 3,
+				"nextIndex": 4,
+				"speaker": "Player",
+				"type": "opt",
+				"words": "老大？给我讲讲",
+				"branch": "main"
+			},
+			{
+				"index": 3,
+				"nextIndex": 5,
+				"speaker": "Player",
+				"type": "opt",
+				"words": "完了，困在这破地方也出不去，岂不是死定了",
+				"branch": "main"
+			},
+			{
+				"index": 4,
+				"nextIndex": -1,
+				"speaker": "OrangeMeow",
+				"type": "cnv",
+				"words": "它老大是一只火熊精，会朝人喷火，恐怕十个你也不是它的对手",
+				"branch": "main"
+			},
+			{
+				"index": 5,
+				"nextIndex": -1,
+				"speaker": "OrangeMeow",
+				"type": "cnv",
+				"words": "我看那边似乎有个洞穴，但是洞穴大门是锁着的，要是有办法进去就好了",
 				"branch": "main"
 			}
 		]

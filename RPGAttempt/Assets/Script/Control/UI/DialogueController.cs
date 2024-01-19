@@ -56,7 +56,8 @@ public class DialogueController : MonoBehaviour
 
     private void Update()
     {
-        if (isOpen && (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.Return)))
+        if (isOpen && ((Input.GetKeyDown(KeyCode.Space)&&currentStep.type.Equals(cnv, System.StringComparison.OrdinalIgnoreCase)) 
+                     || Input.GetKeyDown(KeyCode.Return)))
         {
             nextWords();
         }
@@ -97,6 +98,10 @@ public class DialogueController : MonoBehaviour
         } 
         if (currentStep == null || currentStep.nextIndex < 0)
         {
+            if (conversation.actorName == roleName.orangeMeow && conversation.index == "conv1-1")
+            { 
+                EventHandler.CallGotMission(true); 
+            }
             StartCoroutine(ShowDialogue(""));
             return;
         }

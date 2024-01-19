@@ -24,7 +24,8 @@ public class TreeMonster : Enemy
     }
     public override void toDead()
     {
-        base.toDead();
         EventHandler.CallTreeMonster(StoryManager.dead);
+
+        base.toDead();
     }
 }

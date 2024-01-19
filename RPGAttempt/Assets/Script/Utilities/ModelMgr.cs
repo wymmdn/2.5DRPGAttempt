@@ -64,3 +64,10 @@ public class UIString
     public const string unEquip = "ÍÑÏÂ";
     public const string place = "·ÅÖÃ";
 }
+
+public class roleName
+{
+    public const string orangeMeow = "OrangeMeow";
+    public const string treeMonster = "TreeMonster";
+    public const string fireBear = "FireBear";
+}
