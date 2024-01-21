@@ -9,7 +9,7 @@ public class RotatingCamera : MonoBehaviour
     private bool isRotating = false;
     void Start()
     {
-        player = GameObject.FindGameObjectWithTag("Player").transform;
+        player = GameObject.FindGameObjectWithTag(tagtag.player).transform;
     }
 
     void Update()

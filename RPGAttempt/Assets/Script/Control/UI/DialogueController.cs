@@ -96,12 +96,13 @@ public class DialogueController : MonoBehaviour
             quickShow = true;
             return; 
         } 
+        if (currentStep.branch != "main" && currentStep.branch != "Main")
+        { 
+            EventHandler.CallPerformStory(currentStep.branch);
+        }
         if (currentStep == null || currentStep.nextIndex < 0)
         {
-            if (conversation.actorName == roleName.orangeMeow && conversation.index == "conv1-1")
-            { 
-                EventHandler.CallGotMission(true); 
-            }
+            EventHandler.CallPerformStory("");
             StartCoroutine(ShowDialogue(""));
             return;
         }

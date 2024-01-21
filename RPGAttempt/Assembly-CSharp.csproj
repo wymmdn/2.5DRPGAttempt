@@ -73,6 +73,7 @@
     <Compile Include="Assets\Script\Control\UI\DialogueController.cs" />
     <Compile Include="Assets\Script\Item\Weapon\Projectile.cs" />
     <Compile Include="Assets\Script\Interface\IInteraction.cs" />
+    <Compile Include="Assets\Script\Item\TreeMonsterBody.cs" />
     <Compile Include="Assets\Script\Control\StoryManager.cs" />
     <Compile Include="Assets\Script\Npc\Role.cs" />
     <Compile Include="Assets\Script\Utilities\AnimatorParameter.cs" />
@@ -106,6 +107,7 @@
     <Compile Include="Assets\Script\Item\Weapon\DamageField.cs" />
     <Compile Include="Assets\Script\Data\UIWords_SO.cs" />
     <Compile Include="Assets\Script\Item\ItemSolt.cs" />
+    <Compile Include="Assets\Script\Item\Weapon\FreezeSword.cs" />
     <Compile Include="Assets\Script\Item\ItemBag.cs" />
     <Compile Include="Assets\Script\Interface\WeaponAnimatorManager.cs" />
     <Compile Include="Assets\Script\Interface\IAssailable.cs" />

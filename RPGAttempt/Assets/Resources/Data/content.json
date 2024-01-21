@@ -55,7 +55,7 @@
 				"speaker": "OrangeMeow",
 				"type": "cnv",
 				"words": "你，你是谁(>_<)?",
-				"branch": "main"
+				"branch": "gotMission1"
 			},
 			{
 				"index": 1,
@@ -171,7 +171,7 @@
 				"speaker": "OrangeMeow",
 				"type": "cnv",
 				"words": "真的？你这么厉害！不过你可要小心了，那个树精有个老大罩着，它一定会来找你报仇。",
-				"branch": "main"
+				"branch": "completeMission1"
 			},
 			{
 				"index": 3,
@@ -207,6 +207,146 @@
 			},
 			{
 				"index": 5,
+				"nextIndex": -1,
+				"speaker": "OrangeMeow",
+				"type": "cnv",
+				"words": "我看那边似乎有个洞穴，但是洞穴大门是锁着的，要是有办法进去就好了",
+				"branch": "main"
+			}
+		]
+	},
+	{
+		"actorName": "OrangeMeow",
+		"index": "conv2-2",
+		"convSteps": [
+			{
+				"index": 0,
+				"nextIndex": -1,
+				"speaker": "OrangeMeow",
+				"type": "cnv",
+				"words": "我看那边似乎有个洞穴，但是洞穴大门是锁着的，要是有办法进去就好了。。",
+				"branch": "main"
+			}
+		]
+	},
+	{
+		"actorName": "OrangeMeow",
+		"index": "conv3-1",
+		"convSteps": [
+			{
+				"index": 0,
+				"nextIndex": 1,
+				"speaker": "OrangeMeow",
+				"type": "cnv",
+				"words": "你，你是谁(>_<)?",
+				"branch": "gotMission1"
+			},
+			{
+				"index": 1,
+				"nextIndex": 2,
+				"speaker": "Player",
+				"type": "opt",
+				"words": "不要紧张，我只是路过",
+				"branch": "main"
+			},
+			{
+				"index": 1,
+				"nextIndex": 2,
+				"speaker": "Player",
+				"type": "opt",
+				"words": "我是炒鸡无敌暴龙战神！",
+				"branch": "main"
+			},
+			{
+				"index": 1,
+				"nextIndex": 3,
+				"speaker": "Player",
+				"type": "opt",
+				"words": "妈妈不让我和陌生人说话。。。",
+				"branch": "main"
+			},
+			{
+				"index": 2,
+				"nextIndex": 4,
+				"speaker": "OrangeMeow",
+				"type": "cnv",
+				"words": "我叫橙猫猫，我来采蘑菇被困在这个山谷里了，那边有强大的怪物，你可不要乱走啊",
+				"branch": "main"
+			},
+			{
+				"index": 3,
+				"nextIndex": 4,
+				"speaker": "OrangeMeow",
+				"type": "cnv",
+				"words": "emmm, 好吧( •̌.•̑ ).但是我提醒你那边有强大的怪物，最好不要过去",
+				"branch": "main"
+			},
+			{
+				"index": 4,
+				"nextIndex": 6,
+				"speaker": "Player",
+				"type": "opt",
+				"words": "你是指那个树精吗，我已经解决它了！",
+				"branch": "main"
+			},
+			{
+				"index": 4,
+				"nextIndex": 5,
+				"speaker": "Player",
+				"type": "opt",
+				"words": "呜呜呜，那怎么办QAQ",
+				"branch": "main"
+			},
+			{
+				"index": 5,
+				"nextIndex": -1,
+				"speaker": "OrangeMeow",
+				"type": "cnv",
+				"words": "不管你了，得先想个办法出去才行。",
+				"branch": "main"
+			},
+			{
+				"index": 6,
+				"nextIndex": 7,
+				"speaker": "OrangeMeow",
+				"type": "cnv",
+				"words": "真的？你这么厉害！不过你可要小心了，那个树精有个老大罩着，它一定会来找你报仇。",
+				"branch": "completeMission1"
+			},
+			{
+				"index": 7,
+				"nextIndex": 8,
+				"speaker": "Player",
+				"type": "opt",
+				"words": "不怕，我一拳一个小妖怪",
+				"branch": "main"
+			},
+			{
+				"index": 7,
+				"nextIndex": 8,
+				"speaker": "Player",
+				"type": "opt",
+				"words": "老大？给我讲讲",
+				"branch": "main"
+			},
+			{
+				"index": 7,
+				"nextIndex": 9,
+				"speaker": "Player",
+				"type": "opt",
+				"words": "完了，困在这破地方也出不去，岂不是死定了",
+				"branch": "main"
+			},
+			{
+				"index": 8,
+				"nextIndex": -1,
+				"speaker": "OrangeMeow",
+				"type": "cnv",
+				"words": "它老大是一只火熊精，会朝人喷火，恐怕十个你也不是它的对手",
+				"branch": "main"
+			},
+			{
+				"index": 9,
 				"nextIndex": -1,
 				"speaker": "OrangeMeow",
 				"type": "cnv",

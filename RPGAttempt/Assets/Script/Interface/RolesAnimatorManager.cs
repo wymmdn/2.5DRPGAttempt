@@ -54,8 +54,8 @@ public class RolesAnimatorManager : MonoBehaviour
         anim.SetTrigger("getHeal");
     }
     public void deadAnimation()
-    { 
-    
+    {
+        anim.SetBool("isDead", true);
     }
     public void attackStart()   //called in animator event
     {

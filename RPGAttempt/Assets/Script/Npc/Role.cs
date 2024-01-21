@@ -12,10 +12,11 @@ public class Role : MonoBehaviour ,IInteraction,IAssailable
     [SerializeField] protected float moveSpeed;
     [Header("states")]
     [SerializeField] protected bool isMoving;
-    [SerializeField] protected bool isTalking;
+    [SerializeField] public bool isTalking;
     [SerializeField] protected bool isInvicible;
     [SerializeField] protected float invicibleTime;
     [SerializeField] public bool isAttacking;
+    [SerializeField] protected bool isDead;
 
     [Header("init in inspector")]
     public ItemBag itemBag;
@@ -105,7 +106,10 @@ public class Role : MonoBehaviour ,IInteraction,IAssailable
     public virtual void toDead()
     {
         animatorManager.deadAnimation();
-        this.transform.SetParent(null);
+        isDead = true;
+    }
+    public virtual void toDestory()
+    { 
         Destroy(this.gameObject);
     }
     public virtual void attack()

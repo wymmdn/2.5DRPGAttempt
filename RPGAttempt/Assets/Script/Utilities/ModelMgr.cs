@@ -71,3 +71,10 @@ public class roleName
     public const string treeMonster = "TreeMonster";
     public const string fireBear = "FireBear";
 }
+public class storyPlot
+{
+    public const string gotMission = "gotMission1";
+    public const string completeMission = "completeMission1";
+    public const string gotMission2 = "gotMission2";
+    public const string completeMission2 = "completeMission2";
+}

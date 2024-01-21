@@ -28,6 +28,10 @@ public class Enemy : Role        //Ôİ¶¨ËùÓĞµÄµĞÈË¿ÕÏĞÊ±Ô­µØ²»¶¯£¬·¢ÏÖÍæ¼ÒÊ±¿ªÊ¼×
     // Update is called once per frame
     void Update()
     {
+        if (isDead) 
+        {
+            return;        
+        }
         if (curHealth == 0)
         {
             toDead();
