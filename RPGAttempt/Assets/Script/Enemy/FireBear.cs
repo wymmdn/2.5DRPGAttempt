@@ -35,6 +35,7 @@ public class FireBear : Enemy
         secondWeapon.isPickable = false;
         secondWeapon.transform.position = this.transform.position + secondWeapon.positionOffset;
 
+        player = GameObject.FindGameObjectWithTag(tagtag.player);
         chaseRadius = alertRadius + 1.0f;
         secondAttackRadius = secondWeapon.attackRadius;
         closeRadius = 1f;

@@ -45,6 +45,10 @@ public class Enemy : Role        //Ôİ¶¨ËùÓĞµÄµĞÈË¿ÕÏĞÊ±Ô­µØ²»¶¯£¬·¢ÏÖÍæ¼ÒÊ±¿ªÊ¼×
     }
     private void FixedUpdate()
     {
+        if (isDead)
+        {
+            return;
+        }
         currentState.PhysicsUpdate();
     }
     private void OnDisable()

@@ -218,6 +218,7 @@ MonoBehaviour:
   isInvicible: 0
   invicibleTime: 0
   isAttacking: 0
+  isDead: 0
   itemBag: {fileID: 0}
   defaultWeapon: {fileID: 453969311422015831, guid: c40c37826c17b1945bf60c6355d43762, type: 3}
   weapon: {fileID: 0}

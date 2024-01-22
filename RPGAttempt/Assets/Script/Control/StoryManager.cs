@@ -3,23 +3,30 @@ using System.Collections.Generic;
 using UnityEngine;
 using Newtonsoft.Json;
 using System;
+using Cinemachine;
 
 public class StoryManager : MonoBehaviour
 {
+    [SerializeField] private CinemachineVirtualCamera playerCamera;
+    [SerializeField] private CinemachineVirtualCamera sceneCamera;
+    [SerializeField] private float triggerRadius;
+    
     private bool hasFireBear;
+    private FireBear fireBear;
     private PlayerController player;
+    [HideInInspector]public const int living = 1;
+    [HideInInspector]public const int dead = 2;
 
-    public const int living = 1;
-    public const int dead = 2;
+    [Header("Plot Point")]
     public int treeMonsterState;
     public int fireBearState;
     public int magicBushSate;
     public bool fireBearCame;
+    public bool sawFireBear;
     public bool gotMission;
     public bool completeMission;
     public bool gotMission2;
     public bool completeMission2;
-
 
     public static StoryManager instance;
     private void readStoryParam()
@@ -28,6 +35,7 @@ public class StoryManager : MonoBehaviour
         fireBearState = living;
         magicBushSate = 0;
         fireBearCame = false;
+        sawFireBear = false;
         gotMission = false;
         completeMission = false;
         gotMission2 = false;
@@ -54,9 +62,19 @@ public class StoryManager : MonoBehaviour
             treeMonsterState == dead && 
             fireBearCame == true && 
             player.isTalking == false)
-        { 
-            generateFireBear();
+        {
+            fireBear = EventHandler.CallFireBearCame();
+            sceneCamera.Follow = fireBear.transform;
+            sceneCamera.LookAt = fireBear.transform;
             hasFireBear = true;
+        }
+        if (fireBear != null && 
+            sawFireBear == false && 
+            Vector2.Distance(player.transform.position, fireBear.transform.position) < triggerRadius)
+        {
+            playerCamera.enabled = false;
+            sceneCamera.enabled = true;
+            sawFireBear = true;
         }
     }
     private void OnEnable()
@@ -67,7 +85,6 @@ public class StoryManager : MonoBehaviour
     }
     private void performStory(string plot)
     {
-        Debug.Log(plot);
         switch (plot)
         {
             case storyPlot.gotMission:
@@ -124,10 +141,6 @@ public class StoryManager : MonoBehaviour
         return conversation;
     }
 
-    private void generateFireBear()
-    {
-        Debug.Log("play scene anim");
-    }
     public Conversation readConvFromJson(string actorName, string convIndex)
     {
         string convJson = Resources.Load<TextAsset>("Data/content").text;

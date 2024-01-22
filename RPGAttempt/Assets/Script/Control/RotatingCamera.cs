@@ -14,8 +14,6 @@ public class RotatingCamera : MonoBehaviour
 
     void Update()
     {
-        transform.position = player.position;
-
         Rotate();
     }
 

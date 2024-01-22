@@ -100,3 +100,4 @@ MonoBehaviour:
   holder: {fileID: 0}
   sprite: {fileID: 0}
   interactOpts: []
+  fireBear: {fileID: 4124779532424644006, guid: 68e7329cc0628ef49b68e1e2c7800eee, type: 3}
