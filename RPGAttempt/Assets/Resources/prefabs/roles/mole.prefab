@@ -209,7 +209,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 20
-  curHealth: 20
+  curHealth: 3
   physicResist: 0
   fireResist: 1
   moveSpeed: 1.5
@@ -229,6 +229,31 @@ MonoBehaviour:
   alertRadius: 2.2
   player: {fileID: 0}
   bornPoint: {x: 0, y: 0, z: 0}
+  caveKey: {fileID: 3284540354323754032, guid: 44cce50217933d642b7e3f1e935288ab, type: 3}
+  curve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 2
+      outSlope: 2
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.5
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 0
+    m_RotationOrder: 4
   chaseRadius: 0
   secondAttackRadius: 0
   closeRadius: 0

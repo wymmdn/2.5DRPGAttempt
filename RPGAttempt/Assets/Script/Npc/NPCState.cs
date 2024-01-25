@@ -2,17 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NPCState : MonoBehaviour
+public abstract class NPCState : BaseState
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    protected NPC currentNPC;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public abstract void OnEnter(NPC npc);
 }

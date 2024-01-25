@@ -82,6 +82,7 @@
     <Compile Include="Assets\Script\Enemy\TreeMonster.cs" />
     <Compile Include="Assets\Script\Item\Weapon\Weapon.cs" />
     <Compile Include="Assets\Script\Control\UI\HealthBarPlayer.cs" />
+    <Compile Include="Assets\Script\Item\CaveKey.cs" />
     <Compile Include="Assets\Script\Enemy\FireBear.cs" />
     <Compile Include="Assets\Script\Environment\SecretPoint.cs" />
     <Compile Include="Assets\Script\Interface\IStoryActor.cs" />
@@ -93,7 +94,6 @@
     <Compile Include="Assets\Script\Enemy\FireBearStates.cs" />
     <Compile Include="Assets\Script\Environment\FireGroundTile.cs" />
     <Compile Include="Assets\Script\Control\GameManager.cs" />
-    <Compile Include="Assets\Script\Npc\OrangeMeowState.cs" />
     <Compile Include="Assets\Script\Item\Boob.cs" />
     <Compile Include="Assets\Script\Environment\GroundTile.cs" />
     <Compile Include="Assets\Script\Npc\NPCState.cs" />
@@ -115,6 +115,7 @@
     <Compile Include="Assets\Script\Control\EnemyGenerate.cs" />
     <Compile Include="Assets\Script\Environment\MagicBush.cs" />
     <Compile Include="Assets\Script\Interface\BaseState.cs" />
+    <Compile Include="Assets\Script\Npc\OrangeMeowStates.cs" />
     <Compile Include="Assets\Script\Item\Item.cs" />
     <Compile Include="Assets\Script\Control\UI\HealthBarStd.cs" />
   </ItemGroup>

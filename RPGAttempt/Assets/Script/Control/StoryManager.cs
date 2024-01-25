@@ -74,6 +74,7 @@ public class StoryManager : MonoBehaviour
         {
             playerCamera.enabled = false;
             sceneCamera.enabled = true;
+            StartCoroutine(fireBear.startPerform());
             sawFireBear = true;
         }
     }
@@ -104,6 +105,12 @@ public class StoryManager : MonoBehaviour
                 { 
                     fireBearCame = true;
                 }
+                if (sawFireBear == true && fireBear != null)
+                {
+                    playerCamera.enabled = true;
+                    sceneCamera.enabled = false;
+                    fireBear.endPerform();
+                }
                 break;
             default:
                 break;
@@ -131,8 +138,8 @@ public class StoryManager : MonoBehaviour
                 }
                 break;
             case roleName.fireBear:
-                { 
-                    
+                {
+                    conversation = readConvFromJson(actorName, "conv11-1");
                 }
                 break;
             default:

@@ -9,8 +9,8 @@ public class PlayerController : Role
 
     private float invicibleTimeCnt;
     private float inputX, inputY;
-    [SerializeField]private List<Collider2D> interactCols = new List<Collider2D>(); //存储所有进入trigger collider的collider，用于交互判断
-    [SerializeField]private List<Transform> pickables = new List<Transform>(); //存储范围内可拾取的物品，用于拾取判断
+    private List<Collider2D> interactCols = new List<Collider2D>(); //存储所有进入trigger collider的collider，用于交互判断
+    private List<Transform> pickables = new List<Transform>(); //存储范围内可拾取的物品，用于拾取判断
 
 
     protected override void Awake()
@@ -19,8 +19,8 @@ public class PlayerController : Role
         interactRadius = GetComponent<CircleCollider2D>().radius;
         //changeWeapon((GameObject)Resources.Load(GloblePath.fireWand, typeof(GameObject)));
         //curHeart = maxHeart = 5;
-        invicibleTime = 0f;
-        //invicibleTime = 9999f;
+        //invicibleTime = 0f;
+        invicibleTime = 9999f;
         invicibleTimeCnt = invicibleTime;
     }
     // Start is called before the first frame update

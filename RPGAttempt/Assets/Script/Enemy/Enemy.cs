@@ -28,7 +28,7 @@ public class Enemy : Role        //Ôİ¶¨ËùÓĞµÄµĞÈË¿ÕÏĞÊ±Ô­µØ²»¶¯£¬·¢ÏÖÍæ¼ÒÊ±¿ªÊ¼×
     // Update is called once per frame
     void Update()
     {
-        if (isDead) 
+        if (isDead || isTalking) 
         {
             return;        
         }
@@ -45,7 +45,7 @@ public class Enemy : Role        //Ôİ¶¨ËùÓĞµÄµĞÈË¿ÕÏĞÊ±Ô­µØ²»¶¯£¬·¢ÏÖÍæ¼ÒÊ±¿ªÊ¼×
     }
     private void FixedUpdate()
     {
-        if (isDead)
+        if (isDead || isTalking)
         {
             return;
         }

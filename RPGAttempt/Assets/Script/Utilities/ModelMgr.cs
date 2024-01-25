@@ -47,7 +47,8 @@ public enum stateType
     chase1 = 3,
     chase2 = 4,
     secondAttack = 5,
-    attack = 6
+    attack = 6,
+    run = 7
 }
 public enum equipmentName
 { 

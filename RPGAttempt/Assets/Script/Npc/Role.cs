@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.UI;
 public class Role : MonoBehaviour ,IInteraction,IAssailable
 {
     [Header("attributes")]
@@ -109,7 +109,7 @@ public class Role : MonoBehaviour ,IInteraction,IAssailable
         isDead = true;
     }
     public virtual void toDestory()
-    { 
+    {
         Destroy(this.gameObject);
     }
     public virtual void attack()
@@ -129,7 +129,17 @@ public class Role : MonoBehaviour ,IInteraction,IAssailable
         curHealth -= health;
         animatorManager.getHurtAnimation();
     }
-
+    public IEnumerator showShortWords(Text shortWords,string words)
+    {
+        //shortWords.text = words;
+        shortWords.transform.localScale = Vector3.one;
+        yield return new WaitForSeconds(3.0f);
+        shortWords.transform.localScale = Vector3.zero;
+    }
+    public int getCurHealth()
+    { 
+        return curHealth;
+    }
     public virtual void interact(Role role)
     {
         

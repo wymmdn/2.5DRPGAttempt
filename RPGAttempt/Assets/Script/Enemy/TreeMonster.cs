@@ -2,14 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TreeMonsterStates;
+using UnityEngine.UI;
 
 public class TreeMonster : Enemy
 {
     [SerializeField]private Item freezeSword;
     [SerializeField]private Item deadBody;
+    [SerializeField] private Text shortWords;
     public AnimationCurve curve;
     private float duration = 0.5f;
     private float maxHeight = 1.0f;
+    private float timeCnt = 0f;
     protected override void Awake()
     {
         base.Awake();
@@ -21,7 +24,19 @@ public class TreeMonster : Enemy
         states.Add(stateType.attack, attackState);
         this.weapon.attackInterval = 1.5f;
     }
-
+    protected override void UpdateContent()
+    {
+        base.UpdateContent();
+        //show temp words
+        shortWords.transform.position = transform.position + new Vector3(0,0.5f,0);
+        timeCnt += Time.deltaTime;
+        if (timeCnt > 8.0f)
+        { 
+            timeCnt = 0f;
+            StartCoroutine(showShortWords(shortWords, "")); //words hard code in ui canvas
+        }
+        //
+    }
     protected override void Start()
     {
         base.Start();
@@ -64,5 +79,7 @@ public class TreeMonster : Enemy
             tf.position = new Vector3(0f, height, 0f) + Vector3.Lerp(start, finish, linearTime);
             yield return null;
         }
+        IPickable ip = tf.GetComponent<IPickable>();
+        if (ip != null) ip.isPickable = true;
     }
 }

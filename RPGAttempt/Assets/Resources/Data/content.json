@@ -354,5 +354,59 @@
 				"branch": "main"
 			}
 		]
+	},
+	{
+		"actorName": "FireBear",
+		"index": "conv11-1",
+		"convSteps": [
+			{
+				"index": 0,
+				"nextIndex": 1,
+				"speaker": "FireBear",
+				"type": "cnv",
+				"words": "树精..死了，是你杀了我朋友，可恶的人类，拿命来",
+				"branch": "main"
+			},
+			{
+				"index": 1,
+				"nextIndex": -1,
+				"speaker": "Player",
+				"type": "opt",
+				"words": "又来一个送命的，攻击",
+				"branch": "main"
+			},
+			{
+				"index": 1,
+				"nextIndex": 2,
+				"speaker": "Player",
+				"type": "opt",
+				"words": "大哥饶命啊，我只是和他切磋一下，结果我还没用力，他就倒下了",
+				"branch": "main"
+			},
+			{
+				"index": 1,
+				"nextIndex": 3,
+				"speaker": "Player",
+				"type": "opt",
+				"words": "不要不讲理，明明是他先动的手",
+				"branch": "main"
+			},
+			{
+				"index": 2,
+				"nextIndex": -1,
+				"speaker": "FireBear",
+				"type": "cnv",
+				"words": "胡言乱语，看我火球",
+				"branch": "main"
+			},
+			{
+				"index": 3,
+				"nextIndex": -1,
+				"speaker": "FireBear",
+				"type": "cnv",
+				"words": "还敢狡辩，杀",
+				"branch": "main"
+			}
+		]
 	}
 ]

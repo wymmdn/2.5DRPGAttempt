@@ -5,6 +5,8 @@ using Newtonsoft.Json;
 public class NPC : Role,IStoryActor
 {
     public Vector3 bornPoint;
+    protected NPCState currentState;
+    [HideInInspector] public Dictionary<stateType, NPCState> states = new Dictionary<stateType, NPCState>();
     public string actorName { get; set; }
     public Conversation conversation { get; set; }
     //[HideInInspector] public Dictionary<stateType, EnemyState> states = new Dictionary<stateType, EnemyState>();
@@ -23,5 +25,12 @@ public class NPC : Role,IStoryActor
     {
         conversation = StoryManager.instance.GetConversation(actorName);
         EventHandler.CallShowDialogueEvent(conversation);
+    }
+    public void TransitionState(stateType type)
+    {
+        if (currentState != null)
+            currentState.OnExit();
+        currentState = states[type];
+        currentState.OnEnter(this);
     }
 }

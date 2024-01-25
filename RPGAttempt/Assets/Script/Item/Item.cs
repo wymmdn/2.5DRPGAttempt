@@ -14,7 +14,7 @@ public class Item : MonoBehaviour,IPickable
         interactOpts.Add(UIString.place);
         interactOpts.Add(UIString.discard);
     }
-    public bool isPickable { get; set;}
+    [SerializeField]public bool isPickable { get; set;}
 
     public void discard()
     {
