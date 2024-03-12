@@ -96,6 +96,7 @@
     <Compile Include="Assets\Script\Control\GameManager.cs" />
     <Compile Include="Assets\Script\Item\Boob.cs" />
     <Compile Include="Assets\Script\Environment\GroundTile.cs" />
+    <Compile Include="Assets\Script\Environment\Rock.cs" />
     <Compile Include="Assets\Script\Npc\NPCState.cs" />
     <Compile Include="Assets\Script\Item\Weapon\FireWandProjectile.cs" />
     <Compile Include="Assets\Script\Data\JsonModel.cs" />
@@ -107,6 +108,7 @@
     <Compile Include="Assets\Script\Item\Weapon\DamageField.cs" />
     <Compile Include="Assets\Script\Data\UIWords_SO.cs" />
     <Compile Include="Assets\Script\Item\ItemSolt.cs" />
+    <Compile Include="Assets\Script\Environment\Cave.cs" />
     <Compile Include="Assets\Script\Item\Weapon\FreezeSword.cs" />
     <Compile Include="Assets\Script\Item\ItemBag.cs" />
     <Compile Include="Assets\Script\Interface\WeaponAnimatorManager.cs" />

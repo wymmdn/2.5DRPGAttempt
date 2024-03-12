@@ -11,7 +11,7 @@ public class StoryManager : MonoBehaviour
     [SerializeField] private CinemachineVirtualCamera sceneCamera;
     [SerializeField] private float triggerRadius;
     
-    private bool hasFireBear;
+    
     private FireBear fireBear;
     private PlayerController player;
     [HideInInspector]public const int living = 1;
@@ -22,6 +22,7 @@ public class StoryManager : MonoBehaviour
     public int fireBearState;
     public int magicBushSate;
     public bool fireBearCame;
+    public bool hasFireBear;
     public bool sawFireBear;
     public bool gotMission;
     public bool completeMission;
@@ -29,12 +30,13 @@ public class StoryManager : MonoBehaviour
     public bool completeMission2;
 
     public static StoryManager instance;
-    private void readStoryParam()
+    public void readStoryParam()
     {
         treeMonsterState = living;
         fireBearState = living;
         magicBushSate = 0;
         fireBearCame = false;
+        hasFireBear = false;
         sawFireBear = false;
         gotMission = false;
         completeMission = false;
@@ -74,6 +76,7 @@ public class StoryManager : MonoBehaviour
         {
             playerCamera.enabled = false;
             sceneCamera.enabled = true;
+            player.isTalking = true;
             StartCoroutine(fireBear.startPerform());
             sawFireBear = true;
         }

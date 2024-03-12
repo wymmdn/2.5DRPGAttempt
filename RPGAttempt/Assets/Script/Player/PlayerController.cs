@@ -20,7 +20,7 @@ public class PlayerController : Role
         //changeWeapon((GameObject)Resources.Load(GloblePath.fireWand, typeof(GameObject)));
         //curHeart = maxHeart = 5;
         //invicibleTime = 0f;
-        invicibleTime = 9999f;
+        invicibleTime = 1f;
         invicibleTimeCnt = invicibleTime;
     }
     // Start is called before the first frame update
@@ -44,6 +44,7 @@ public class PlayerController : Role
         if (isTalking)
         {
             isInvicible = true;
+            stopMove();
             return;
         }
         checkAttack();

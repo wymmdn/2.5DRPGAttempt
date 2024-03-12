@@ -19,10 +19,10 @@ public class TrapMgr : MonoBehaviour
     }
     private void OnTriggerStay2D(Collider2D collision)
     {
-        PlayerController controller = collision.GetComponent<PlayerController>();
-        if (controller != null)
+        IAssailable obj = collision.GetComponent<IAssailable>();
+        if (obj != null)
         {
-            controller.changeHealth(damage, changeHealthType.physicDamage);
+            obj.changeHealth(damage, changeHealthType.physicDamage);
         }
     }
 }

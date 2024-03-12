@@ -7,12 +7,14 @@ public class Item : MonoBehaviour,IPickable
     public Role holder;
     public SpriteRenderer sprite;
     public List<string> interactOpts = new List<string>();
+    public string itemName;
 
     protected virtual void Awake()
     {
         sprite = GetComponent<SpriteRenderer>();
         interactOpts.Add(UIString.place);
         interactOpts.Add(UIString.discard);
+        itemName = gameObject.name;
     }
     [SerializeField]public bool isPickable { get; set;}
 

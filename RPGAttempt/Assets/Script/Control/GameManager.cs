@@ -34,6 +34,7 @@ public class GameManager : MonoBehaviour
         bushNum = 0;
         bushTriggerNum = 0;
         playerController = GameObject.FindGameObjectWithTag(tagtag.player).GetComponent<PlayerController>();
+        StoryManager.instance.readStoryParam();
     }
     // Update is called once per frame
     void Update()

@@ -18,6 +18,7 @@ public class Boob : Item , IAssailable
     [SerializeField] private Grid grid;
 
     [SerializeField] private float explodeRadius;
+    [SerializeField] private int explodeDamage;
 
     protected override void Awake()
     {
@@ -25,6 +26,7 @@ public class Boob : Item , IAssailable
         createdMap = GameObject.FindWithTag(tagtag.createdMap).GetComponent<Tilemap>();
         grid = createdMap.GetComponentInParent<Grid>();
         explodeRadius = 0.5f;
+        explodeDamage = 1;
     }
     public void changeHealth(int health, changeHealthType type)
     {
@@ -67,12 +69,20 @@ public class Boob : Item , IAssailable
     public void explode()
     {
         //hard code
-        var player = GameObject.FindGameObjectWithTag(tagtag.player).GetComponent<PlayerController>();
+        /*var player = GameObject.FindGameObjectWithTag(tagtag.player).GetComponent<PlayerController>();
         if (Vector2.Distance((Vector2)player.transform.position, (Vector2)transform.position) < explodeRadius)
         {
             player.changeHealth(1, changeHealthType.physicDamage);
+        }*/
+        var cols = Physics2D.OverlapCircleAll(transform.position, explodeRadius);
+        for (int i = 0; i < cols.Length; i++)
+        {
+            IAssailable obj = cols[i].GetComponent<IAssailable>();
+            if (obj != null)
+            {
+                obj.changeHealth(explodeDamage, changeHealthType.realDamage);
+            }
         }
-
 
         Vector3Int point = grid.WorldToCell(transform.position);
         Tile tile = Instantiate(fireTile);

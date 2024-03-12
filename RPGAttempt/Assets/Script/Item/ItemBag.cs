@@ -10,7 +10,7 @@ public class ItemBag : MonoBehaviour
     [SerializeField]public RaycastHit2D rayCast;
     public Transform hitTransform;
     [SerializeField]private GameObject slotPrefab;
-    [SerializeField]private Dictionary<ItemSolt,Item> items = new Dictionary<ItemSolt,Item>();
+    public Dictionary<ItemSolt,Item> items = new Dictionary<ItemSolt,Item>();
     private GridLayoutGroup bagPanel;
     private PlayerController player;
     private Role holder;
