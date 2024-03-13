@@ -1,20 +1,23 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class RotatingCamera : MonoBehaviour
 {
     public float rotateTime = 0.2f;
-    private Transform player;
     private bool isRotating = false;
     void Start()
     {
-        player = GameObject.FindGameObjectWithTag(tagtag.player).transform;
+
     }
 
     void Update()
     {
-        Rotate();
+        if (SceneManager.GetActiveScene().name == sceneName.magicValley)
+        { 
+            Rotate();
+        }
     }
 
     void Rotate()

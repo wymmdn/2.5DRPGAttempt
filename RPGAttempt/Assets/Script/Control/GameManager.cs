@@ -10,6 +10,8 @@ public class GameManager : MonoBehaviour
     private int bushNum;
     private int bushTriggerNum;
     private PlayerController playerController;
+    [SerializeField]private Canvas menuCanvas;
+    [SerializeField]private Camera menuCamera;
 
     void Awake()
     {
@@ -25,16 +27,15 @@ public class GameManager : MonoBehaviour
         mBushs = new List<MagicBush>();
         bushNum = 0;
         bushTriggerNum = 0;
-        playerController = GameObject.FindGameObjectWithTag(tagtag.player).GetComponent<PlayerController>();
     }
 
-    private void resetManager()
+    public void resetManager(string sceneName)
     {
         mBushs = new List<MagicBush>();
         bushNum = 0;
         bushTriggerNum = 0;
         playerController = GameObject.FindGameObjectWithTag(tagtag.player).GetComponent<PlayerController>();
-        StoryManager.instance.readStoryParam();
+        StoryManager.instance.resetStory();
     }
     // Update is called once per frame
     void Update()
@@ -80,13 +81,46 @@ public class GameManager : MonoBehaviour
     public void GetWin()
     {
         Debug.Log("you win");
-        resetManager();
+        resetManager("");
         SceneManager.LoadScene(playerController.gameObject.scene.name);
     }
     public void GameOver()
     {
         Debug.Log("game over");
-        resetManager();
+        resetManager("");
         SceneManager.LoadScene(playerController.gameObject.scene.name);
+    }
+    public IEnumerator debugfunc()
+    {
+        yield return new WaitUntil(SceneManager.GetSceneByName("MagicValley").IsValid);
+        Debug.Log(SceneManager.GetSceneByName("MagicValley").name);
+    }
+    public IEnumerator loadGameScene(string menu, string game)
+    {
+        AsyncOperation ao = SceneManager.UnloadSceneAsync(menu);
+        while (!ao.isDone)
+        {
+            yield return null;
+            Debug.Log(ao.progress);
+        }
+        menuCanvas.gameObject.SetActive(false);
+        menuCamera.gameObject.SetActive(false);
+        yield return SceneManager.LoadSceneAsync(game,LoadSceneMode.Additive);
+        SceneManager.SetActiveScene(SceneManager.GetSceneByName(game));
+        resetManager(game);
+    }
+    public IEnumerator loadMenuScene(string game, string menu)
+    {
+        AsyncOperation ao = SceneManager.UnloadSceneAsync(game);
+        while (!ao.isDone)
+        {
+            yield return null;
+            Debug.Log(ao.progress);
+        }
+        menuCanvas.gameObject.SetActive(true);
+        menuCamera.gameObject.SetActive(true);
+        yield return SceneManager.LoadSceneAsync(menu, LoadSceneMode.Additive);
+        SceneManager.SetActiveScene(SceneManager.GetSceneByName(menu));
+        resetManager(menu);
     }
 }

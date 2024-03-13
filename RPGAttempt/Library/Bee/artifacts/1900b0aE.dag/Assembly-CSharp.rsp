@@ -395,6 +395,7 @@
 "Assets/Script/Control/UI/HealthBarPlayer.cs"
 "Assets/Script/Control/UI/HealthBarStd.cs"
 "Assets/Script/Control/UI/InteractPanel.cs"
+"Assets/Script/Control/UI/MenuButton.cs"
 "Assets/Script/Control/UI/UIManager.cs"
 "Assets/Script/Data/JsonModel.cs"
 "Assets/Script/Data/UIWords_SO.cs"

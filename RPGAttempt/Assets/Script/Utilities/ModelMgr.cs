@@ -79,3 +79,9 @@ public class storyPlot
     public const string gotMission2 = "gotMission2";
     public const string completeMission2 = "completeMission2";
 }
+
+public class sceneName
+{
+    public const string menuScene = "Menu";
+    public const string magicValley = "MagicValley";
+}

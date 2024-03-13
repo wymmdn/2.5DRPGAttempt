@@ -86,6 +86,7 @@
     <Compile Include="Assets\Script\Enemy\FireBear.cs" />
     <Compile Include="Assets\Script\Environment\SecretPoint.cs" />
     <Compile Include="Assets\Script\Interface\IStoryActor.cs" />
+    <Compile Include="Assets\Script\Control\UI\MenuButton.cs" />
     <Compile Include="Assets\Script\Item\Weapon\FreeHand.cs" />
     <Compile Include="Assets\Script\Utilities\EnvironCheck.cs" />
     <Compile Include="Assets\Script\Control\FacingCamera.cs" />

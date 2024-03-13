@@ -30,7 +30,7 @@ public class StoryManager : MonoBehaviour
     public bool completeMission2;
 
     public static StoryManager instance;
-    public void readStoryParam()
+    public void resetStory()
     {
         treeMonsterState = living;
         fireBearState = living;
@@ -42,6 +42,7 @@ public class StoryManager : MonoBehaviour
         completeMission = false;
         gotMission2 = false;
         completeMission2 = false;
+        player = GameObject.FindGameObjectWithTag(tagtag.player).GetComponent<PlayerController>();
     }
     void Awake()
     {
@@ -54,9 +55,7 @@ public class StoryManager : MonoBehaviour
             Destroy(this.gameObject);
         }
         DontDestroyOnLoad(this);
-        hasFireBear = false ;
-        player = GameObject.FindGameObjectWithTag(tagtag.player).GetComponent<PlayerController>();
-        readStoryParam();
+        resetStory();
     }
     private void Update()
     {

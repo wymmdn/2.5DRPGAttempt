@@ -68,12 +68,6 @@ public class Boob : Item , IAssailable
     { }
     public void explode()
     {
-        //hard code
-        /*var player = GameObject.FindGameObjectWithTag(tagtag.player).GetComponent<PlayerController>();
-        if (Vector2.Distance((Vector2)player.transform.position, (Vector2)transform.position) < explodeRadius)
-        {
-            player.changeHealth(1, changeHealthType.physicDamage);
-        }*/
         var cols = Physics2D.OverlapCircleAll(transform.position, explodeRadius);
         for (int i = 0; i < cols.Length; i++)
         {
