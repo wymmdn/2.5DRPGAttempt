@@ -42,7 +42,7 @@ public class StoryManager : MonoBehaviour
         completeMission = false;
         gotMission2 = false;
         completeMission2 = false;
-        player = GameObject.FindGameObjectWithTag(tagtag.player).GetComponent<PlayerController>();
+        player = GameManager.instance.playerController;
     }
     void Awake()
     {

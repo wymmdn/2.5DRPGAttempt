@@ -16,6 +16,7 @@ public class tagtag {
     public const string npc = "NPC";
     public const string createdMap = "CreatedMap";
     public const string ground = "Ground";
+    public const string gameCamera = "MainCamera";
 }
 public class LayerString { 
     //public const string

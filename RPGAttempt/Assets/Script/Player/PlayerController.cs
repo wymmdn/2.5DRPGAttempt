@@ -167,7 +167,22 @@ public class PlayerController : Role
         base.equipWeapon(wp);
         equipments.displayWeapon(wp);
     }
-
+    public IEnumerator theEnd(Vector2 position)
+    {
+        isTalking = true;
+        float timeCnt = 0f;
+        yield return new WaitForSeconds(0.3f);
+        while (timeCnt < 1.0f)
+        {
+            var speed = moveSpeed;
+            moveSpeed = 0.5f;
+            movement(position);
+            moveSpeed = speed;
+            timeCnt += Time.deltaTime;
+            yield return null;
+        }
+        yield return null;
+    }
     private void talkStart(Conversation c)
     {
         this.isTalking = true;

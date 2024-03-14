@@ -9,9 +9,10 @@ public class GameManager : MonoBehaviour
     List<MagicBush> mBushs;
     private int bushNum;
     private int bushTriggerNum;
-    private PlayerController playerController;
+    public PlayerController playerController;
     [SerializeField]private Canvas menuCanvas;
     [SerializeField]private Camera menuCamera;
+    [SerializeField]private Canvas escCanvas;
 
     void Awake()
     {
@@ -27,19 +28,36 @@ public class GameManager : MonoBehaviour
         mBushs = new List<MagicBush>();
         bushNum = 0;
         bushTriggerNum = 0;
+        //resetManager("");
     }
 
-    public void resetManager(string sceneName)
+    public void resetManager(string scene)
     {
         mBushs = new List<MagicBush>();
         bushNum = 0;
         bushTriggerNum = 0;
-        playerController = GameObject.FindGameObjectWithTag(tagtag.player).GetComponent<PlayerController>();
-        StoryManager.instance.resetStory();
+        if (scene != sceneName.menuScene)
+        {
+            playerController = GameObject.FindGameObjectWithTag(tagtag.player).GetComponent<PlayerController>();
+            escCanvas.worldCamera = GameObject.FindGameObjectWithTag(tagtag.gameCamera).GetComponent<Camera>();
+            StoryManager.instance.resetStory();
+        }
     }
     // Update is called once per frame
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            if (escCanvas.gameObject.activeSelf)
+            {
+                continueGame();
+            }
+            else
+            {
+                GameManager.instance.pauseGame();
+                escCanvas.gameObject.SetActive(true);
+            }
+        }
         if (bushNum != 0 && bushTriggerNum == bushNum)
         {
             GetWin(); 
@@ -65,19 +83,6 @@ public class GameManager : MonoBehaviour
             }
         }
     }
-    public void pauseGame()
-    {
-        Time.timeScale = 0;
-    }
-
-    public void OnApplicationPause(bool pause)
-    {
-        
-    }
-    private void readData()
-    { 
-        
-    }
     public void GetWin()
     {
         Debug.Log("you win");
@@ -90,18 +95,13 @@ public class GameManager : MonoBehaviour
         resetManager("");
         SceneManager.LoadScene(playerController.gameObject.scene.name);
     }
-    public IEnumerator debugfunc()
-    {
-        yield return new WaitUntil(SceneManager.GetSceneByName("MagicValley").IsValid);
-        Debug.Log(SceneManager.GetSceneByName("MagicValley").name);
-    }
     public IEnumerator loadGameScene(string menu, string game)
     {
         AsyncOperation ao = SceneManager.UnloadSceneAsync(menu);
         while (!ao.isDone)
         {
             yield return null;
-            Debug.Log(ao.progress);
+            //Debug.Log(ao.progress);
         }
         menuCanvas.gameObject.SetActive(false);
         menuCamera.gameObject.SetActive(false);
@@ -115,12 +115,51 @@ public class GameManager : MonoBehaviour
         while (!ao.isDone)
         {
             yield return null;
-            Debug.Log(ao.progress);
+            //Debug.Log(ao.progress);
         }
         menuCanvas.gameObject.SetActive(true);
         menuCamera.gameObject.SetActive(true);
         yield return SceneManager.LoadSceneAsync(menu, LoadSceneMode.Additive);
         SceneManager.SetActiveScene(SceneManager.GetSceneByName(menu));
         resetManager(menu);
+    }
+
+    public void startGame()
+    {
+        StartCoroutine(loadGameScene(sceneName.menuScene, sceneName.magicValley));
+        //StartCoroutine(GameManager.instance.debugfunc());
+    }
+    public void exitGame()
+    {
+
+    }
+    public void continueGame()
+    {
+        GameManager.instance.cancelPause();
+        escCanvas.gameObject.SetActive(false);
+    }
+    public void backMenu()
+    {
+        continueGame();
+        StartCoroutine(GameManager.instance.loadMenuScene(sceneName.magicValley, sceneName.menuScene));
+    }
+    public void pauseGame()
+    {
+        Time.timeScale = 0;
+        playerController.isTalking = true;
+    }
+    public void cancelPause()
+    {
+        Time.timeScale = 1f;
+        playerController.isTalking = false;
+    }
+
+    public void OnApplicationPause(bool pause)
+    {
+
+    }
+    private void readData()
+    {
+
     }
 }

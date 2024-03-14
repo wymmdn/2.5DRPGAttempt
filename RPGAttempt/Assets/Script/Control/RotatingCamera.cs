@@ -14,7 +14,8 @@ public class RotatingCamera : MonoBehaviour
 
     void Update()
     {
-        if (SceneManager.GetActiveScene().name == sceneName.magicValley)
+        if (SceneManager.GetActiveScene().name == sceneName.magicValley && 
+            GameManager.instance.playerController.isTalking != true)
         { 
             Rotate();
         }

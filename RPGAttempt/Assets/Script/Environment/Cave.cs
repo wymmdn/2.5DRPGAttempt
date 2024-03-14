@@ -2,9 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Cave : MonoBehaviour,IInteraction
+public class Cave : MonoBehaviour,IInteraction, IStoryActor
 {
     private Transform MaskTransform;
+    private PlayerController player;
+
+    public string actorName { get; set; }
+    public Conversation conversation { get; set; }
 
     private void Awake()
     {
@@ -24,6 +28,7 @@ public class Cave : MonoBehaviour,IInteraction
         if (hasKey == true)
         {
             StartCoroutine(openDoor());
+            StartCoroutine(player.theEnd(transform.position));
         }
     }
     private IEnumerator openDoor()
@@ -34,5 +39,10 @@ public class Cave : MonoBehaviour,IInteraction
             MaskTransform.localScale = new Vector3(MaskTransform.localScale.x + 0.01f, MaskTransform.localScale.y,MaskTransform.localScale.z);
             yield return new WaitForSeconds(0.03f);
         }
+        openDialogue();
+    }
+    public void openDialogue()
+    {
+        
     }
 }
