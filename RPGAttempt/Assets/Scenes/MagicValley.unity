@@ -60430,6 +60430,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 620910821}
     - target: {fileID: 8080064141406637817, guid: 418f6a78655e60b4c9dcacb6e0348470, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8080064141406637817, guid: 418f6a78655e60b4c9dcacb6e0348470, type: 3}
       propertyPath: m_ExcludeLayers.m_Bits
       value: 8
       objectReference: {fileID: 0}
@@ -60484,6 +60488,10 @@ PrefabInstance:
     - target: {fileID: 8080064141406637822, guid: 418f6a78655e60b4c9dcacb6e0348470, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8080064141406637823, guid: 418f6a78655e60b4c9dcacb6e0348470, type: 3}
+      propertyPath: m_Color.a
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

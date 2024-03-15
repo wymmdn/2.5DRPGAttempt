@@ -408,5 +408,27 @@
 				"branch": "main"
 			}
 		]
+	},
+	{
+		"actorName": "Cave",
+		"index": "conv21-1",
+		"convSteps": [
+			{
+				"index": 0,
+				"nextIndex": 1,
+				"speaker": "Cave",
+				"type": "cnv",
+				"words": "你使用了这把奇怪的钥匙，洞口打开了，里面似乎空空如也，又好像能延伸到任何地方",
+				"branch": "main"
+			},
+			{
+				"index": 1,
+				"nextIndex": -1,
+				"speaker": "Cave",
+				"type": "cnv",
+				"words": "看着深黑的洞口，你有些犹豫，但这也许是唯一能逃离这座山谷的路径，最后你还是选择走了进去...",
+				"branch": "main"
+			}
+		]
 	}
 ]

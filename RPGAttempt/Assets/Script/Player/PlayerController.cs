@@ -170,6 +170,8 @@ public class PlayerController : Role
     public IEnumerator theEnd(Vector2 position)
     {
         isTalking = true;
+        GetComponent<BoxCollider2D>().enabled = false;
+        animatorManager.deadAnimation();
         float timeCnt = 0f;
         yield return new WaitForSeconds(0.3f);
         while (timeCnt < 1.0f)

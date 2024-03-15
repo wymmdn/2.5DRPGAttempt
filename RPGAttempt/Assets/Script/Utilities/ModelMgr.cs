@@ -72,6 +72,7 @@ public class roleName
     public const string orangeMeow = "OrangeMeow";
     public const string treeMonster = "TreeMonster";
     public const string fireBear = "FireBear";
+    public const string cave = "Cave";
 }
 public class storyPlot
 {

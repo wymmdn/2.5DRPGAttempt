@@ -28,6 +28,7 @@ public class StoryManager : MonoBehaviour
     public bool completeMission;
     public bool gotMission2;
     public bool completeMission2;
+    public bool gameWin;
 
     public static StoryManager instance;
     public void resetStory()
@@ -42,6 +43,7 @@ public class StoryManager : MonoBehaviour
         completeMission = false;
         gotMission2 = false;
         completeMission2 = false;
+        gameWin = false;
         player = GameManager.instance.playerController;
     }
     void Awake()
@@ -54,7 +56,7 @@ public class StoryManager : MonoBehaviour
         {
             Destroy(this.gameObject);
         }
-        DontDestroyOnLoad(this);
+        //DontDestroyOnLoad(this);
         resetStory();
     }
     private void Update()
@@ -113,6 +115,10 @@ public class StoryManager : MonoBehaviour
                     sceneCamera.enabled = false;
                     fireBear.endPerform();
                 }
+                if (gameWin == true)
+                {
+                    GameManager.instance.GetWin();
+                }
                 break;
             default:
                 break;
@@ -143,6 +149,9 @@ public class StoryManager : MonoBehaviour
                 {
                     conversation = readConvFromJson(actorName, "conv11-1");
                 }
+                break;
+            case roleName.cave:
+                conversation = readConvFromJson(actorName, "conv21-1");
                 break;
             default:
                 break;

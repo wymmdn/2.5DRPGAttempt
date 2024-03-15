@@ -13,6 +13,7 @@ public class Cave : MonoBehaviour,IInteraction, IStoryActor
     private void Awake()
     {
         MaskTransform = transform.GetChild(0);
+        actorName = roleName.cave;
     }
     public void interact(Role role)
     {
@@ -27,22 +28,24 @@ public class Cave : MonoBehaviour,IInteraction, IStoryActor
         }
         if (hasKey == true)
         {
+            player = GameManager.instance.playerController;
             StartCoroutine(openDoor());
             StartCoroutine(player.theEnd(transform.position));
         }
     }
     private IEnumerator openDoor()
     {
-        Debug.Log("opened");
         while (MaskTransform.localScale.x < 0.5f)
         { 
             MaskTransform.localScale = new Vector3(MaskTransform.localScale.x + 0.01f, MaskTransform.localScale.y,MaskTransform.localScale.z);
             yield return new WaitForSeconds(0.03f);
         }
+        StoryManager.instance.gameWin = true;
         openDialogue();
     }
     public void openDialogue()
     {
-        
+        conversation = StoryManager.instance.GetConversation(actorName);
+        EventHandler.CallShowDialogueEvent(conversation);
     }
 }

@@ -86,13 +86,13 @@ public class GameManager : MonoBehaviour
     public void GetWin()
     {
         Debug.Log("you win");
-        resetManager("");
-        SceneManager.LoadScene(playerController.gameObject.scene.name);
+        resetManager(sceneName.menuScene);
+        StartCoroutine(loadMenuScene(sceneName.magicValley, sceneName.menuScene));        
     }
     public void GameOver()
     {
         Debug.Log("game over");
-        resetManager("");
+        resetManager(sceneName.magicValley);
         SceneManager.LoadScene(playerController.gameObject.scene.name);
     }
     public IEnumerator loadGameScene(string menu, string game)
